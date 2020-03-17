@@ -11,8 +11,8 @@ Nos principales sources de données sont les suivantes:
 * niveau mondial
   * https://github.com/CSSEGISandData/COVID-19
 * niveau national
- * données régionales/départementales https://github.com/opencovid19-fr/data
- * données individualisée https://github.com/lperez31/coronavirus-france-dataset
+  * données régionales/départementales https://github.com/opencovid19-fr/data
+  * données individualisée https://github.com/lperez31/coronavirus-france-dataset
 * croisements géographiques
   * données nationales https://github.com/gregoiredavid/france-geojson
 
