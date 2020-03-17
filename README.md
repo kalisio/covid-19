@@ -1,7 +1,7 @@
 # Données cartographiques concernant l'épidémie de COVID-19
 
 L'information officielle sur la progression de l'épidémie en France est assez fragmentée. Différentes initiatives tentent de structurer celle-ci sous forme de données libres. Malgré ce travail les données sont néanmoins souvent difficilement
-exploitables à l'état brut au sein d'outils cartographique.
+exploitables à l'état brut au sein d'outils cartographiques.
 
 L'objectif de ce dépôt est de consolider l'information et de la rendre disponible dans des formats ouverts et aisément réutilisables pour produire des cartes. Le format pivot privilégié est le [GeoJson](https://fr.wikipedia.org/wiki/GeoJSON).
 
