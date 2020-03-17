@@ -31,7 +31,9 @@ Les principales données produites sont les suivantes:
   * croisement géographique par département réalisé sur la base du code de département
   * géolocalisation des données au barycentre du département pour la constitution d'[heatmaps](https://fr.wikipedia.org/wiki/Heat_map)
 
-![Carte de densité évolutive des cas](./https://drive.google.com/open?id=1G6IWKDE1XuSIjY_ncSELPcl8GuMmmKoH)
+![Carte de densité évolutive des cas](Kano-Covid-19-Heatmap-France.gif)
+
+Voir la [vidéo originale](https://drive.google.com/open?id=1G6IWKDE1XuSIjY_ncSELPcl8GuMmmKoH).
 
 * données globales individualisée des patients en France [patients-france](./patients-france)
   * géolocalisation des données au barycentre du département
