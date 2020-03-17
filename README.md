@@ -26,7 +26,7 @@ Les données du Johns Hopkins CSSE étant devenu le standard defacto nous avons 
 * `Recovered` nombre de guérisons confirmées
 
 Les principales données produites sont les suivantes:
-* données journalières par département consolidées au niveau national [departements-france](./departements-france)
+* données journalières par département consolidées au niveau national dans le dossier [departements-france](./departements-france)
   * issues des données des [Agences Régionales de Santé](https://github.com/opencovid19-fr/data/tree/master/agences-regionales-sante)
   * croisement géographique par département réalisé sur la base du code de département
   * géolocalisation des données au barycentre du département pour la constitution d'[heatmaps](https://fr.wikipedia.org/wiki/Heat_map)
@@ -35,7 +35,7 @@ Les principales données produites sont les suivantes:
 
 Voir la [vidéo originale](https://drive.google.com/open?id=1G6IWKDE1XuSIjY_ncSELPcl8GuMmmKoH).
 
-* données globales individualisée des patients en France [patients-france](./patients-france)
+* données globales individualisée des patients en France dans le dossier [patients-france](./patients-france)
   * géolocalisation des données au barycentre du département
   * contient une version aggrégée par département pour la constitution d'[heatmaps](https://fr.wikipedia.org/wiki/Heat_map)
 
