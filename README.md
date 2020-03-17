@@ -139,7 +139,9 @@ Exemple de configuration d'une heatmap:
 
 ## Comment contribuer ?
 
-Vous pouvez vous proposer comme volontaire pour tester nos scrappeur, utiliser nos données ou réaliser de nouveaux jeux de données.
+Vous pouvez vous proposer comme volontaire pour tester nos scrappeurs, utiliser nos données ou réaliser de nouveaux jeux de données.
+
+Pour vous signaler rejoignez la communauté sur [Slack](https://join.slack.com/t/dataagainstcovid-19/shared_invite/zt-cgsplso2-LIvWeRHlf1ZFIrh~SPj~IA), ouvrez une [issue](https://github.com/kalisio/covid-19/issues) ou une une [pull request](https://github.com/kalisio/covid-19/pulls).
 
 Quelques idées:
 * géolocalisation des données des patients au niveau communal
