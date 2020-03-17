@@ -39,11 +39,11 @@ Voir la [vidéo originale](https://drive.google.com/open?id=1G6IWKDE1XuSIjY_ncSE
   * géolocalisation des données au barycentre du département
   * contient une version aggrégée par département pour la constitution d'[heatmaps](https://fr.wikipedia.org/wiki/Heat_map)
 
-![Distribution des patients](./patients-france.png)
+<img src="https://raw.githubusercontent.com/kalisio/covid-19/master/patients-france.png" width="512" height="512">
 
-![Distribution des patients (zoom)](./patients-france-zoom.png)
+<img src="https://raw.githubusercontent.com/kalisio/covid-19/master/patients-france-zoom.png" width="512" height="512">
 
-![Carte de densité des patients](./patients-heatmap-france.png)
+<img src="https://raw.githubusercontent.com/kalisio/covid-19/master/patients-heatmap-france.png" width="512" height="512">
 
 ## Outils
 
