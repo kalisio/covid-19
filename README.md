@@ -47,9 +47,9 @@ Voir la [vidéo originale](https://drive.google.com/open?id=1G6IWKDE1XuSIjY_ncSE
 
 ## Outils
 
-Les données sont scrappées via [Krawler](https://kalisio.github.io/krawler/). Les données sont visualisée via [Kano](https://kalisio.github.io/kano/).
+Les données sont scrappées via [Krawler](https://kalisio.github.io/krawler/) et peuvent être visualisées via [Kano](https://kalisio.github.io/kano/) ou tout autre outil SIG standard comme [QGIS](https://www.qgis.org/fr/site/).
 
-Nous faisons évoluer ces outils en fonction des besoins, aussi il faut utiliser la version en cours de développement (branche master) et non des version stables. Pour Kano il vous faudra par exemple faire un [yarn/npm link](https://docs.npmjs.com/cli/link).
+Nous faisons évoluer nos outils en fonction des besoins, aussi il faut utiliser la version en cours de développement (branche master) et non des version stables. Pour Kano il vous faudra par exemple faire un [yarn/npm link](https://docs.npmjs.com/cli/link) comme tout développeur travaillant sur ce projet.
 
 Pour Krawler:
 ```bash
@@ -103,16 +103,18 @@ L'ensemble des données est visualisable via un simple drag'n'drop des fichiers 
 Exemple de configuration d'une heatmap:
 ```js
 {
-    name: 'COVID-19 (Patients)',
-    description: 'Patients in France',
+    name: 'COVID-19 (ARS)',
+    description: 'Cases in France',
     tags: [
       'business'
     ],
-    icon: 'fas fa-procedures',
+    icon: 'fas fa-atlas',
+    attribution: '',
     type: 'OverlayLayer',
+    featureId: 'Province/State',
     leaflet: {
       type: 'heatmap',
-      url: `${s3Url}/krawler/covid-19/patients-heatmap-france.json`,
+      urlTemplate: `https://s3.eu-central-1.amazonaws.com/krawler/covid-19/departements-france-<%= time.format('YYYY-MM-DD') %>.json`,
       valueField: 'Confirmed',
       // The unit is in pixel, meaning
       // 1 pixel radius (2 pixel diameter) at zoom level 0
@@ -135,6 +137,7 @@ Exemple de configuration d'une heatmap:
       // The higher the blur factor is, the smoother the gradients will be
       blur: 0.8
     }
+  }
 ```
 
 ## Comment contribuer ?
@@ -144,8 +147,9 @@ Vous pouvez vous proposer comme volontaire pour tester nos scrappeurs, utiliser 
 Pour vous signaler rejoignez la communauté sur [Slack](https://join.slack.com/t/dataagainstcovid-19/shared_invite/zt-cgsplso2-LIvWeRHlf1ZFIrh~SPj~IA), ouvrez une [issue](https://github.com/kalisio/covid-19/issues) ou une une [pull request](https://github.com/kalisio/covid-19/pulls).
 
 Quelques idées:
-* géolocalisation des données des patients au niveau communal
-* consitution de collections MongoDB pour visualisation spatio-temporelle dans Kano
+* production de jeux de données avec le contour des départements et non les barycentres
+* géolocalisation des données des patients au niveau communal (pour l'instant très peu de données)
+* consitution de collections MongoDB pour visualisation spatio-temporelle dans Kano (eg séries temporelles)
 
 ## Licence
 
