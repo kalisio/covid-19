@@ -10,7 +10,7 @@ const turf = require('@turf/turf')
 const heatmap = ((process.argv.length > 3) && (process.argv[3] === 'heatmap'))
 console.log('Computing patients ' + (heatmap ? 'heatmap' : 'map'))
 // Read departemnts DB
-const departements = fs.readJsonSync(path.join(__dirname, 'departements-france.geojson'))
+const departements = fs.readJsonSync(path.join(__dirname, 'departements-france-outre-mer.geojson'))
 departements.features.forEach(feature => {
   // Compute centroid of real geometry and update in place
   const centroid = turf.centroid(feature.geometry)
@@ -64,10 +64,13 @@ module.exports = {
                   const departement = match[0]
                   patient.Longitude = departement.geometry.coordinates[0]
                   patient.Latitude = departement.geometry.coordinates[1]
+                } else {
+                  //console.log(`Skipping patient from ${patient.departement} departement because it has not been found in database`)
                 }
               })
             }
             console.log(`Geolocated ${count} patients on ${nbPatients} patients`)
+            console.log(`Skipped ${nbPatients - count} patients whose departement has not been found in database`)
           }
         },
         convertToGeoJson: {

@@ -6,7 +6,7 @@ const turf = require('@turf/turf')
 const moment = require('moment')
 
 // Read departements DB
-const departements = fs.readJsonSync(path.join(__dirname, 'departements-france.geojson'))
+const departements = fs.readJsonSync(path.join(__dirname, 'departements-france-outre-mer.geojson'))
 departements.features.forEach(feature => {
   // Compute centroid of real geometry and update in place
   const centroid = turf.centroid(feature.geometry)
