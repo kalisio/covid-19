@@ -45,47 +45,6 @@ Voir la [vidéo originale](https://drive.google.com/open?id=1G6IWKDE1XuSIjY_ncSE
 
 ![Carte de densité des patients](./patients-heatmap-france.png)
 
-## Examples d'application
-
-L'ensemble des données est visualisable via un simple drag'n'drop des fichiers dans Kano. Néanmoins pour des visualisations spatio-temporelles avancées il vous faudra faire un peu de configuration.
-
-Exemple de configuration d'une heatmap:
-```js
-{
-    name: 'COVID-19 (Patients)',
-    description: 'Patients in France',
-    tags: [
-      'business'
-    ],
-    icon: 'fas fa-procedures',
-    type: 'OverlayLayer',
-    leaflet: {
-      type: 'heatmap',
-      url: `${s3Url}/krawler/covid-19/patients-heatmap-france.json`,
-      valueField: 'Confirmed',
-      // The unit is in pixel, meaning
-      // 1 pixel radius (2 pixel diameter) at zoom level 0
-      // ...
-      // 64 pixel radius (128 pixel diameter) at zoom level 6
-      // ...
-      // We'd like an event to cover a range expressed as Km
-      // According to https://groups.google.com/forum/#!topic/google-maps-js-api-v3/hDRO4oHVSeM
-      // this means 1 pixel at level 7 so at level 0 we get 1 / 2^7
-      radius: 100 * 0.0078,
-      minOpacity: 0,
-      maxOpacity: 0.5,
-      // scales the radius based on map zoom
-      scaleRadius: true,
-      // uses the data maximum within the current map boundaries
-      // (there will always be a red spot with useLocalExtremas true)
-      useLocalExtrema: false,
-      min: 0,
-      max: 100,
-      // The higher the blur factor is, the smoother the gradients will be
-      blur: 0.8
-    }
-```
-
 ## Outils
 
 Les données sont scrappées via [Krawler](https://kalisio.github.io/krawler/). Les données sont visualisée via [Kano](https://kalisio.github.io/kano/).
@@ -135,6 +94,47 @@ cd kano
 yarn install
 yarn link @kalisio/kdk
 yarn run dev
+```
+
+## Examples d'application
+
+L'ensemble des données est visualisable via un simple drag'n'drop des fichiers dans Kano. Néanmoins pour des visualisations spatio-temporelles avancées comme les heatmaps il vous faudra faire un peu de configuration.
+
+Exemple de configuration d'une heatmap:
+```js
+{
+    name: 'COVID-19 (Patients)',
+    description: 'Patients in France',
+    tags: [
+      'business'
+    ],
+    icon: 'fas fa-procedures',
+    type: 'OverlayLayer',
+    leaflet: {
+      type: 'heatmap',
+      url: `${s3Url}/krawler/covid-19/patients-heatmap-france.json`,
+      valueField: 'Confirmed',
+      // The unit is in pixel, meaning
+      // 1 pixel radius (2 pixel diameter) at zoom level 0
+      // ...
+      // 64 pixel radius (128 pixel diameter) at zoom level 6
+      // ...
+      // We'd like an event to cover a range expressed as Km
+      // According to https://groups.google.com/forum/#!topic/google-maps-js-api-v3/hDRO4oHVSeM
+      // this means 1 pixel at level 7 so at level 0 we get 1 / 2^7
+      radius: 100 * 0.0078,
+      minOpacity: 0,
+      maxOpacity: 0.5,
+      // scales the radius based on map zoom
+      scaleRadius: true,
+      // uses the data maximum within the current map boundaries
+      // (there will always be a red spot with useLocalExtremas true)
+      useLocalExtrema: false,
+      min: 0,
+      max: 100,
+      // The higher the blur factor is, the smoother the gradients will be
+      blur: 0.8
+    }
 ```
 
 ## Comment contribuer ?
