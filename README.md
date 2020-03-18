@@ -32,6 +32,10 @@ Les principales données produites sont les suivantes:
   * croisement géographique par région réalisé sur la base du code de région
   * géolocalisation des données au barycentre de la région pour la constitution d'[heatmaps](https://fr.wikipedia.org/wiki/Heat_map)
 
+![Carte évolutive des cas en régions](Kano-Covid-19-Regions-France.gif)
+
+Voir la [vidéo originale](https://drive.google.com/file/d/1GjdhBEVwtei5WxCTeXwtoKquKUQk5Gwp/view).
+
 * données journalières par département consolidées au niveau national dans le dossier [departements-france](./departements-france)
   * issues des données des [Agences Régionales de Santé](https://github.com/opencovid19-fr/data/tree/master/agences-regionales-sante)
   * croisement géographique par département réalisé sur la base du code de département
