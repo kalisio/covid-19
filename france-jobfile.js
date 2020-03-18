@@ -57,6 +57,9 @@ regions.forEach(region => {
   })
 })
 
+let nbConfirmed = 0
+let nbDeaths = 0
+
 module.exports = {
   id: `departements-france-${date.format('YYYY-MM-DD')}`,
   store: 'memory',
@@ -110,6 +113,8 @@ module.exports = {
               if (match) {
                 console.log(`Found matching departement ${feature.properties.code} for data with code ${match.code}`)
                 count++
+                if (match.casConfirmes) nbConfirmed += match.casConfirmes
+                if (match.deces) nbDeaths += match.deces
                 feature.properties.Confirmed = match.casConfirmes
                 feature.properties.Deaths = match.deces
               }
@@ -151,11 +156,16 @@ module.exports = {
               yesterday.features.forEach(feature => {
                 const previousData = data.features.find(element =>
                   _.get(element, 'properties.Province/State') === _.get(feature, 'properties.Province/State'))
-                if (!previousData) data.features.push(feature)
+                if (!previousData) {
+                  if (feature.properties.Confirmed) nbConfirmed += feature.properties.Confirmed
+                  if (feature.properties.Deaths) nbDeaths += feature.properties.Deaths
+                  data.features.push(feature)
+                }
               })
               const nbTotalDepartements = data.features.length
               console.log(`Filled data with ${nbTotalDepartements - nbInitialDepartements} previously found departements`)
               console.log(`Data processed for ${nbTotalDepartements} departements on ${nbDepartements} departements`)
+              console.log(`Found a total of ${nbConfirmed} confirmed cases and ${nbDeaths} deaths`)
             }
           }
         },
@@ -166,7 +176,7 @@ module.exports = {
         writeJsonS3: {
           hook: 'writeJson',
           store: 's3',
-          key: `covid-19/<%= id %>.json`,
+          key: `covid-19/departements-france/<%= id %>.json`,
           storageOptions: {
             ACL: 'public-read'
           }

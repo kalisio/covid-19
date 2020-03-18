@@ -31,6 +31,8 @@ Les principales données produites sont les suivantes:
   * croisement géographique par département réalisé sur la base du code de département
   * géolocalisation des données au barycentre du département pour la constitution d'[heatmaps](https://fr.wikipedia.org/wiki/Heat_map)
 
+Si vous souhaitez référencer les jeux de données directement plutôt que de les copier utiliser plutôt notre bucket S3 sur AWS, le chemin vers les fichiers reste le même en préfixant par la racine `https://s3.eu-central-1.amazonaws.com/krawler/`. Par exemple l'URL vers le fichier des patients en france est `https://s3.eu-central-1.amazonaws.com/krawler/covid-19/patients-france/patients-france.json`.
+
 ![Carte de densité évolutive des cas](Kano-Covid-19-Heatmap-France.gif)
 
 Voir la [vidéo originale](https://drive.google.com/open?id=1G6IWKDE1XuSIjY_ncSELPcl8GuMmmKoH).
@@ -114,7 +116,7 @@ Exemple de configuration d'une heatmap:
     featureId: 'Province/State',
     leaflet: {
       type: 'heatmap',
-      urlTemplate: `https://s3.eu-central-1.amazonaws.com/krawler/covid-19/departements-france-<%= time.format('YYYY-MM-DD') %>.json`,
+      urlTemplate: `https://s3.eu-central-1.amazonaws.com/krawler/covid-19/departements-france/departements-france-<%= time.format('YYYY-MM-DD') %>.json`,
       valueField: 'Confirmed',
       // The unit is in pixel, meaning
       // 1 pixel radius (2 pixel diameter) at zoom level 0

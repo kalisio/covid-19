@@ -84,7 +84,7 @@ module.exports = {
         writeJsonS3: {
           hook: 'writeJson',
           store: 's3',
-          key: 'covid-19/<%= id %>.json',
+          key: 'covid-19/patients-france/<%= id %>.json',
           storageOptions: {
             ACL: 'public-read'
           }
