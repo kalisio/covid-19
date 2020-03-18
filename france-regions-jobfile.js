@@ -5,9 +5,9 @@ const sift = require('sift')
 const turf = require('@turf/turf')
 const moment = require('moment')
 
-// Read departements DB
-const departements = fs.readJsonSync(path.join(__dirname, 'departements-france-outre-mer.geojson'))
-departements.features.forEach(feature => {
+// Read regions DB
+const regions = fs.readJsonSync(path.join(__dirname, 'regions-france-outre-mer.geojson'))
+regions.features.forEach(feature => {
   // Compute centroid of real geometry and update in place
   const centroid = turf.centroid(feature.geometry)
   feature.geometry = centroid.geometry
@@ -21,20 +21,23 @@ if (process.argv.length > 3) {
 }
 
 // Read previous data if any to gill gaps
-let yesterday = path.join(__dirname, 'departements-france',
-  `departements-france-${date.clone().subtract(1, 'day').format('YYYY-MM-DD')}.json`)
+let yesterday = path.join(__dirname, 'regions-france',
+  `regions-france-${date.clone().subtract(1, 'day').format('YYYY-MM-DD')}.json`)
 if (fs.pathExistsSync(yesterday)) {
   console.log('Reading data from previous day')
   yesterday = fs.readJsonSync(yesterday)
 }
 
-const regions = [
+const regionsData = [
+  'Guyane',
+  'Martinique',
   'auvergne-rhone-alpes',
   'bourgogne-franche-comte',
   'bretagne',
   'centre-val-de-loire',
   'corse',
   'grand-est',
+  'guadeloupe',
   'hauts-de-france',
   'ile-de-france',
   'normandie',
@@ -45,7 +48,7 @@ const regions = [
 ]
 
 let tasks = []
-regions.forEach(region => {
+regionsData.forEach(region => {
   tasks.push({
     id: `${region}-${date.format('YYYY-MM-DD')}`,
     region,
@@ -61,7 +64,7 @@ let nbConfirmed = 0
 let nbDeaths = 0
 
 module.exports = {
-  id: `departements-france-${date.format('YYYY-MM-DD')}`,
+  id: `regions-france-${date.format('YYYY-MM-DD')}`,
   store: 'memory',
   options: { faultTolerant: true },
   tasks,
@@ -69,9 +72,8 @@ module.exports = {
     tasks: {
       after: {
         readYAML: {
-          objectPath: 'donneesDepartementales'
-        },
-        /* DEBUG
+          objectPath: 'donneesRegionales'
+        }/*,
         writeJsonFS: {
           hook: 'writeJson',
           store: 'fs'
@@ -84,7 +86,7 @@ module.exports = {
           id: 'memory'
         }, {
           id: 'fs',
-          options: { path: path.join(__dirname, 'departements-france') }
+          options: { path: path.join(__dirname, 'regions-france') }
         },
         {
           id: 's3',
@@ -105,13 +107,13 @@ module.exports = {
           hook: 'apply',
           dataPath: 'result.data',
           function: (data) => {
-            const nbDepartements = departements.features.length
+            const nbRegions = regions.features.length
             let count = 0
-            departements.features.forEach(feature => {
-              // Find corresponding data, we use departement number
-              const match = data.find(element => element.code.replace('DEP-', '') === feature.properties.code)
+            regions.features.forEach(feature => {
+              // Find corresponding data, we use region number
+              const match = data.find(element => element.code.replace('REG-', '') === feature.properties.code)
               if (match) {
-                console.log(`Found matching departement ${feature.properties.code} for data with code ${match.code}`)
+                console.log(`Found matching region ${feature.properties.code} for data with code ${match.code}`)
                 count++
                 if (match.casConfirmes) nbConfirmed += match.casConfirmes
                 if (match.deces) nbDeaths += match.deces
@@ -119,11 +121,11 @@ module.exports = {
                 feature.properties.Deaths = match.deces
               }
             })
-            console.log(`Found data for ${count} departements on ${nbDepartements} departements`)
+            console.log(`Found data for ${count} regions on ${nbRegions} regions`)
             // Update data in-place
             data.splice(0, data.length)
             count = 0
-            departements.features.forEach(feature => {
+            regions.features.forEach(feature => {
               if (feature.properties.Confirmed || feature.properties.Deaths) {
                 data.push({
                   'Country/Region': 'France',
@@ -135,10 +137,10 @@ module.exports = {
                 })
               } else {
                 count++
-                //console.log(`Skipping empty data for departement ${feature.properties.code}`, feature.properties)
+                //console.log(`Skipping empty data for region ${feature.properties.code}`, feature.properties)
               }
             })
-            console.log(`Skipping empty data for ${count} departements`)
+            console.log(`Skipping empty data for ${count} regions`)
           }
         },
         convertToGeoJson: {
@@ -151,8 +153,8 @@ module.exports = {
           function: (data) => {
             // Try to fill gaps with previous data
             if (yesterday.features) {
-              const nbDepartements = departements.features.length
-              const nbInitialDepartements = data.features.length
+              const nbRegions = regions.features.length
+              const nbInitialRegions = data.features.length
               yesterday.features.forEach(feature => {
                 const previousData = data.features.find(element =>
                   _.get(element, 'properties.Province/State') === _.get(feature, 'properties.Province/State'))
@@ -162,9 +164,9 @@ module.exports = {
                   data.features.push(feature)
                 }
               })
-              const nbTotalDepartements = data.features.length
-              console.log(`Filled data with ${nbTotalDepartements - nbInitialDepartements} previously found departements`)
-              console.log(`Data processed for ${nbTotalDepartements} departements on ${nbDepartements} departements`)
+              const nbTotalRegions = data.features.length
+              console.log(`Filled data with ${nbTotalRegions - nbInitialRegions} previously found regions`)
+              console.log(`Data processed for ${nbTotalRegions} regions on ${nbRegions} regions`)
               console.log(`Found a total of ${nbConfirmed} confirmed cases and ${nbDeaths} deaths`)
             }
           }
@@ -176,7 +178,7 @@ module.exports = {
         writeJsonS3: {
           hook: 'writeJson',
           store: 's3',
-          key: `covid-19/departements-france/<%= id %>.json`,
+          key: `covid-19/regions-france/<%= id %>.json`,
           storageOptions: {
             ACL: 'public-read'
           }
