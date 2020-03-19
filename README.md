@@ -161,7 +161,7 @@ Vous pouvez vous proposer comme volontaire pour tester nos scrappeurs, utiliser 
 Pour vous signaler rejoignez la communauté sur [Slack](https://join.slack.com/t/dataagainstcovid-19/shared_invite/zt-cgsplso2-LIvWeRHlf1ZFIrh~SPj~IA), ouvrez une [issue](https://github.com/kalisio/covid-19/issues) ou une une [pull request](https://github.com/kalisio/covid-19/pulls).
 
 Quelques idées:
-* production de jeux de données avec le contour des départements et non les barycentres
+* ~~production de jeux de données avec le contour des départements et non les barycentres~~
 * géolocalisation des données des patients au niveau communal (pour l'instant très peu de données)
 * consitution de collections MongoDB pour visualisation spatio-temporelle dans Kano (eg séries temporelles)
 
