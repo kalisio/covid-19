@@ -30,7 +30,7 @@ Les principales données produites sont les suivantes:
 * données journalières par région consolidées au niveau national dans le dossier [regions-france](./regions-france)
   * issues des données des [Agences Régionales de Santé](https://github.com/opencovid19-fr/data/tree/master/agences-regionales-sante)
   * croisement géographique par région réalisé sur la base du code de région
-  * géolocalisation des données au barycentre de la région pour la constitution d'[heatmaps](https://fr.wikipedia.org/wiki/Heat_map)
+  * polygones (fichiers préfixés par `polygons`) ou géolocalisation des données au barycentre de la région pour la constitution d'[heatmaps](https://fr.wikipedia.org/wiki/Heat_map)
 
 ![Carte évolutive des cas en régions](Kano-Covid-19-Regions-France.gif)
 
@@ -39,7 +39,7 @@ Voir la [vidéo originale](https://drive.google.com/file/d/1GjdhBEVwtei5WxCTeXwt
 * données journalières par département consolidées au niveau national dans le dossier [departements-france](./departements-france)
   * issues des données des [Agences Régionales de Santé](https://github.com/opencovid19-fr/data/tree/master/agences-regionales-sante)
   * croisement géographique par département réalisé sur la base du code de département
-  * géolocalisation des données au barycentre du département pour la constitution d'[heatmaps](https://fr.wikipedia.org/wiki/Heat_map)
+  * polygones (fichiers préfixés par `polygons`) ou géolocalisation des données au barycentre du département pour la constitution d'[heatmaps](https://fr.wikipedia.org/wiki/Heat_map)
 
 Si vous souhaitez référencer les jeux de données directement plutôt que de les copier utiliser plutôt notre bucket S3 sur AWS, le chemin vers les fichiers reste le même en préfixant par la racine `https://s3.eu-central-1.amazonaws.com/krawler/`. Par exemple l'URL vers le fichier des patients en france est `https://s3.eu-central-1.amazonaws.com/krawler/covid-19/patients-france/patients-france.json`.
 
@@ -76,11 +76,13 @@ git clone https://github.com/kalisio/covid-19.git
 cd covid-19
 export NODE_PATH="path_to_krawler/node_modules"
 krawler france-patients-jobfile.js
-krawler france-patients-jobfile.js 'heatmap'
-krawler france-jobfile.js 2020-03-01
-krawler france-jobfile.js 2020-03-02
+krawler france-patients-jobfile.js --departements
+krawler france-departements-jobfile.js --date 2020-03-01 --geometry 'Point' ou 'Polygon'
 ...
-krawler france-jobfile.js 2020-03-16
+krawler france-departements-jobfile.js --date 2020-03-16 --geometry 'Point' ou 'Polygon'
+krawler france-regions-jobfile.js --date 2020-03-01 --geometry 'Point' ou 'Polygon'
+...
+krawler france-regions-jobfile.js --date 2020-03-16 --geometry 'Point' ou 'Polygon'
 ```
 
 Pour Kano:

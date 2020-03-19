@@ -3,12 +3,16 @@ const _ = require('lodash')
 const fs = require('fs-extra')
 const sift = require('sift')
 const turf = require('@turf/turf')
+const program = require('commander')
+
+program
+    .option('-d, --departements', 'Aggregate data by departement')
+    .parse(process.argv)
 
 // By default we generate a list of geolocated patients
 // Finest granularity now is departement level, we use their centroids
-// We can also compute a heatmap, in that case each departement has a count with patients
-const heatmap = ((process.argv.length > 3) && (process.argv[3] === 'heatmap'))
-console.log('Computing patients ' + (heatmap ? 'heatmap' : 'map'))
+// In that case each departement has a count with patients
+console.log('Computing patients map')
 // Read departemnts DB
 const departements = fs.readJsonSync(path.join(__dirname, 'departements-france-outre-mer.geojson'))
 departements.features.forEach(feature => {
@@ -21,7 +25,7 @@ module.exports = {
   id: 'patients-france',
   store: 'memory',
   tasks: [{
-    id: (heatmap ? 'patients-heatmap-france' : 'patients-france'),
+    id: (program.departements ? 'patients-departements-france' : 'patients-france'),
     type: 'http',
     options: {
       url: 'https://raw.githubusercontent.com/lperez31/coronavirus-france-dataset/master/patient.csv'
@@ -37,7 +41,7 @@ module.exports = {
           function: (item) => {
             const nbPatients = item.data.length
             let count = 0
-            if (heatmap) {
+            if (program.departements) {
               departements.features.forEach(feature => {
                 // Find corresponding patients, we use JSON parsing to manage unicode
                 const match = sift({ departement: feature.properties.nom }, item.data)
