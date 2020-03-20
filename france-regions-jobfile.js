@@ -44,7 +44,7 @@ regionsData.forEach(region => {
     id: `${region}-${date.format('YYYY-MM-DD')}`,
     type: 'http',
     options: {
-      url: 'https://raw.githubusercontent.com/claustres/data/master/agences-regionales-sante/' +
+      url: 'https://raw.githubusercontent.com/opencovid19-fr/data/master/agences-regionales-sante/' +
            `${region}/${date.format('YYYY-MM-DD')}.yaml`
     }
   })
