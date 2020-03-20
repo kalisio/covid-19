@@ -93,7 +93,6 @@ module.exports = {
       },
       after: {
         mergeJson: {
-          by: 'code'
         },
         processData: {
           hook: 'apply',
@@ -103,13 +102,17 @@ module.exports = {
             let count = 0
             departements.features.forEach(feature => {
               // Find corresponding data, we use departement number
-              const match = data.find(element => element.code.replace('DEP-', '') === feature.properties.code)
-              if (match) {
-                console.log(`Found matching departement ${feature.properties.code} for data with code ${match.code}`)
+              const matches = data.filter(element => element.code.replace('DEP-', '') === feature.properties.code)
+              if (matches.length) {
                 count++
-                if (match.casConfirmes) nbConfirmed += match.casConfirmes
-                if (match.deces) nbDeaths += match.deces
-                feature.match = match
+                let max = _.maxBy(matches, 'casConfirmes')
+                let casConfirmes = (max ? max.casConfirmes : 0)
+                max = _.maxBy(matches, 'deces')
+                let deces = (max ? max.deces : 0)
+                if (casConfirmes) nbConfirmed += casConfirmes
+                if (deces) nbDeaths += deces
+                feature.match = { casConfirmes, deces }
+                console.log(`Found matching department ${feature.properties.code} with ${casConfirmes} confirmed cases and ${deces} deaths`)
               }
             })
             console.log(`Found data for ${count} departements on ${nbDepartements} departements`)

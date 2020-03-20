@@ -42,13 +42,21 @@ let tasks = []
 regionsData.forEach(region => {
   tasks.push({
     id: `${region}-${date.format('YYYY-MM-DD')}`,
-    region,
     type: 'http',
     options: {
-      url: 'https://raw.githubusercontent.com/opencovid19-fr/data/master/agences-regionales-sante/' +
+      url: 'https://raw.githubusercontent.com/claustres/data/master/agences-regionales-sante/' +
            `${region}/${date.format('YYYY-MM-DD')}.yaml`
     }
   })
+})
+// Add SPF source
+tasks.push({
+  id: `spf-${date.format('YYYY-MM-DD')}`,
+  type: 'http',
+  options: {
+    url: 'https://raw.githubusercontent.com/opencovid19-fr/data/master/sante-publique-france/' +
+         `${date.format('YYYY-MM-DD')}.yaml`
+  }
 })
 
 let nbConfirmed = 0
@@ -92,7 +100,6 @@ module.exports = {
       },
       after: {
         mergeJson: {
-          by: 'code'
         },
         processData: {
           hook: 'apply',
@@ -102,13 +109,17 @@ module.exports = {
             let count = 0
             regions.features.forEach(feature => {
               // Find corresponding data, we use region number
-              const match = data.find(element => element.code.replace('REG-', '') === feature.properties.code)
-              if (match) {
-                console.log(`Found matching region ${feature.properties.code} for data with code ${match.code}`)
+              const matches = data.filter(element => element.code.replace('REG-', '') === feature.properties.code)
+              if (matches.length) {
                 count++
-                if (match.casConfirmes) nbConfirmed += match.casConfirmes
-                if (match.deces) nbDeaths += match.deces
-                feature.match = match
+                let max = _.maxBy(matches, 'casConfirmes')
+                let casConfirmes = (max ? max.casConfirmes : 0)
+                max = _.maxBy(matches, 'deces')
+                let deces = (max ? max.deces : 0)
+                if (casConfirmes) nbConfirmed += casConfirmes
+                if (deces) nbDeaths += deces
+                feature.match = { casConfirmes, deces }
+                console.log(`Found matching region ${feature.properties.code} with ${casConfirmes} confirmed cases and ${deces} deaths`)
               }
             })
             console.log(`Found data for ${count} regions on ${nbRegions} regions`)
@@ -149,6 +160,15 @@ module.exports = {
                   if (feature.properties.Confirmed) nbConfirmed += feature.properties.Confirmed
                   if (feature.properties.Deaths) nbDeaths += feature.properties.Deaths
                   data.features.push(feature)
+                } else {
+                  if (feature.properties.Confirmed > previousData.properties.Confirmed) {
+                    nbConfirmed += (feature.properties.Confirmed - previousData.properties.Confirmed)
+                    previousData.properties.Confirmed = feature.properties.Confirmed
+                  }
+                  if (feature.properties.Deaths > previousData.properties.Deaths) {
+                    nbDeaths += (feature.properties.Deaths - previousData.properties.Deaths)
+                    previousData.properties.Deaths = feature.properties.Deaths
+                  }
                 }
               })
               const nbTotalRegions = data.features.length

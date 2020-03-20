@@ -16,6 +16,7 @@
   'occitanie',
   'pays-de-la-loire',
   'provence-alpes-cote-dazur',
+  'reunion',
   'saint-barthelemy',
   'saint-martin'
 ]
