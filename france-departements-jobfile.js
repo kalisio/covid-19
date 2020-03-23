@@ -12,7 +12,7 @@ program
     .parse(process.argv)
 
 // Read departements DB
-const departements = utils.processAdministrativeData('departements-france-outre-mer', program.geometry)
+const departements = utils.processAdministrativeData('departements-france-outre-mer', program.geometry, 'population-departements-france')
 
 const date = moment(program.date)
 if (!date.isValid()) {

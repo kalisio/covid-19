@@ -14,7 +14,8 @@ Nos principales sources de données sont les suivantes:
   * données régionales/départementales https://github.com/opencovid19-fr/data
   * données individualisée https://github.com/lperez31/coronavirus-france-dataset
 * croisements géographiques
-  * données nationales https://github.com/gregoiredavid/france-geojson
+  * contours administratifs nationaux https://github.com/gregoiredavid/france-geojson
+  * population régionale/départementale par classe d'âge https://www.insee.fr/fr/statistiques/1893198
 
 ## Données cartographiques
 
@@ -26,6 +27,13 @@ Les données du Johns Hopkins CSSE étant devenu le standard defacto nous avons 
 * `Recovered` nombre de guérisons confirmées
 * `Severe` nombre de cas hospitalisés
 * `Critical` nombre de cas en réanimation
+* `Population`
+  * `Total` - Ensemble
+  * `Under19` - 0 à 19 ans
+  * `Under39` - 20 à 39 ans
+  * `Under59` - 40 à 59 ans
+  * `Under74` - 60 à 74 ans
+  * `Over75` - 75 ans et plus
 
 Les principales données produites sont les suivantes:
 
