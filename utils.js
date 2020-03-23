@@ -47,13 +47,14 @@ module.exports = {
         const population = populationData.find(element => element.Nom === feature.properties.nom)
         if (population) {
           count++
+          // Convert population numbers stored as string in source files
           feature.Population = {
-            Total: population['Ensemble - Total'],
-            Under19: population['Ensemble - 0 à 19 ans'],
-            Under39: population['Ensemble - 20 à 39 ans'],
-            Under59: population['Ensemble - 40 à 59 ans'],
-            Under74: population['Ensemble - 60 à 74 ans'],
-            Over75: population['Ensemble - 75 ans et plus']
+            Total: _.toNumber(population['Ensemble - Total'].replace(/ /g, '')),
+            Under19: _.toNumber(population['Ensemble - 0 à 19 ans'].replace(/ /g, '')),
+            Under39: _.toNumber(population['Ensemble - 20 à 39 ans'].replace(/ /g, '')),
+            Under59: _.toNumber(population['Ensemble - 40 à 59 ans'].replace(/ /g, '')),
+            Under74: _.toNumber(population['Ensemble - 60 à 74 ans'].replace(/ /g, '')),
+            Over75: _.toNumber(population['Ensemble - 75 ans et plus'].replace(/ /g, ''))
           }
           console.log(`Found matching population of ${feature.Population.Total} for ${feature.properties.nom}`)
         }
