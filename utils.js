@@ -1,4 +1,7 @@
+const path = require('path')
 const _ = require('lodash')
+const turf = require('@turf/turf')
+const fs = require('fs-extra')
 
 // Properties mapping
 const properties = {
@@ -26,6 +29,39 @@ module.exports = {
   properties,
   N,
   max,
+  processAdministrativeData(file, geometry, populationFile) {
+    // Read DB
+    const data = fs.readJsonSync(path.join(__dirname, `${file}.geojson`), { encoding: 'utf8' })
+    data.features.forEach(feature => {
+      // Compute centroid of real geometry and update in place
+      if (geometry === 'Point') {
+        const centroid = turf.centroid(feature.geometry)
+        feature.geometry = centroid.geometry
+      }
+    })
+    // Add opulation data
+    if (populationFile) {
+      let count = 0
+      let populationData = fs.readJsonSync(path.join(__dirname, `${populationFile}.json`), { encoding: 'utf8' })
+      data.features.forEach(feature => {
+        const population = populationData.find(element => element.Nom === feature.properties.nom)
+        if (population) {
+          count++
+          feature.Population = {
+            Total: population['Ensemble - Total'],
+            Under19: population['Ensemble - 0 à 19 ans'],
+            Under39: population['Ensemble - 20 à 39 ans'],
+            Under59: population['Ensemble - 40 à 59 ans'],
+            Under74: population['Ensemble - 60 à 74 ans'],
+            Over75: population['Ensemble - 75 ans et plus']
+          }
+          console.log(`Found matching population of ${feature.Population.Total} for ${feature.properties.nom}`)
+        }
+      })
+      console.log(`Found ${count} elements with matching population`)
+    }
+    return data
+  },
   processData(data, features, matcher) {
     const nbElements = features.length
     let count = 0
@@ -59,7 +95,8 @@ module.exports = {
         data.push(Object.assign({
           'Country/Region': 'France',
           'Province/State': feature.properties.nom,
-          geometry: feature.geometry
+          Population: feature.Population,
+          geometry: feature.geometry,
         }, feature.match))
       } else {
         count++

@@ -1,8 +1,6 @@
 const path = require('path')
 const _ = require('lodash')
 const fs = require('fs-extra')
-const sift = require('sift')
-const turf = require('@turf/turf')
 const moment = require('moment')
 const program = require('commander')
 const utils = require('./utils')
@@ -14,14 +12,7 @@ program
     .parse(process.argv)
 
 // Read departements DB
-const departements = fs.readJsonSync(path.join(__dirname, 'departements-france-outre-mer.geojson'))
-departements.features.forEach(feature => {
-  // Compute centroid of real geometry and update in place
-  if (program.geometry === 'Point') {
-    const centroid = turf.centroid(feature.geometry)
-    feature.geometry = centroid.geometry
-  }
-})
+const departements = utils.processAdministrativeData('departements-france-outre-mer', program.geometry)
 
 const date = moment(program.date)
 if (!date.isValid()) {
