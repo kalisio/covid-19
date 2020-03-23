@@ -5,6 +5,7 @@ const sift = require('sift')
 const turf = require('@turf/turf')
 const moment = require('moment')
 const program = require('commander')
+const utils = require('./utils')
 
 // By default try to grap latest data
 program
@@ -59,9 +60,6 @@ tasks.push({
   }
 })
 
-let nbConfirmed = 0
-let nbDeaths = 0
-
 module.exports = {
   id: (program.geometry === 'Point' ? 'regions-france-' : 'regions-france-polygons-') + `${date.format('YYYY-MM-DD')}`,
   store: 'memory',
@@ -105,42 +103,7 @@ module.exports = {
           hook: 'apply',
           dataPath: 'result.data',
           function: (data) => {
-            const nbRegions = regions.features.length
-            let count = 0
-            regions.features.forEach(feature => {
-              // Find corresponding data, we use region number
-              const matches = data.filter(element => element.code.replace('REG-', '') === feature.properties.code)
-              if (matches.length) {
-                count++
-                let max = _.maxBy(matches, 'casConfirmes')
-                let casConfirmes = (max ? max.casConfirmes : 0)
-                max = _.maxBy(matches, 'deces')
-                let deces = (max ? max.deces : 0)
-                if (casConfirmes) nbConfirmed += casConfirmes
-                if (deces) nbDeaths += deces
-                feature.match = { casConfirmes, deces }
-                console.log(`Found matching region ${feature.properties.code} with ${casConfirmes} confirmed cases and ${deces} deaths`)
-              }
-            })
-            console.log(`Found data for ${count} regions on ${nbRegions} regions`)
-            // Update data in-place
-            data.splice(0, data.length)
-            count = 0
-            regions.features.forEach(feature => {
-              if (feature.match) {
-                data.push({
-                  'Country/Region': 'France',
-                  'Province/State': feature.properties.nom,
-                  Confirmed: feature.match.casConfirmes,
-                  Deaths: feature.match.deces,
-                  geometry: feature.geometry
-                })
-              } else {
-                count++
-                //console.log(`Skipping empty data for region ${feature.properties.code}`, feature.properties)
-              }
-            })
-            console.log(`Skipping empty data for ${count} regions`)
+            utils.processData(data, regions.features, feature => element => element.code.replace('REG-', '') === feature.properties.code)
           }
         },
         convertToGeoJson: {
@@ -151,30 +114,11 @@ module.exports = {
           function: (data) => {
             // Try to fill gaps with previous data
             if (yesterday.features) {
-              const nbRegions = regions.features.length
-              const nbInitialRegions = data.features.length
-              yesterday.features.forEach(feature => {
-                const previousData = data.features.find(element =>
-                  _.get(element, 'properties.Province/State') === _.get(feature, 'properties.Province/State'))
-                if (!previousData) {
-                  if (feature.properties.Confirmed) nbConfirmed += feature.properties.Confirmed
-                  if (feature.properties.Deaths) nbDeaths += feature.properties.Deaths
-                  data.features.push(feature)
-                } else {
-                  if (feature.properties.Confirmed > previousData.properties.Confirmed) {
-                    nbConfirmed += (feature.properties.Confirmed - previousData.properties.Confirmed)
-                    previousData.properties.Confirmed = feature.properties.Confirmed
-                  }
-                  if (feature.properties.Deaths > previousData.properties.Deaths) {
-                    nbDeaths += (feature.properties.Deaths - previousData.properties.Deaths)
-                    previousData.properties.Deaths = feature.properties.Deaths
-                  }
-                }
+              utils.processPreviousData(data.features, yesterday.features)
+              console.log(`Data processed for ${data.features.length} regions on ${regions.features.length} regions`)
+              _.forOwn(utils.properties, (value, key) => {
+                console.log(`Found a total of ${utils.N[value]} ${value}`)
               })
-              const nbTotalRegions = data.features.length
-              console.log(`Filled data with ${nbTotalRegions - nbInitialRegions} previously found regions`)
-              console.log(`Data processed for ${nbTotalRegions} regions on ${nbRegions} regions`)
-              console.log(`Found a total of ${nbConfirmed} confirmed cases and ${nbDeaths} deaths`)
             }
           }
         },
