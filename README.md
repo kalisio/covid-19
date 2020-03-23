@@ -24,6 +24,8 @@ Les données du Johns Hopkins CSSE étant devenu le standard defacto nous avons 
 * `Confirmed` nombre de cas confirmés
 * `Deaths` nombre de décès confirmés
 * `Recovered` nombre de guérisons confirmées
+* `Severe` nombre de cas hospitalisés
+* `Critical` nombre de cas en réanimation
 
 Les principales données produites sont les suivantes:
 
