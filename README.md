@@ -37,7 +37,7 @@ Les données du Johns Hopkins CSSE étant devenu le standard defacto nous avons 
 
 Les principales données produites sont les suivantes:
 
-* données journalières par région consolidées au niveau national dans le dossier [regions-france](./regions-france)
+* données journalières par région consolidées au niveau national :open_file_folder: [regions-france](./regions-france)
   * issues des données des [Agences Régionales de Santé](https://github.com/opencovid19-fr/data/tree/master/agences-regionales-sante)
   * croisement géographique par région réalisé sur la base du code de région
   * polygones (fichiers préfixés par `polygons`) ou géolocalisation des données au barycentre de la région pour la constitution d'[heatmaps](https://fr.wikipedia.org/wiki/Heat_map)
@@ -46,7 +46,7 @@ Les principales données produites sont les suivantes:
 
 Voir la [vidéo originale](https://drive.google.com/file/d/1GjdhBEVwtei5WxCTeXwtoKquKUQk5Gwp/view).
 
-* données journalières par département consolidées au niveau national dans le dossier [departements-france](./departements-france)
+* données journalières par département consolidées au niveau national :open_file_folder: [departements-france](./departements-france)
   * issues des données des [Agences Régionales de Santé](https://github.com/opencovid19-fr/data/tree/master/agences-regionales-sante)
   * croisement géographique par département réalisé sur la base du code de département
   * polygones (fichiers préfixés par `polygons`) ou géolocalisation des données au barycentre du département pour la constitution d'[heatmaps](https://fr.wikipedia.org/wiki/Heat_map)
@@ -57,7 +57,7 @@ Si vous souhaitez référencer les jeux de données directement plutôt que de l
 
 Voir la [vidéo originale](https://drive.google.com/open?id=1G6IWKDE1XuSIjY_ncSELPcl8GuMmmKoH).
 
-* données globales individualisée des patients en France dans le dossier [patients-france](./patients-france)
+* données globales individualisée des patients en France :open_file_folder: [patients-france](./patients-france)
   * géolocalisation des données au barycentre du département
   * contient une version aggrégée par département pour la constitution d'[heatmaps](https://fr.wikipedia.org/wiki/Heat_map)
 
