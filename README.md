@@ -46,6 +46,10 @@ Les principales données produites sont les suivantes:
 
 Voir la [vidéo originale](https://drive.google.com/file/d/1GjdhBEVwtei5WxCTeXwtoKquKUQk5Gwp/view).
 
+![Carte évolutive des cas en régions pondérée selon la population](Kano-Covid-19-Regions-France-Population.gif)
+
+Voir la [vidéo originale](https://drive.google.com/file/d/1PpuVcfr6CGq48rGWr5xq9aMCsq7XTPQX/view).
+
 * données journalières par département consolidées au niveau national :open_file_folder: [departements-france](./departements-france)
   * issues des données des [Agences Régionales de Santé](https://github.com/opencovid19-fr/data/tree/master/agences-regionales-sante)
   * croisement géographique par département réalisé sur la base du code de département
