@@ -29,6 +29,15 @@ module.exports = {
         readCSV: {
           headers: true
         },
+        transformJson: { // Data format changed on 22/03/2020
+          mapping: {
+            Province_State: 'Province/State',
+            Country_Region: 'Country/Region',
+            Last_Update: 'Last Update',
+            Lat: 'Latitude',
+            Long_: 'Longitude'
+          }
+        },
         convertToGeoJson: {
           latitude: 'Latitude',
           longitude: 'Longitude'
