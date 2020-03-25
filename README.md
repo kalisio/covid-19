@@ -38,7 +38,7 @@ Les données du Johns Hopkins CSSE étant devenu le standard defacto nous avons 
 Les principales données produites sont les suivantes:
 
 * données journalières par région consolidées au niveau national :open_file_folder: [regions-france](./regions-france)
-  * issues des données des [Agences Régionales de Santé](https://github.com/opencovid19-fr/data/tree/master/agences-regionales-sante)
+  * issues des données des [Agences Régionales de Santé](https://github.com/opencovid19-fr/data/tree/master/agences-regionales-sante) et de [Santé Publique France](https://github.com/opencovid19-fr/data/tree/master/sante-publique-france)
   * croisement géographique par région réalisé sur la base du code de région
   * polygones (fichiers préfixés par `polygons`) ou géolocalisation des données au barycentre de la région pour la constitution d'[heatmaps](https://fr.wikipedia.org/wiki/Heat_map)
 
