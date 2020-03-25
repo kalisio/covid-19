@@ -16,6 +16,14 @@ Nos principales sources de données sont les suivantes:
 * croisements géographiques
   * contours administratifs nationaux https://github.com/gregoiredavid/france-geojson
   * population régionale/départementale par classe d'âge https://www.insee.fr/fr/statistiques/1893198
+  * correspondance code départements/régions https://www.insee.fr/fr/information/3720946#titre-bloc-15
+  * données hospitalières https://hopitaux.datasette.11d.im/hopitaux, example de reqête pour nombre de lits en réanimation
+  `SELECT departement, libdepartement, sum(LIT) AS lits
+    FROM(select DISTINCT f.departement, f.libdepartement, r.FI, r.FI_EJ, r.UNI, r.LIT
+    FROM [finess-clean] f
+    INNER JOIN REA_2018 r
+    ON r.FI = f.nofinesset AND r.UNI = 'SITOT') tmp
+    GROUP BY departement, libdepartement`
 
 ## Données cartographiques
 

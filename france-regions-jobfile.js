@@ -12,7 +12,8 @@ program
     .parse(process.argv)
 
 // Read regions DB
-const regions = utils.processAdministrativeData('regions-france-outre-mer', program.geometry, 'population-regions-france')
+const regions = utils.processAdministrativeData('regions-france-outre-mer', program.geometry,
+  'population-regions-france', 'lits-reanimation-regions-france', 'region')
 
 const date = moment(program.date)
 if (!date.isValid()) {

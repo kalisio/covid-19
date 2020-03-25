@@ -12,7 +12,8 @@ program
     .parse(process.argv)
 
 // Read departements DB
-const departements = utils.processAdministrativeData('departements-france-outre-mer', program.geometry, 'population-departements-france')
+const departements = utils.processAdministrativeData('departements-france-outre-mer', program.geometry,
+  'population-departements-france', 'lits-reanimation-departements-france', 'departement')
 
 const date = moment(program.date)
 if (!date.isValid()) {

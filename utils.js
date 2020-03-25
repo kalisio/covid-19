@@ -3,6 +3,34 @@ const _ = require('lodash')
 const turf = require('@turf/turf')
 const fs = require('fs-extra')
 
+// Generate bed statistics by regions from departement entries
+/*
+const departements = fs.readJsonSync(path.join(__dirname, 'codes-departements-france.json'), { encoding: 'utf8' })
+let regions = {}
+departements.forEach(departement => {
+  const region = departement.reg.toString()
+  if (!regions[departement.reg]) regions[departement.reg] = []
+  regions[departement.reg].push(departement.dep.toString())
+})
+const departementBeds = fs.readJsonSync(path.join(__dirname, 'lits-reanimation-departements-france.json'), { encoding: 'utf8' })
+let regionBeds = {}
+let bedCount = 0
+_.forOwn(regions, (value, key) => {
+  regionBeds[key] = { region: key, lits: 0 }
+  value.forEach(departement => {
+    const beds = _.find(departementBeds, item => item.departement.toString() === departement)
+    if (beds) {
+      console.log(`Found ${beds.lits} matching beds for department ${beds.libdepartement} in region ${key}`)
+      regionBeds[key].lits += beds.lits
+      bedCount += beds.lits
+    }
+  })
+  console.log(`Found a total of ${regionBeds[key].lits} beds in region ${key}`)
+})
+console.log(`Found a total of ${bedCount} beds`)
+fs.writeJsonSync(path.join(__dirname, 'lits-reanimation-regions-france.json'), _.values(regionBeds), { encoding: 'utf8' })
+*/
+
 // Properties mapping
 const properties = {
   casConfirmes: 'Confirmed',
@@ -24,12 +52,12 @@ function max(matches, property) {
   N[properties[property]] += max
   return max
 }
-
+    
 module.exports = {
   properties,
   N,
   max,
-  processAdministrativeData(file, geometry, populationFile) {
+  processAdministrativeData(file, geometry, populationFile, bedsFile, bedsCode) {
     // Read DB
     const data = fs.readJsonSync(path.join(__dirname, `${file}.geojson`), { encoding: 'utf8' })
     data.features.forEach(feature => {
@@ -39,7 +67,7 @@ module.exports = {
         feature.geometry = centroid.geometry
       }
     })
-    // Add opulation data
+    // Add population data
     if (populationFile) {
       let count = 0
       let populationData = fs.readJsonSync(path.join(__dirname, `${populationFile}.json`), { encoding: 'utf8' })
@@ -60,6 +88,20 @@ module.exports = {
         }
       })
       console.log(`Found ${count} elements with matching population`)
+    }
+    // Add bed data
+    if (bedsFile) {
+      let count = 0
+      let bedData = fs.readJsonSync(path.join(__dirname, `${bedsFile}.json`), { encoding: 'utf8' })
+      data.features.forEach(feature => {
+        const beds = bedData.find(element => element[bedsCode].toString() === feature.properties.code)
+        if (beds) {
+          count++
+          feature.Beds = beds.lits
+          console.log(`Found ${feature.Beds} matching beds for ${feature.properties.nom}`)
+        }
+      })
+      console.log(`Found ${count} elements with matching beds`)
     }
     return data
   },
@@ -97,6 +139,7 @@ module.exports = {
           'Country/Region': 'France',
           'Province/State': feature.properties.nom,
           Population: feature.Population,
+          Beds: feature.Beds,
           geometry: feature.geometry,
         }, feature.match))
       } else {
