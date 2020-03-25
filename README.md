@@ -124,44 +124,71 @@ yarn run dev
 
 L'ensemble des données est visualisable via un simple drag'n'drop des fichiers dans Kano. Néanmoins pour des visualisations spatio-temporelles avancées comme les heatmaps il vous faudra faire un peu de configuration.
 
+Exemple de configuration d'un affichage de bulles d'information par région:
+```js
+{
+  name: 'COVID-19 (Regions)',
+  description: 'Cases by regions in France',
+  tags: [ 'business' ],
+  icon: 'fas fa-atlas',
+  attribution: '',
+  type: 'OverlayLayer',
+  featureId: 'Province/State',
+  leaflet: {
+    type: 'geoJson',
+    realtime: true,
+    sourceTemplate: `https://s3.eu-central-1.amazonaws.com/krawler/covid-19/regions-france/regions-france-<%= time.format('YYYY-MM-DD') %>.json`,
+    'marker-type': 'circleMarker',
+    radius: `<%= 10 + Math.round(properties.Confirmed * 0.02) %>`,
+    stroke: 'red',
+    'stroke-opacity': 1,
+    'fill-opacity': 0.5,
+    'fill-color': 'green',
+    template: ['radius'],
+    tooltip: {
+      template: `<b><%= properties['Province/State'] %></br><% if (properties.Confirmed) { %> <%= properties.Confirmed %> cas<% }
+                 if (properties.Deaths) { %> - <%= properties.Deaths %> décès<% } %></b>`
+    }
+  }
+}
+```
+
 Exemple de configuration d'une heatmap:
 ```js
 {
-    name: 'COVID-19 (ARS)',
-    description: 'Cases in France',
-    tags: [
-      'business'
-    ],
-    icon: 'fas fa-atlas',
-    attribution: '',
-    type: 'OverlayLayer',
-    featureId: 'Province/State',
-    leaflet: {
-      type: 'heatmap',
-      urlTemplate: `https://s3.eu-central-1.amazonaws.com/krawler/covid-19/departements-france/departements-france-<%= time.format('YYYY-MM-DD') %>.json`,
-      valueField: 'Confirmed',
-      // The unit is in pixel, meaning
-      // 1 pixel radius (2 pixel diameter) at zoom level 0
-      // ...
-      // 64 pixel radius (128 pixel diameter) at zoom level 6
-      // ...
-      // We'd like an event to cover a range expressed as Km
-      // According to https://groups.google.com/forum/#!topic/google-maps-js-api-v3/hDRO4oHVSeM
-      // this means 1 pixel at level 7 so at level 0 we get 1 / 2^7
-      radius: 100 * 0.0078,
-      minOpacity: 0,
-      maxOpacity: 0.5,
-      // scales the radius based on map zoom
-      scaleRadius: true,
-      // uses the data maximum within the current map boundaries
-      // (there will always be a red spot with useLocalExtremas true)
-      useLocalExtrema: false,
-      min: 0,
-      max: 100,
-      // The higher the blur factor is, the smoother the gradients will be
-      blur: 0.8
-    }
+  name: 'COVID-19 (Depts)',
+  description: 'Cases by departements in France',
+  tags: [ 'business' ],
+  icon: 'fas fa-atlas',
+  attribution: '',
+  type: 'OverlayLayer',
+  featureId: 'Province/State',
+  leaflet: {
+    type: 'heatmap',
+    urlTemplate: `https://s3.eu-central-1.amazonaws.com/krawler/covid-19/departements-france/departements-france-<%= time.format('YYYY-MM-DD') %>.json`,
+    valueField: 'Confirmed',
+    // The unit is in pixel, meaning
+    // 1 pixel radius (2 pixel diameter) at zoom level 0
+    // ...
+    // 64 pixel radius (128 pixel diameter) at zoom level 6
+    // ...
+    // We'd like an event to cover a range expressed as Km
+    // According to https://groups.google.com/forum/#!topic/google-maps-js-api-v3/hDRO4oHVSeM
+    // this means 1 pixel at level 7 so at level 0 we get 1 / 2^7
+    radius: 100 * 0.0078,
+    minOpacity: 0,
+    maxOpacity: 0.5,
+    // scales the radius based on map zoom
+    scaleRadius: true,
+    // uses the data maximum within the current map boundaries
+    // (there will always be a red spot with useLocalExtremas true)
+    useLocalExtrema: false,
+    min: 0,
+    max: 100,
+    // The higher the blur factor is, the smoother the gradients will be
+    blur: 0.8
   }
+}
 ```
 
 ## Comment contribuer ?
@@ -173,6 +200,7 @@ Pour vous signaler rejoignez la communauté sur [Slack](https://join.slack.com/t
 Quelques idées:
 * ~~production de jeux de données avec le contour des départements et non les barycentres~~
 * ~~croisement avec des données de population~~
+* croisement avec des données hospitalières (nombre de lits, etc.)
 * géolocalisation des données des patients au niveau communal (pour l'instant très peu de données)
 * consitution de collections MongoDB pour visualisation spatio-temporelle dans Kano (eg séries temporelles)
 

@@ -11,12 +11,16 @@
   'hauts-de-france',
   'ile-de-france',
   'martinique',
+  'mayotte',
   'normandie',
   'nouvelle-aquitaine',
+  'nouvelle-caledonie',
   'occitanie',
   'pays-de-la-loire',
+  'polynesie-francaise',
   'provence-alpes-cote-dazur',
   'reunion',
   'saint-barthelemy',
-  'saint-martin'
+  'saint-martin',
+  'wallis-et-futuna'
 ]
