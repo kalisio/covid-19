@@ -58,15 +58,20 @@ Les principales données produites sont les suivantes:
   * croisement géographique par région réalisé sur la base du code de région
   * polygones (fichiers préfixés par `polygons`) ou géolocalisation des données au barycentre de la région pour la constitution d'[heatmaps](https://fr.wikipedia.org/wiki/Heat_map)
 
-Carte évolutive des cas en régions:
+Carte évolutive des cas en régions, taille des bulles liée au nombre de cas:
 ![Carte évolutive des cas en régions](Kano-Covid-19-Regions-France.gif)
 
 Voir la [vidéo originale](https://drive.google.com/file/d/1GjdhBEVwtei5WxCTeXwtoKquKUQk5Gwp/view).
 
-Carte évolutive des cas en régions pondérés selon la population:
+Carte évolutive des cas en régions, taille des bulles liée au nombre de cas pondéré par la population:
 ![Carte évolutive des cas en régions pondérés selon la population](Kano-Covid-19-Regions-France-Population.gif)
 
 Voir la [vidéo originale](https://drive.google.com/file/d/1PpuVcfr6CGq48rGWr5xq9aMCsq7XTPQX/view).
+
+Carte évolutive des cas en régions, taille des bulles liée au nombre de cas pondéré par la population, couleur/opacité des bulles liée au rapport entre le nombre de cas et de lits disponibles (on suppose que 10% des cas occupent des lits):
+![Carte évolutive des cas en régions pondérés selon la population et les lits disponibles](Kano-Covid-19-Regions-France-Population-Lits.gif)
+
+Voir la [vidéo originale](https://drive.google.com/file/d/1tcD_34txCr8I-5L_EVor-sQPO4xm_YQh/view).
 
 * données journalières par département consolidées au niveau national :open_file_folder: [departements-france](./departements-france)
   * issues des données des [Agences Régionales de Santé](https://github.com/opencovid19-fr/data/tree/master/agences-regionales-sante)
@@ -170,6 +175,35 @@ Exemple de configuration d'un affichage de bulles d'information par région:
     tooltip: {
       template: `<b><%= properties['Province/State'] %></br><% if (properties.Confirmed) { %> <%= properties.Confirmed %> cas<% }
                  if (properties.Deaths) { %> - <%= properties.Deaths %> décès<% } %></b>`
+    }
+  }
+}
+```
+
+Exemple de configuration d'un affichage coloré dépendant du ration de cas/lits par région:
+```js
+{
+  name: 'COVID-19 (Regions)',
+  description: 'Cases by regions in France',
+  tags: [ 'business' ],
+  icon: 'fas fa-atlas',
+  attribution: '',
+  type: 'OverlayLayer',
+  featureId: 'Province/State',
+  leaflet: {
+    type: 'geoJson',
+    realtime: true,
+    sourceTemplate: `https://s3.eu-central-1.amazonaws.com/krawler/covid-19/regions-france/regions-france-<%= time.format('YYYY-MM-DD') %>.json`,
+    'marker-type': 'circleMarker',
+    radius: `<%= 10 + Math.round(properties.Confirmed * 0.02) %>`,
+    stroke: 'red',
+    'stroke-opacity': 1,
+    'fill-opacity': '<%= 0.5 + (0.1 * properties.Confirmed / properties.Beds.Total) %>',
+    'fill-color': '<%= chroma.scale('BuPu').domain([-1,1])(0.1 * properties.Confirmed / properties.Beds.Total).hex() %>',
+    template: ['radius', 'fill-color', 'fill-opacity'],
+    tooltip: {
+      template: `<b><%= properties['Province/State'] %></br><% if (properties.Confirmed) { %> <%= properties.Confirmed %> cas<% }
+                 if (properties.Deaths) { %> - <%= properties.Beds.Total %> lits<% } %></b>`
     }
   }
 }
