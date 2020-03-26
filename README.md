@@ -17,13 +17,17 @@ Nos principales sources de données sont les suivantes:
   * contours administratifs nationaux https://github.com/gregoiredavid/france-geojson
   * population régionale/départementale par classe d'âge https://www.insee.fr/fr/statistiques/1893198
   * correspondance code départements/régions https://www.insee.fr/fr/information/3720946#titre-bloc-15
-  * données hospitalières https://hopitaux.datasette.11d.im/hopitaux, example de reqête pour nombre de lits en réanimation
-  `SELECT departement, libdepartement, sum(LIT) AS lits
+  * données hospitalières issues de la [statistique annuelle des établissements de santé](https://www.sae-diffusion.sante.gouv.fr/sae-diffusion/recherche.htm) (2018)
+
+Example de requête pour nombre de lits en réanimation sur https://hopitaux.datasette.11d.im/hopitaux:
+```
+SELECT departement, libdepartement, sum(LIT) AS lits
     FROM(select DISTINCT f.departement, f.libdepartement, r.FI, r.FI_EJ, r.UNI, r.LIT
     FROM [finess-clean] f
     INNER JOIN REA_2018 r
     ON r.FI = f.nofinesset AND r.UNI = 'SITOT') tmp
-    GROUP BY departement, libdepartement`
+    GROUP BY departement, libdepartement
+```
 
 ## Données cartographiques
 
@@ -42,6 +46,10 @@ Les données du Johns Hopkins CSSE étant devenu le standard defacto nous avons 
   * `Under59` - 40 à 59 ans
   * `Under74` - 60 à 74 ans
   * `Over75` - 75 ans et plus
+* `Beds` Lits hospitaliers
+  * `Total` - Ensemble
+  * `Resuscitation` - Réanimation
+  * `IntensiveCare` - Soins intensifs
 
 Les principales données produites sont les suivantes:
 
@@ -50,11 +58,13 @@ Les principales données produites sont les suivantes:
   * croisement géographique par région réalisé sur la base du code de région
   * polygones (fichiers préfixés par `polygons`) ou géolocalisation des données au barycentre de la région pour la constitution d'[heatmaps](https://fr.wikipedia.org/wiki/Heat_map)
 
+Carte évolutive des cas en régions:
 ![Carte évolutive des cas en régions](Kano-Covid-19-Regions-France.gif)
 
 Voir la [vidéo originale](https://drive.google.com/file/d/1GjdhBEVwtei5WxCTeXwtoKquKUQk5Gwp/view).
 
-![Carte évolutive des cas en régions pondérée selon la population](Kano-Covid-19-Regions-France-Population.gif)
+Carte évolutive des cas en régions pondérés selon la population:
+![Carte évolutive des cas en régions pondérés selon la population](Kano-Covid-19-Regions-France-Population.gif)
 
 Voir la [vidéo originale](https://drive.google.com/file/d/1PpuVcfr6CGq48rGWr5xq9aMCsq7XTPQX/view).
 

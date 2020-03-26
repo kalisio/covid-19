@@ -1,0 +1,911 @@
+[
+  {
+    "dep_id": "01",
+    "dep": "Ain",
+    "rea": 22,
+    "si_usic": 6,
+    "si_unv": 4,
+    "si_autres": "",
+    "sc": 10
+  },
+  {
+    "dep_id": "02",
+    "dep": "Aisne",
+    "rea": 34,
+    "si_usic": 34,
+    "si_unv": 12,
+    "si_autres": 9,
+    "sc": 55
+  },
+  {
+    "dep_id": "03",
+    "dep": "Allier",
+    "rea": 24,
+    "si_usic": 22,
+    "si_unv": 6,
+    "si_autres": "",
+    "sc": 28
+  },
+  {
+    "dep_id": "04",
+    "dep": "Alpes-de-Haute-Provence",
+    "rea": 6,
+    "si_usic": "",
+    "si_unv": "",
+    "si_autres": "",
+    "sc": ""
+  },
+  {
+    "dep_id": "05",
+    "dep": "Hautes-Alpes",
+    "rea": 8,
+    "si_usic": "",
+    "si_unv": "",
+    "si_autres": "",
+    "sc": ""
+  },
+  {
+    "dep_id": "06",
+    "dep": "Alpes Maritimes",
+    "rea": 89,
+    "si_usic": 50,
+    "si_unv": 12,
+    "si_autres": 29,
+    "sc": 91
+  },
+  {
+    "dep_id": "07",
+    "dep": "Ardèche",
+    "rea": 8,
+    "si_usic": "",
+    "si_unv": "",
+    "si_autres": "",
+    "sc": ""
+  },
+  {
+    "dep_id": "08",
+    "dep": "Ardennes",
+    "rea": 12,
+    "si_usic": 16,
+    "si_unv": "",
+    "si_autres": 5,
+    "sc": 21
+  },
+  {
+    "dep_id": "09",
+    "dep": "Ariège",
+    "rea": 8,
+    "si_usic": "",
+    "si_unv": "",
+    "si_autres": 8,
+    "sc": 8
+  },
+  {
+    "dep_id": 10,
+    "dep": "Aube",
+    "rea": 12,
+    "si_usic": 14,
+    "si_unv": 4,
+    "si_autres": "",
+    "sc": 18
+  },
+  {
+    "dep_id": 11,
+    "dep": "Aude",
+    "rea": 16,
+    "si_usic": 12,
+    "si_unv": 10,
+    "si_autres": "",
+    "sc": 22
+  },
+  {
+    "dep_id": 12,
+    "dep": "Aveyron",
+    "rea": 11,
+    "si_usic": 8,
+    "si_unv": 8,
+    "si_autres": "",
+    "sc": 16
+  },
+  {
+    "dep_id": 13,
+    "dep": "Bouches-du-Rhône",
+    "rea": 281,
+    "si_usic": 144,
+    "si_unv": 12,
+    "si_autres": 82,
+    "sc": 238
+  },
+  {
+    "dep_id": 14,
+    "dep": "Calvados",
+    "rea": 91,
+    "si_usic": 28,
+    "si_unv": 14,
+    "si_autres": 22,
+    "sc": 64
+  },
+  {
+    "dep_id": 15,
+    "dep": "Cantal",
+    "rea": 8,
+    "si_usic": 7,
+    "si_unv": "",
+    "si_autres": 8,
+    "sc": 15
+  },
+  {
+    "dep_id": 16,
+    "dep": "Charente",
+    "rea": 12,
+    "si_usic": 14,
+    "si_unv": 4,
+    "si_autres": "",
+    "sc": 18
+  },
+  {
+    "dep_id": 17,
+    "dep": "Charente Maritime",
+    "rea": 30,
+    "si_usic": 20,
+    "si_unv": 16,
+    "si_autres": "",
+    "sc": 36
+  },
+  {
+    "dep_id": 18,
+    "dep": "Cher",
+    "rea": 12,
+    "si_usic": 12,
+    "si_unv": 4,
+    "si_autres": "",
+    "sc": 16
+  },
+  {
+    "dep_id": 19,
+    "dep": "Correze",
+    "rea": 15,
+    "si_usic": 15,
+    "si_unv": "",
+    "si_autres": 6,
+    "sc": 21
+  },
+  {
+    "dep_id": 21,
+    "dep": "Côte d'Or",
+    "rea": 57,
+    "si_usic": 32,
+    "si_unv": 10,
+    "si_autres": 53,
+    "sc": 95
+  },
+  {
+    "dep_id": 22,
+    "dep": "Côtes d'Armor",
+    "rea": 14,
+    "si_usic": 10,
+    "si_unv": 6,
+    "si_autres": "",
+    "sc": 16
+  },
+  {
+    "dep_id": 23,
+    "dep": "Creuse",
+    "rea": 8,
+    "si_usic": 8,
+    "si_unv": "",
+    "si_autres": "",
+    "sc": 8
+  },
+  {
+    "dep_id": 24,
+    "dep": "Dordogne",
+    "rea": 19,
+    "si_usic": 12,
+    "si_unv": 6,
+    "si_autres": "",
+    "sc": 18
+  },
+  {
+    "dep_id": 25,
+    "dep": "Doubs",
+    "rea": 40,
+    "si_usic": 25,
+    "si_unv": 10,
+    "si_autres": 96,
+    "sc": 131
+  },
+  {
+    "dep_id": 26,
+    "dep": "Drôme",
+    "rea": 24,
+    "si_usic": 24,
+    "si_unv": 10,
+    "si_autres": "",
+    "sc": 34
+  },
+  {
+    "dep_id": 27,
+    "dep": "Eure",
+    "rea": 12,
+    "si_usic": 14,
+    "si_unv": 4,
+    "si_autres": 4,
+    "sc": 22
+  },
+  {
+    "dep_id": 28,
+    "dep": "Eure et Loir",
+    "rea": 20,
+    "si_usic": 14,
+    "si_unv": 8,
+    "si_autres": "",
+    "sc": 22
+  },
+  {
+    "dep_id": 29,
+    "dep": "Finistère",
+    "rea": 66,
+    "si_usic": 31,
+    "si_unv": 14,
+    "si_autres": 26,
+    "sc": 71
+  },
+  {
+    "dep_id": "2A",
+    "dep": "Corse du Sud",
+    "rea": 10,
+    "si_usic": 8,
+    "si_unv": 3,
+    "si_autres": 4,
+    "sc": 15
+  },
+  {
+    "dep_id": "2B",
+    "dep": "Haute-Corse",
+    "rea": 8,
+    "si_usic": 6,
+    "si_unv": "",
+    "si_autres": "",
+    "sc": 6
+  },
+  {
+    "dep_id": 30,
+    "dep": "Gard",
+    "rea": 49,
+    "si_usic": 32,
+    "si_unv": 8,
+    "si_autres": 14,
+    "sc": 54
+  },
+  {
+    "dep_id": 31,
+    "dep": "Haute-Garonne",
+    "rea": 161,
+    "si_usic": 68,
+    "si_unv": 21,
+    "si_autres": 126,
+    "sc": 215
+  },
+  {
+    "dep_id": 32,
+    "dep": "Gers",
+    "rea": 8,
+    "si_usic": "",
+    "si_unv": 4,
+    "si_autres": "",
+    "sc": 4
+  },
+  {
+    "dep_id": 33,
+    "dep": "Gironde",
+    "rea": 183,
+    "si_usic": 84,
+    "si_unv": 20,
+    "si_autres": 27,
+    "sc": 131
+  },
+  {
+    "dep_id": 34,
+    "dep": "Hérault",
+    "rea": 124,
+    "si_usic": 44,
+    "si_unv": 30,
+    "si_autres": 97,
+    "sc": 171
+  },
+  {
+    "dep_id": 35,
+    "dep": "Ille-et-Vilaine",
+    "rea": 60,
+    "si_usic": 40,
+    "si_unv": 12,
+    "si_autres": 60,
+    "sc": 112
+  },
+  {
+    "dep_id": 36,
+    "dep": "Indre",
+    "rea": 10,
+    "si_usic": 9,
+    "si_unv": "",
+    "si_autres": "",
+    "sc": 9
+  },
+  {
+    "dep_id": 37,
+    "dep": "Indre-et-Loire",
+    "rea": 79,
+    "si_usic": 36,
+    "si_unv": 8,
+    "si_autres": 14,
+    "sc": 58
+  },
+  {
+    "dep_id": 38,
+    "dep": "Isère",
+    "rea": 74,
+    "si_usic": 45,
+    "si_unv": 13,
+    "si_autres": 31,
+    "sc": 89
+  },
+  {
+    "dep_id": 39,
+    "dep": "Jura",
+    "rea": 8,
+    "si_usic": 6,
+    "si_unv": 3,
+    "si_autres": "",
+    "sc": 9
+  },
+  {
+    "dep_id": 40,
+    "dep": "Landes",
+    "rea": 14,
+    "si_usic": 8,
+    "si_unv": 8,
+    "si_autres": "",
+    "sc": 16
+  },
+  {
+    "dep_id": 41,
+    "dep": "Loir-et-Cher",
+    "rea": 12,
+    "si_usic": 8,
+    "si_unv": "",
+    "si_autres": "",
+    "sc": 8
+  },
+  {
+    "dep_id": 42,
+    "dep": "Loire",
+    "rea": 70,
+    "si_usic": 28,
+    "si_unv": 11,
+    "si_autres": 21,
+    "sc": 60
+  },
+  {
+    "dep_id": 43,
+    "dep": "Haute-Loire",
+    "rea": 8,
+    "si_usic": 6,
+    "si_unv": 4,
+    "si_autres": "",
+    "sc": 10
+  },
+  {
+    "dep_id": 44,
+    "dep": "Loire Atlantique",
+    "rea": 77,
+    "si_usic": 54,
+    "si_unv": 12,
+    "si_autres": 65,
+    "sc": 131
+  },
+  {
+    "dep_id": 45,
+    "dep": "Loiret",
+    "rea": 47,
+    "si_usic": 31,
+    "si_unv": 6,
+    "si_autres": 23,
+    "sc": 60
+  },
+  {
+    "dep_id": 46,
+    "dep": "Lot",
+    "rea": 8,
+    "si_usic": "",
+    "si_unv": 4,
+    "si_autres": "",
+    "sc": 4
+  },
+  {
+    "dep_id": 47,
+    "dep": "Lot-et-Garonne",
+    "rea": 11,
+    "si_usic": 12,
+    "si_unv": 6,
+    "si_autres": "",
+    "sc": 18
+  },
+  {
+    "dep_id": 48,
+    "dep": "Lozère",
+    "rea": 3,
+    "si_usic": "",
+    "si_unv": "",
+    "si_autres": "",
+    "sc": ""
+  },
+  {
+    "dep_id": 49,
+    "dep": "Maine-et-Loire",
+    "rea": 61,
+    "si_usic": 40,
+    "si_unv": 6,
+    "si_autres": 52,
+    "sc": 98
+  },
+  {
+    "dep_id": 50,
+    "dep": "Manche",
+    "rea": 28,
+    "si_usic": 16,
+    "si_unv": 10,
+    "si_autres": "",
+    "sc": 26
+  },
+  {
+    "dep_id": 51,
+    "dep": "Marne",
+    "rea": 54,
+    "si_usic": 24,
+    "si_unv": 4,
+    "si_autres": 11,
+    "sc": 39
+  },
+  {
+    "dep_id": 52,
+    "dep": "Haute-Marne",
+    "rea": 8,
+    "si_usic": 6,
+    "si_unv": "",
+    "si_autres": "",
+    "sc": 6
+  },
+  {
+    "dep_id": 53,
+    "dep": "Mayenne",
+    "rea": 8,
+    "si_usic": 8,
+    "si_unv": "",
+    "si_autres": "",
+    "sc": 8
+  },
+  {
+    "dep_id": 54,
+    "dep": "Meurthe-et-Moselle",
+    "rea": 83,
+    "si_usic": 35,
+    "si_unv": 12,
+    "si_autres": 39,
+    "sc": 86
+  },
+  {
+    "dep_id": 55,
+    "dep": "Meuse",
+    "rea": 8,
+    "si_usic": 6,
+    "si_unv": 4,
+    "si_autres": "",
+    "sc": 10
+  },
+  {
+    "dep_id": 56,
+    "dep": "Morbihan",
+    "rea": 22,
+    "si_usic": 16,
+    "si_unv": 16,
+    "si_autres": "",
+    "sc": 32
+  },
+  {
+    "dep_id": 57,
+    "dep": "Moselle",
+    "rea": 88,
+    "si_usic": 34,
+    "si_unv": 14,
+    "si_autres": 8,
+    "sc": 56
+  },
+  {
+    "dep_id": 58,
+    "dep": "Nièvre",
+    "rea": 12,
+    "si_usic": 16,
+    "si_unv": "",
+    "si_autres": "",
+    "sc": 16
+  },
+  {
+    "dep_id": 59,
+    "dep": "Nord",
+    "rea": 225,
+    "si_usic": 116,
+    "si_unv": 50,
+    "si_autres": 183,
+    "sc": 349
+  },
+  {
+    "dep_id": 60,
+    "dep": "Oise",
+    "rea": 36,
+    "si_usic": 23,
+    "si_unv": 13,
+    "si_autres": 10,
+    "sc": 46
+  },
+  {
+    "dep_id": 61,
+    "dep": "Orne",
+    "rea": 16,
+    "si_usic": 8,
+    "si_unv": 4,
+    "si_autres": "",
+    "sc": 12
+  },
+  {
+    "dep_id": 62,
+    "dep": "Pas-de-Calais",
+    "rea": 85,
+    "si_usic": 61,
+    "si_unv": 32,
+    "si_autres": 44,
+    "sc": 137
+  },
+  {
+    "dep_id": 63,
+    "dep": "Puy-de-Dôme",
+    "rea": 77,
+    "si_usic": 26,
+    "si_unv": 4,
+    "si_autres": 22,
+    "sc": 52
+  },
+  {
+    "dep_id": 64,
+    "dep": "Pyrénées-Atlantiques",
+    "rea": 35,
+    "si_usic": 32,
+    "si_unv": 10,
+    "si_autres": 13,
+    "sc": 55
+  },
+  {
+    "dep_id": 65,
+    "dep": "Hautes-Pyrénées",
+    "rea": 12,
+    "si_usic": 18,
+    "si_unv": 4,
+    "si_autres": "",
+    "sc": 22
+  },
+  {
+    "dep_id": 66,
+    "dep": "Pyrénées-Orientales",
+    "rea": 32,
+    "si_usic": 16,
+    "si_unv": 8,
+    "si_autres": 8,
+    "sc": 32
+  },
+  {
+    "dep_id": 67,
+    "dep": "Bas-Rhin",
+    "rea": 122,
+    "si_usic": 51,
+    "si_unv": 16,
+    "si_autres": 37,
+    "sc": 104
+  },
+  {
+    "dep_id": 68,
+    "dep": "Haut-Rhin",
+    "rea": 70,
+    "si_usic": 48,
+    "si_unv": 8,
+    "si_autres": 12,
+    "sc": 68
+  },
+  {
+    "dep_id": 69,
+    "dep": "Rhône",
+    "rea": 192,
+    "si_usic": 70,
+    "si_unv": 18,
+    "si_autres": 123,
+    "sc": 211
+  },
+  {
+    "dep_id": 70,
+    "dep": "Haute-Saône",
+    "rea": 12,
+    "si_usic": 8,
+    "si_unv": 4,
+    "si_autres": "",
+    "sc": 12
+  },
+  {
+    "dep_id": 71,
+    "dep": "Saône-et-Loire",
+    "rea": 26,
+    "si_usic": 15,
+    "si_unv": 5,
+    "si_autres": 2,
+    "sc": 22
+  },
+  {
+    "dep_id": 72,
+    "dep": "Sarthe",
+    "rea": 17,
+    "si_usic": 23,
+    "si_unv": 4,
+    "si_autres": "",
+    "sc": 27
+  },
+  {
+    "dep_id": 73,
+    "dep": "Savoie",
+    "rea": 18,
+    "si_usic": 8,
+    "si_unv": 8,
+    "si_autres": 2,
+    "sc": 18
+  },
+  {
+    "dep_id": 74,
+    "dep": "Haute-Savoie",
+    "rea": 34,
+    "si_usic": 23,
+    "si_unv": 7,
+    "si_autres": 11,
+    "sc": 41
+  },
+  {
+    "dep_id": 75,
+    "dep": "Paris",
+    "rea": 389,
+    "si_usic": 148,
+    "si_unv": 67,
+    "si_autres": 326,
+    "sc": 541
+  },
+  {
+    "dep_id": 76,
+    "dep": "Seine-Maritime",
+    "rea": 93,
+    "si_usic": 60,
+    "si_unv": 10,
+    "si_autres": 80,
+    "sc": 150
+  },
+  {
+    "dep_id": 77,
+    "dep": "Seine-et-Marne",
+    "rea": 77,
+    "si_usic": 28,
+    "si_unv": 6,
+    "si_autres": 16,
+    "sc": 50
+  },
+  {
+    "dep_id": 78,
+    "dep": "Yvelines",
+    "rea": 84,
+    "si_usic": 72,
+    "si_unv": 14,
+    "si_autres": 16,
+    "sc": 102
+  },
+  {
+    "dep_id": 79,
+    "dep": "Deux-Sèvres",
+    "rea": 8,
+    "si_usic": 14,
+    "si_unv": 4,
+    "si_autres": "",
+    "sc": 18
+  },
+  {
+    "dep_id": 80,
+    "dep": "Somme",
+    "rea": 58,
+    "si_usic": 31,
+    "si_unv": 9,
+    "si_autres": 42,
+    "sc": 82
+  },
+  {
+    "dep_id": 81,
+    "dep": "Tarn",
+    "rea": 24,
+    "si_usic": 21,
+    "si_unv": 14,
+    "si_autres": "",
+    "sc": 35
+  },
+  {
+    "dep_id": 82,
+    "dep": "Tarn-et-Garonne",
+    "rea": 18,
+    "si_usic": 14,
+    "si_unv": 6,
+    "si_autres": "",
+    "sc": 20
+  },
+  {
+    "dep_id": 83,
+    "dep": "Var",
+    "rea": 60,
+    "si_usic": 34,
+    "si_unv": 6,
+    "si_autres": 2,
+    "sc": 42
+  },
+  {
+    "dep_id": 84,
+    "dep": "Vaucluse",
+    "rea": 16,
+    "si_usic": 20,
+    "si_unv": 4,
+    "si_autres": 6,
+    "sc": 30
+  },
+  {
+    "dep_id": 85,
+    "dep": "Vendée",
+    "rea": 18,
+    "si_usic": 16,
+    "si_unv": 6,
+    "si_autres": "",
+    "sc": 22
+  },
+  {
+    "dep_id": 86,
+    "dep": "Vienne",
+    "rea": 53,
+    "si_usic": 16,
+    "si_unv": 8,
+    "si_autres": 38,
+    "sc": 62
+  },
+  {
+    "dep_id": 87,
+    "dep": "Haute-Vienne",
+    "rea": 24,
+    "si_usic": 24,
+    "si_unv": 8,
+    "si_autres": 40,
+    "sc": 72
+  },
+  {
+    "dep_id": 88,
+    "dep": "Vosges",
+    "rea": 8,
+    "si_usic": 8,
+    "si_unv": 4,
+    "si_autres": "",
+    "sc": 12
+  },
+  {
+    "dep_id": 89,
+    "dep": "Yonne",
+    "rea": 18,
+    "si_usic": 14,
+    "si_unv": 2,
+    "si_autres": "",
+    "sc": 16
+  },
+  {
+    "dep_id": 90,
+    "dep": "Territoire de Belfort",
+    "rea": 25,
+    "si_usic": 16,
+    "si_unv": 4,
+    "si_autres": "",
+    "sc": 20
+  },
+  {
+    "dep_id": 91,
+    "dep": "Essonne",
+    "rea": 97,
+    "si_usic": 44,
+    "si_unv": 18,
+    "si_autres": 20,
+    "sc": 82
+  },
+  {
+    "dep_id": 92,
+    "dep": "Hauts-de-Seine",
+    "rea": 184,
+    "si_usic": 74,
+    "si_unv": 8,
+    "si_autres": 56,
+    "sc": 138
+  },
+  {
+    "dep_id": 93,
+    "dep": "Seine-St-Denis",
+    "rea": 100,
+    "si_usic": 78,
+    "si_unv": 16,
+    "si_autres": 15,
+    "sc": 109
+  },
+  {
+    "dep_id": 94,
+    "dep": "Val-de-Marne",
+    "rea": 156,
+    "si_usic": 58,
+    "si_unv": 19,
+    "si_autres": 92,
+    "sc": 169
+  },
+  {
+    "dep_id": 95,
+    "dep": "Val-D'Oise",
+    "rea": 60,
+    "si_usic": 37,
+    "si_unv": 12,
+    "si_autres": 16,
+    "sc": 65
+  },
+  {
+    "dep_id": 971,
+    "dep": "Guadeloupe",
+    "rea": 27,
+    "si_usic": 28,
+    "si_unv": 6,
+    "si_autres": "",
+    "sc": 34
+  },
+  {
+    "dep_id": 972,
+    "dep": "Martinique",
+    "rea": 26,
+    "si_usic": 8,
+    "si_unv": 6,
+    "si_autres": 15,
+    "sc": 29
+  },
+  {
+    "dep_id": 973,
+    "dep": "Guyane",
+    "rea": 13,
+    "si_usic": 6,
+    "si_unv": "",
+    "si_autres": "",
+    "sc": 6
+  },
+  {
+    "dep_id": 974,
+    "dep": "Réunion",
+    "rea": 52,
+    "si_usic": 26,
+    "si_unv": 14,
+    "si_autres": 37,
+    "sc": 77
+  },
+  {
+    "dep_id": 976,
+    "dep": "Mayotte",
+    "rea": 6,
+    "si_usic": "",
+    "si_unv": "",
+    "si_autres": "",
+    "sc": ""
+  }
+]

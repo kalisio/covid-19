@@ -13,7 +13,7 @@ program
 
 // Read regions DB
 const regions = utils.processAdministrativeData('regions-france-outre-mer', program.geometry,
-  'population-regions-france', 'lits-reanimation-regions-france', 'region')
+  'population-regions-france', 'lits-regions-france', 'reg_id')
 
 const date = moment(program.date)
 if (!date.isValid()) {
@@ -120,6 +120,7 @@ module.exports = {
         },
         writeJsonS3: {
           hook: 'writeJson',
+          predicate: (item) => process.env.S3_BUCKET,
           store: 's3',
           key: `covid-19/regions-france/<%= id %>.json`,
           storageOptions: {

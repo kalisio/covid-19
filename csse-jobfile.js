@@ -48,6 +48,7 @@ module.exports = {
         },
         writeJsonS3: {
           hook: 'writeJson',
+          predicate: (item) => process.env.S3_BUCKET,
           store: 's3',
           key: 'covid-19/csse_covid_19_daily_reports/<%= id %>.json',
           storageOptions: {

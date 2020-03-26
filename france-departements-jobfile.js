@@ -13,7 +13,7 @@ program
 
 // Read departements DB
 const departements = utils.processAdministrativeData('departements-france-outre-mer', program.geometry,
-  'population-departements-france', 'lits-reanimation-departements-france', 'departement')
+  'population-departements-france', 'lits-departements-france', 'dep_id')
 
 const date = moment(program.date)
 if (!date.isValid()) {
@@ -113,6 +113,7 @@ module.exports = {
         },
         writeJsonS3: {
           hook: 'writeJson',
+          predicate: (item) => process.env.S3_BUCKET,
           store: 's3',
           key: `covid-19/departements-france/<%= id %>.json`,
           storageOptions: {

@@ -97,8 +97,14 @@ module.exports = {
         const beds = bedData.find(element => element[bedsCode].toString() === feature.properties.code)
         if (beds) {
           count++
-          feature.Beds = beds.lits
-          console.log(`Found ${feature.Beds} matching beds for ${feature.properties.nom}`)
+          const Resuscitation = _.toNumber(beds.rea)
+          const IntensiveCare = _.toNumber(beds.si_usic) + _.toNumber(beds.si_unv) + _.toNumber(beds.si_autres) + _.toNumber(beds.sc)
+          feature.Beds = {
+            Resuscitation,
+            IntensiveCare,
+            Total: Resuscitation + IntensiveCare
+          }
+          console.log(`Found ${feature.Beds.Total} matching beds for ${feature.properties.nom}`)
         }
       })
       console.log(`Found ${count} elements with matching beds`)
