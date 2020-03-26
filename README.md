@@ -78,8 +78,7 @@ Voir la [vidéo originale](https://drive.google.com/file/d/1tcD_34txCr8I-5L_EVor
   * croisement géographique par département réalisé sur la base du code de département
   * polygones (fichiers préfixés par `polygons`) ou géolocalisation des données au barycentre du département pour la constitution d'[heatmaps](https://fr.wikipedia.org/wiki/Heat_map)
 
-Si vous souhaitez référencer les jeux de données directement plutôt que de les copier utiliser plutôt notre bucket S3 sur AWS, le chemin vers les fichiers reste le même en préfixant par la racine `https://s3.eu-central-1.amazonaws.com/krawler/`. Par exemple l'URL vers le fichier des patients en france est `https://s3.eu-central-1.amazonaws.com/krawler/covid-19/patients-france/patients-france.json`.
-
+Carte de densité évolutive des cas par département:
 ![Carte de densité évolutive des cas](Kano-Covid-19-Heatmap-France.gif)
 
 Voir la [vidéo originale](https://drive.google.com/open?id=1G6IWKDE1XuSIjY_ncSELPcl8GuMmmKoH).
@@ -88,11 +87,15 @@ Voir la [vidéo originale](https://drive.google.com/open?id=1G6IWKDE1XuSIjY_ncSE
   * géolocalisation des données au barycentre du département
   * contient une version aggrégée par département pour la constitution d'[heatmaps](https://fr.wikipedia.org/wiki/Heat_map)
 
+Carte des cas par département:
 <img src="https://raw.githubusercontent.com/kalisio/covid-19/master/patients-france.png" width="512" height="512">
 
 <img src="https://raw.githubusercontent.com/kalisio/covid-19/master/patients-france-zoom.png" width="512" height="512">
 
+Carte de densité des cas par département:
 <img src="https://raw.githubusercontent.com/kalisio/covid-19/master/patients-heatmap-france.png" width="512" height="512">
+
+Si vous souhaitez référencer les jeux de données directement plutôt que de les copier utiliser plutôt notre bucket S3 sur AWS, le chemin vers les fichiers reste le même en préfixant par la racine `https://s3.eu-central-1.amazonaws.com/krawler/`. Par exemple l'URL vers le fichier des patients en france est `https://s3.eu-central-1.amazonaws.com/krawler/covid-19/patients-france/patients-france.json`.
 
 ## Outils
 
