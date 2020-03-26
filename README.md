@@ -31,7 +31,7 @@ SELECT departement, libdepartement, sum(LIT) AS lits
 
 ## Données cartographiques
 
-Les données du Johns Hopkins CSSE étant devenu le standard defacto nous avons décidé de conserver leur format pour l'essentiel des jeux de données produits, c'est à dire que chaque élément cartographique contient les propriétés suivantes:
+Chaque élément cartographique peut contenir les propriétés suivantes:
 * `Country/Region` Pays/Région de provenance
 * `Province/State` Etat/Département de provenance
 * `Confirmed` nombre de cas confirmés
