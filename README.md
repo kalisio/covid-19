@@ -259,7 +259,7 @@ Pour vous signaler rejoignez la communauté sur [Slack](https://join.slack.com/t
 Quelques idées:
 * ~~production de jeux de données avec le contour des départements et non les barycentres~~
 * ~~croisement avec des données de population~~
-* croisement avec des données hospitalières (nombre de lits, etc.)
+* croisement avec des données hospitalières (nombre de lits, etc.) => en cours via SAE 2018
 * géolocalisation des données des patients au niveau communal (pour l'instant très peu de données)
 * consitution de collections MongoDB pour visualisation spatio-temporelle dans Kano (eg séries temporelles)
 
