@@ -5,6 +5,20 @@ exploitables à l'état brut au sein d'outils cartographiques.
 
 L'objectif de ce dépôt est de consolider l'information et de la rendre disponible dans des formats ouverts et aisément réutilisables pour produire des cartes. Le format pivot privilégié est le [GeoJson](https://fr.wikipedia.org/wiki/GeoJSON).
 
+## Comment contribuer ?
+
+Vous pouvez vous proposer comme volontaire pour tester nos scrappeurs, les améliorer, utiliser nos données ou réaliser de nouveaux jeux de données.
+
+Pour vous signaler rejoignez la communauté sur [Slack](https://join.slack.com/t/dataagainstcovid-19/shared_invite/zt-cgsplso2-LIvWeRHlf1ZFIrh~SPj~IA), ouvrez une [issue](https://github.com/kalisio/covid-19/issues) ou une une [pull request](https://github.com/kalisio/covid-19/pulls).
+
+Quelques idées:
+* ~~production de jeux de données avec le contour des départements et non les barycentres~~
+* ~~croisement avec des données de population~~
+* croisement avec des données hospitalières (nombre de lits, etc.) => en cours via SAE 2018
+* intégrer les [nouvelles données](https://github.com/opencovid19-fr/data/tree/master/data-sources/sante-publique-france) de Santé Publique France remontées au niveau départemental 
+* géolocalisation des données des patients au niveau communal (pour l'instant très peu de données)
+* consitution de collections MongoDB pour visualisation spatio-temporelle dans Kano (eg séries temporelles)
+
 ## Sources de données
 
 Nos principales sources de données sont les suivantes:
@@ -251,19 +265,6 @@ Exemple de configuration d'une heatmap:
   }
 }
 ```
-
-## Comment contribuer ?
-
-Vous pouvez vous proposer comme volontaire pour tester nos scrappeurs, utiliser nos données ou réaliser de nouveaux jeux de données.
-
-Pour vous signaler rejoignez la communauté sur [Slack](https://join.slack.com/t/dataagainstcovid-19/shared_invite/zt-cgsplso2-LIvWeRHlf1ZFIrh~SPj~IA), ouvrez une [issue](https://github.com/kalisio/covid-19/issues) ou une une [pull request](https://github.com/kalisio/covid-19/pulls).
-
-Quelques idées:
-* ~~production de jeux de données avec le contour des départements et non les barycentres~~
-* ~~croisement avec des données de population~~
-* croisement avec des données hospitalières (nombre de lits, etc.) => en cours via SAE 2018
-* géolocalisation des données des patients au niveau communal (pour l'instant très peu de données)
-* consitution de collections MongoDB pour visualisation spatio-temporelle dans Kano (eg séries temporelles)
 
 ## Licence
 
