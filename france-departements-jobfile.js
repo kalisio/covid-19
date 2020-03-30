@@ -43,6 +43,14 @@ regionsData.forEach(region => {
     }
   })
 })
+// Add SPF source
+tasks.push({
+  id: `spf-donnees-hospitalieres-${date.format('MM-DD-YYYY')}.yaml`,
+  type: 'store',
+  options: {
+    store: 'spf'
+  }
+})
 
 module.exports = {
   id: (program.geometry === 'Point' ? 'departements-france-' : 'departements-france-polygons-') + `${date.format('YYYY-MM-DD')}`,
@@ -69,6 +77,10 @@ module.exports = {
         }, {
           id: 'fs',
           options: { path: path.join(__dirname, 'departements-france') }
+        }, {
+          id: 'spf',
+          type: 'fs',
+          options: { path: path.join(__dirname, 'spf-donnees-hospitalieres') }
         },
         {
           id: 's3',
@@ -113,7 +125,6 @@ module.exports = {
         },
         writeJsonS3: {
           hook: 'writeJson',
-          predicate: (item) => process.env.S3_BUCKET,
           store: 's3',
           key: `covid-19/departements-france/<%= id %>.json`,
           storageOptions: {
@@ -121,7 +132,7 @@ module.exports = {
           }
         },
         clearOutputs: {},
-        removeStores: ['memory', 'fs', 's3']
+        removeStores: ['memory', 'fs', 'spf', 's3']
       }
     }
   }

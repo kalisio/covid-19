@@ -1,9 +1,12 @@
 # Données cartographiques concernant l'épidémie de COVID-19
 
-L'information officielle sur la progression de l'épidémie en France est assez fragmentée. Différentes initiatives tentent de structurer celle-ci sous forme de données libres. Malgré ce travail les données sont néanmoins souvent difficilement
-exploitables à l'état brut au sein d'outils cartographiques.
+L'information officielle sur la progression de l'épidémie en France a été au départ assez fragmentée. Différentes initiatives ont tenté de structurer celle-ci sous forme de données libres. Malgré ce travail les données ont été néanmoins souvent difficilement exploitables à l'état brut au sein d'outils cartographiques.
 
 L'objectif de ce dépôt est de consolider l'information et de la rendre disponible dans des formats ouverts et aisément réutilisables pour produire des cartes. Le format pivot privilégié est le [GeoJson](https://fr.wikipedia.org/wiki/GeoJSON).
+
+L'information officielle sur la progression de l’épidémie en France est consolidée par <a href='https://www.santepubliquefrance.fr'>Santé publique France</a>. L’agence propose un <a href='https://www.santepubliquefrance.fr/maladies-et-traumatismes/maladies-et-infections-respiratoires/infection-a-coronavirus/articles/infection-au-nouveau-coronavirus-sars-cov-2-covid-19-france-et-monde'>point épidémiologique quotidien</a>, qui comprend les chiffres-clés nationaux. Par ailleurs, les <a href="https://www.ars.sante.fr">Agences Régionales de Santé</a>, les <a href="http://www.prefectures-regions.gouv.fr">préfectures de régions</a> et les <a href="https://www.interieur.gouv.fr/Le-ministere/Prefectures">préfectures</a> publient des bulletins d’informations centrés sur leur territoire de compétence.
+
+Sous l'impulsion des initiatives libres telles que <a href='https://github.com/opencovid19-fr'>OpenCovid19</a>, Santé publique France propose également des <a href='https://www.data.gouv.fr/fr/organizations/sante-publique-france/'>données relatives à l’épidémie plus précises</a> sur la plateforme <a href='https://www.data.gouv.fr'>www.data.gouv.fr</a>. Un outil <a href='https://github.com/etalab/covid19-dashboard'>dont le code source est libre</a>, développé sous l’impulsion d’<a target='_top' href='https://www.etalab.gouv.fr'>Etalab</a>, au sein de la <a href='https://www.numerique.gouv.fr/dinum/'>direction interministérielle du numérique</a>, propose une vision consolidée des données officielles disponibles.
 
 ## Comment contribuer ?
 
@@ -26,6 +29,7 @@ Nos principales sources de données sont les suivantes:
   * https://github.com/CSSEGISandData/COVID-19
 * niveau national
   * données régionales/départementales https://github.com/opencovid19-fr/data
+  * données départementales https://www.data.gouv.fr/fr/organizations/sante-publique-france
   * données individualisée https://github.com/lperez31/coronavirus-france-dataset
 * croisements géographiques
   * contours administratifs nationaux https://github.com/gregoiredavid/france-geojson

@@ -40,6 +40,10 @@ module.exports = {
           hook: 'runCommand',
           command: `krawler csse-jobfile.js --port 3031 --date <%= date.format('YYYY-MM-DD') %>`
         },
+        spf: {
+          hook: 'runCommand',
+          command: `krawler spf-donnees-hospitalieres-jobfile.js --port 3031 --date <%= date.format('YYYY-MM-DD') %>`
+        },
         regionsPoint: {
           hook: 'runCommand',
           command: `krawler france-regions-jobfile.js --port 3031 --geometry Point --date <%= date.format('YYYY-MM-DD') %>`
