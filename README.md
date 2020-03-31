@@ -126,6 +126,8 @@ Les données sont scrappées via [Krawler](https://kalisio.github.io/krawler/) e
 
 Les données disponibles ne sont réellement significative qu'à partir du 1er Mars 2020. Un job Krawler est responsable de la production de chaque jeu de données à une date fixée (i.e. statistiques par département, statistiques par région, patients). Certains jobs sont interdépendants, par exemple les jobs des statistiques par département/région dépendent de l'exécution préalable du job de génération des données hospitalières Santé Publique France. Le job `generate-data-jobfile` permet de lancer tous les jobs dans le bon ordre pour générer tous les jeux de données sur une période.
 
+**Lorsque certains indicateurs (e.g. les des cas confirmés) manquent à une date donnée nous avons fait le choix de combler le trou en réutilisant la valeur de la date précédente. Merci de tenir compte de cette hypothèse dans vos réutilisation.**
+
 **Certains indicateurs (e.g. les des cas confirmés) peuvent ne plus être pertinents à partir d'une certaine période et donc ne plus être communiqués par les pouvoirs publics, sauf par exemple au niveau national.**
 
 Nous faisons évoluer nos outils en fonction des besoins, aussi il faut utiliser la version en cours de développement (branche master) et non des version stables. Pour Kano il vous faudra par exemple faire un [yarn/npm link](https://docs.npmjs.com/cli/link) comme tout développeur travaillant sur ce projet.
