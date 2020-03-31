@@ -8,6 +8,8 @@ L'information officielle sur la progression de l’épidémie en France est cons
 
 Sous l'impulsion des initiatives libres telles que <a href='https://github.com/opencovid19-fr'>OpenCovid19</a>, Santé publique France propose également des <a href='https://www.data.gouv.fr/fr/organizations/sante-publique-france/'>données relatives à l’épidémie plus précises</a> sur la plateforme <a href='https://www.data.gouv.fr'>www.data.gouv.fr</a>. Un outil <a href='https://github.com/etalab/covid19-dashboard'>dont le code source est libre</a>, développé sous l’impulsion d’<a target='_top' href='https://www.etalab.gouv.fr'>Etalab</a>, au sein de la <a href='https://www.numerique.gouv.fr/dinum/'>direction interministérielle du numérique</a>, propose une vision consolidée des données officielles disponibles.
 
+**A partir du 25/03 devant l'ampleur de la contamination l'indicateur des cas confirmés n'étant plus pertinent il n'est généralement plus communiqué par les pouvoirs publics, sauf au niveau national.**
+
 ## Comment contribuer ?
 
 Vous pouvez vous proposer comme volontaire pour tester nos scrappeurs, les améliorer, utiliser nos données ou réaliser de nouveaux jeux de données.
@@ -118,9 +120,13 @@ Carte de densité des cas par département:
 
 Si vous souhaitez référencer les jeux de données directement plutôt que de les copier utiliser plutôt notre bucket S3 sur AWS, le chemin vers les fichiers reste le même en préfixant par la racine `https://s3.eu-central-1.amazonaws.com/krawler/`. Par exemple l'URL vers le fichier des patients en france est `https://s3.eu-central-1.amazonaws.com/krawler/covid-19/patients-france/patients-france.json`.
 
-## Outils
+## Génération des jeux données
 
 Les données sont scrappées via [Krawler](https://kalisio.github.io/krawler/) et peuvent être visualisées via [Kano](https://kalisio.github.io/kano/) ou tout autre outil SIG standard comme [geojson.io](http://geojson.io/), [QGIS](https://www.qgis.org/fr/site/), etc.
+
+Les données disponibles ne sont réellement significative qu'à partir du 1er Mars 2020. Un job Krawler est responsable de la production de chaque jeu de données à une date fixée (i.e. statistiques par département, statistiques par région, patients). Certains jobs sont interdépendants, par exemple les jobs des statistiques par département/région dépendent de l'exécution préalable du job de génération des données hospitalières Santé Publique France. Le job `generate-data-jobfile` permet de lancer tous les jobs dans le bon ordre pour générer tous les jeux de données sur une période.
+
+**Certains indicateurs (e.g. les des cas confirmés) peuvent ne plus être pertinents à partir d'une certaine période et donc ne plus être communiqués par les pouvoirs publics, sauf par exemple au niveau national.**
 
 Nous faisons évoluer nos outils en fonction des besoins, aussi il faut utiliser la version en cours de développement (branche master) et non des version stables. Pour Kano il vous faudra par exemple faire un [yarn/npm link](https://docs.npmjs.com/cli/link) comme tout développeur travaillant sur ce projet.
 
@@ -136,14 +142,26 @@ yarn link
 git clone https://github.com/kalisio/covid-19.git
 cd covid-19
 export NODE_PATH="path_to_krawler/node_modules"
-krawler france-patients-jobfile.js
-krawler france-patients-jobfile.js --departements
+// Run job to generate all data for all dates in a period
+// By default will start on 2020-03-01 and finish on yesterday
+krawler generate-data-jobfile.js --start 2020-03-01 --end 2020-03-30
+```
+
+Vous pouvez aussi lancer chaque job de façon individuelle:
+```bash
+// Run job to generate SPF data (to be done first)
+krawler spf-donnees-hospitalieres-jobfile.js --date 2020-03-01
+// Run job to generate departements data
 krawler france-departements-jobfile.js --date 2020-03-01 --geometry 'Point' ou 'Polygon'
 ...
 krawler france-departements-jobfile.js --date 2020-03-16 --geometry 'Point' ou 'Polygon'
+// Run job to generate regions data
 krawler france-regions-jobfile.js --date 2020-03-01 --geometry 'Point' ou 'Polygon'
 ...
 krawler france-regions-jobfile.js --date 2020-03-16 --geometry 'Point' ou 'Polygon'
+// Run job to generate patients data
+krawler france-patients-jobfile.js
+krawler france-patients-jobfile.js --departements
 ```
 
 Pour Kano:

@@ -38,26 +38,32 @@ module.exports = {
       after: {
         csse: {
           hook: 'runCommand',
+          stdout: true, stderr: true,
           command: `krawler csse-jobfile.js --port 3031 --date <%= date.format('YYYY-MM-DD') %>`
         },
         spf: {
           hook: 'runCommand',
+          stdout: true, stderr: true,
           command: `krawler spf-donnees-hospitalieres-jobfile.js --port 3031 --date <%= date.format('YYYY-MM-DD') %>`
         },
         regionsPoint: {
           hook: 'runCommand',
+          stdout: true, stderr: true,
           command: `krawler france-regions-jobfile.js --port 3031 --geometry Point --date <%= date.format('YYYY-MM-DD') %>`
         },
         regionsPolygon: {
           hook: 'runCommand',
+          stdout: true, stderr: true,
           command: `krawler france-regions-jobfile.js --port 3031 --geometry Polygon --date <%= date.format('YYYY-MM-DD') %>`
         },
         departementsPoint: {
           hook: 'runCommand',
+          stdout: true, stderr: true,
           command: `krawler france-departements-jobfile.js --port 3031 --geometry Point --date <%= date.format('YYYY-MM-DD') %>`
         },
         departementsPolygon: {
           hook: 'runCommand',
+          stdout: true, stderr: true,
           command: `krawler france-departements-jobfile.js --port 3031 --geometry Polygon --date <%= date.format('YYYY-MM-DD') %>`
         }
       }
