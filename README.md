@@ -70,7 +70,7 @@ Chaque élément cartographique peut contenir les propriétés suivantes:
 * `Beds` Lits hospitaliers
   * `Total` - Ensemble
   * `Resuscitation` - Réanimation
-  * `IntensiveCare` - Soins intensifs
+  * `IntensiveCare` - Soins intensifs et continus
 
 Les principales données produites sont les suivantes:
 
