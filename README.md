@@ -21,7 +21,7 @@ Quelques idées:
 * ~~croisement avec des données de population~~
 * ~~croisement avec des données hospitalières (nombre de lits, etc.)~~ => fait via SAE 2018
 * ~~intégrer les [données hospitalières](https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/) de Santé Publique France remontées au niveau départemental~~
-* intégrer les [données des urgences et SOS médecins](https://github.com/opencovid19-fr/data/tree/master/data-sources/sante-publique-france) de Santé Publique France remontées au niveau départemental
+* intégrer les [données des urgences et SOS médecins](https://www.data.gouv.fr/fr/datasets/donnees-des-urgences-hospitalieres-et-de-sos-medecins-relatives-a-lepidemie-de-covid-19/) de Santé Publique France remontées au niveau départemental
 * géolocalisation des données des patients au niveau communal (pour l'instant très peu de données)
 * consitution de collections MongoDB pour visualisation spatio-temporelle dans Kano (eg séries temporelles)
 
