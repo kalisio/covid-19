@@ -51,10 +51,10 @@ module.exports = {
             dc: 'deces'
           },
           unitMapping: {
-            hospitalises: { asNumber: true },
-            reanimation: { asNumber: true },
-            gueris: { asNumber: true },
-            deces: { asNumber: true }
+            hospitalises: { asNumber: true, empty: 0 },
+            reanimation: { asNumber: true, empty: 0 },
+            gueris: { asNumber: true, empty: 0 },
+            deces: { asNumber: true, empty: 0 }
           },
           pick: ['code', 'hospitalises', 'reanimation', 'gueris', 'deces'],
           outputPath: 'donneesDepartementales'

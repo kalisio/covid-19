@@ -21,7 +21,7 @@ Quelques idées:
 * ~~croisement avec des données de population~~
 * ~~croisement avec des données hospitalières (nombre de lits, etc.)~~ => fait via SAE 2018
 * ~~intégrer les [données hospitalières](https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/) de Santé Publique France remontées au niveau départemental~~
-* intégrer les [données des urgences et SOS médecins](https://www.data.gouv.fr/fr/datasets/donnees-des-urgences-hospitalieres-et-de-sos-medecins-relatives-a-lepidemie-de-covid-19/) de Santé Publique France remontées au niveau départemental
+* ~~intégrer les [données des urgences et SOS médecins](https://www.data.gouv.fr/fr/datasets/donnees-des-urgences-hospitalieres-et-de-sos-medecins-relatives-a-lepidemie-de-covid-19/) de Santé Publique France remontées au niveau départemental~~
 * géolocalisation des données des patients au niveau communal (pour l'instant très peu de données)
 * consitution de collections MongoDB pour visualisation spatio-temporelle dans Kano (eg séries temporelles)
 
@@ -60,6 +60,13 @@ Chaque élément cartographique peut contenir les propriétés suivantes:
 * `Recovered` nombre cumulé de guérisons
 * `Severe` nombre de cas hospitalisés à date
 * `Critical` nombre de cas en réanimation à date
+* `Emergencies`
+  * `Total` - nombre de passages aux urgences total
+  * `Suspected` - nombre de passages aux urgences pour suspicion COVID-19 à date
+  * `Severe` - nombre d'hospitalisations parmi les passages aux urgences pour suspicion COVID-19 à date
+* `MedicalActs`
+  * `Total` - nombres d'actes médicaux SOS Médecins total à date
+  * `Suspected` - nombres d'actes médicaux SOS Médecins pour suspicion de COVID-19 à date
 * `Population`
   * `Total` - Ensemble
   * `Under19` - 0 à 19 ans

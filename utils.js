@@ -37,19 +37,25 @@ const properties = {
   deces: 'Deaths',
   gueris: 'Recovered',
   hospitalises: 'Severe',
-  reanimation: 'Critical'
+  reanimation: 'Critical',
+  urgences: 'Emergencies.Suspected',
+  urgencesTotal: 'Emergencies.Total',
+  urgencesHospitalises: 'Emergencies.Severe',
+  actes: 'MedicalActs.Suspected',
+  actesTotal: 'MedicalActs.Total'
 }
 
 // Counters
 let N = {}
 _.forOwn(properties, (value, key) => {
-  N[value] = 0
+  _.set(N, value, 0)
 })
 
 function max(matches, property) {
   let max = _.maxBy(matches, property)
-  max = (max ? max[property] : 0)
-  N[properties[property]] += max
+  max = (max ? _.get(max, property) : 0)
+  const n = _.get(N, properties[property])
+  _.set(N, properties[property], n + max)
   return max
 }
     
@@ -118,7 +124,7 @@ module.exports = {
       // Find corresponding data, we use region number
       const matches = data.filter(matcher(feature))
       if (matches.length) {
-        console.log(`Found matching element with code ${feature.properties.code}`)
+        console.log(`Found ${matches.length} matching elements with code ${feature.properties.code}`)
         count++
         feature.match = {}
         // Iterate over data properties
@@ -126,7 +132,7 @@ module.exports = {
           // Keep track of max value
           const n = max(matches, key)
           if (n) {
-            feature.match[value] = n
+            _.set(feature.match, value, n)
             console.log(`Found ${n} ${value}`)
           }
         })
@@ -134,7 +140,8 @@ module.exports = {
     })
     console.log(`Found data for ${count} elements on ${nbElements} elements`)
     _.forOwn(properties, (value, key) => {
-      console.log(`Found a total of ${N[value]} ${value}`)
+      const n = _.get(N, value)
+      console.log(`Found a total of ${n} ${value}`)
     })
     // Update data in-place
     data.splice(0, data.length)
@@ -144,6 +151,7 @@ module.exports = {
         data.push(Object.assign({
           'Country/Region': 'France',
           'Province/State': feature.properties.nom,
+          'Code': feature.properties.code,
           Population: feature.Population,
           Beds: feature.Beds,
           geometry: feature.geometry,
@@ -165,16 +173,20 @@ module.exports = {
       if (!data) {
         // Iterate over properties
         _.forOwn(properties, (value, key) => {
-          if (feature.properties[value]) N[value] += feature.properties[value]
+          if (feature.properties[value]) {
+            const n = _.get(N, value)
+            _.set(N, value, n + _.get(feature.properties, value))
+          }
         })
         features.push(feature)
       } else { // Otherwise keep track of max values
         // Iterate over properties
         _.forOwn(properties, (value, key) => {
-          if (feature.properties[value]) {
-            if (data.properties[value] && (feature.properties[value] <= data.properties[value])) return
-            N[value] += (feature.properties[value] - (data.properties[value] || 0))
-            data.properties[value] = feature.properties[value]
+          if (_.get(feature.properties, value)) {
+            if (_.get(data.properties, value) && (_.get(feature.properties, value) <= _.get(data.properties, value))) return
+            const n = _.get(N, value)
+            _.set(N, value, n + (_.get(feature.properties, value) - _.get(data.properties, value, 0)))
+            _.set(data.properties, value, _.get(feature.properties, value))
           }
         })
       }

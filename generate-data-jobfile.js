@@ -41,10 +41,15 @@ module.exports = {
           stdout: true, stderr: true,
           command: `krawler csse-jobfile.js --port 3031 --date <%= date.format('YYYY-MM-DD') %>`
         },
-        spf: {
+        spfHospitalieres: {
           hook: 'runCommand',
           stdout: true, stderr: true,
           command: `krawler spf-donnees-hospitalieres-jobfile.js --port 3031 --date <%= date.format('YYYY-MM-DD') %>`
+        },
+        spfUrgences: {
+          hook: 'runCommand',
+          stdout: true, stderr: true,
+          command: `krawler spf-donnees-urgences-sos-medecins-jobfile.js --port 3031 --date <%= date.format('YYYY-MM-DD') %>`
         },
         regionsPoint: {
           hook: 'runCommand',

@@ -52,10 +52,17 @@ tasks.push({
   }
 })
 tasks.push({
-  id: `spf-donnees-hospitalieres-${date.format('MM-DD-YYYY')}.yaml`,
+  id: `spf-donnees-hospitalieres/spf-donnees-hospitalieres-${date.format('MM-DD-YYYY')}.yaml`,
   type: 'store',
   options: {
-    store: 'spf'
+    store: 'fs'
+  }
+})
+tasks.push({
+  id: `spf-donnees-urgences-sos-medecins/spf-donnees-urgences-sos-medecins-${date.format('MM-DD-YYYY')}.yaml`,
+  type: 'store',
+  options: {
+    store: 'fs'
   }
 })
 
@@ -82,11 +89,7 @@ module.exports = {
           id: 'memory'
         }, {
           id: 'fs',
-          options: { path: path.join(__dirname, 'regions-france') }
-        }, {
-          id: 'spf',
-          type: 'fs',
-          options: { path: path.join(__dirname, 'spf-donnees-hospitalieres') }
+          options: { path: __dirname }
         },
         {
           id: 's3',
@@ -120,14 +123,16 @@ module.exports = {
               utils.processPreviousData(data.features, yesterday.features)
               console.log(`Data processed for ${data.features.length} regions on ${regions.features.length} regions`)
               _.forOwn(utils.properties, (value, key) => {
-                console.log(`Found a total of ${utils.N[value]} ${value}`)
+                const n = _.get(utils.N, value)
+                console.log(`Found a total of ${n} ${value}`)
               })
             }
           }
         },
         writeJsonFS: {
           hook: 'writeJson',
-          store: 'fs'
+          store: 'fs',
+          key: `regions-france/<%= id %>.json`
         },
         writeJsonS3: {
           hook: 'writeJson',
@@ -138,7 +143,7 @@ module.exports = {
           }
         },
         clearOutputs: {},
-        removeStores: ['memory', 'fs', 'spf', 's3']
+        removeStores: ['memory', 'fs', 's3']
       }
     }
   }
