@@ -55,11 +55,11 @@ SELECT departement, libdepartement, sum(LIT) AS lits
 Chaque élément cartographique peut contenir les propriétés suivantes:
 * `Country/Region` Pays/Région de provenance
 * `Province/State` Etat/Département de provenance
-* `Confirmed` nombre de cas confirmés
-* `Deaths` nombre de décès confirmés
-* `Recovered` nombre de guérisons confirmées
-* `Severe` nombre de cas hospitalisés
-* `Critical` nombre de cas en réanimation
+* `Confirmed` nombre cumulé de cas confirmés
+* `Deaths` nombre cumulé de décès
+* `Recovered` nombre cumulé de guérisons
+* `Severe` nombre de cas hospitalisés à date
+* `Critical` nombre de cas en réanimation à date
 * `Population`
   * `Total` - Ensemble
   * `Under19` - 0 à 19 ans
