@@ -61,7 +61,7 @@ Chaque élément cartographique peut contenir les propriétés suivantes:
 * `Severe` nombre de cas hospitalisés à date
 * `Critical` nombre de cas en réanimation à date
 * `Emergencies`
-  * `Total` - nombre de passages aux urgences total
+  * `Total` - nombre de passages aux urgences total à date
   * `Suspected` - nombre de passages aux urgences pour suspicion COVID-19 à date
   * `Severe` - nombre d'hospitalisations parmi les passages aux urgences pour suspicion COVID-19 à date
 * `MedicalActs`
