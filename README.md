@@ -82,7 +82,7 @@ Chaque élément cartographique peut contenir les propriétés suivantes:
 Les principales données produites sont les suivantes:
 
 * données journalières par région consolidées au niveau national :open_file_folder: [regions-france](./regions-france)
-  * issues des données des [Agences Régionales de Santé](https://github.com/opencovid19-fr/data/tree/master/agences-regionales-sante) et de [Santé Publique France](https://github.com/opencovid19-fr/data/tree/master/sante-publique-france)
+  * issues des données des [Agences Régionales de Santé](https://github.com/opencovid19-fr/data/tree/master/agences-regionales-sante) et de [Santé Publique France](https://www.data.gouv.fr/fr/organizations/sante-publique-france/)
   * croisement géographique par région réalisé sur la base du code de région
   * polygones (fichiers préfixés par `polygons`) ou géolocalisation des données au barycentre de la région pour la constitution d'[heatmaps](https://fr.wikipedia.org/wiki/Heat_map)
 
@@ -102,7 +102,7 @@ Carte évolutive des cas en régions, taille des bulles liée au nombre de cas p
 Voir la [vidéo originale](https://drive.google.com/file/d/1tcD_34txCr8I-5L_EVor-sQPO4xm_YQh/view).
 
 * données journalières par département consolidées au niveau national :open_file_folder: [departements-france](./departements-france)
-  * issues des données des [Agences Régionales de Santé](https://github.com/opencovid19-fr/data/tree/master/agences-regionales-sante)
+  * issues des données des [Agences Régionales de Santé](https://github.com/opencovid19-fr/data/tree/master/agences-regionales-sante) et de [Santé Publique France](https://www.data.gouv.fr/fr/organizations/sante-publique-france/)
   * croisement géographique par département réalisé sur la base du code de département
   * polygones (fichiers préfixés par `polygons`) ou géolocalisation des données au barycentre du département pour la constitution d'[heatmaps](https://fr.wikipedia.org/wiki/Heat_map)
 
