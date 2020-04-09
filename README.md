@@ -102,6 +102,7 @@ Carte évolutive des cas en régions, taille des bulles liée au nombre de cas p
 Voir la [vidéo originale](https://drive.google.com/file/d/1tcD_34txCr8I-5L_EVor-sQPO4xm_YQh/view).
 
 Carte évolutive des cas hospitalisations en régions, hauteur et couleur des formes 3D liées au nombre de cas sévères pondéré par la population:
+
 ![Carte évolutive des cas en régions pondérés selon la population](Kano-Covid-19-Régions-France-Hospitalisations-Population-3D.gif)
 
 Voir la [vidéo originale](https://drive.google.com/file/d/1uNqU9opcMAPYbmaeZWa-aDtfwMw3_kSI/view).
