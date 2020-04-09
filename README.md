@@ -101,6 +101,11 @@ Carte évolutive des cas en régions, taille des bulles liée au nombre de cas p
 
 Voir la [vidéo originale](https://drive.google.com/file/d/1tcD_34txCr8I-5L_EVor-sQPO4xm_YQh/view).
 
+Carte évolutive des cas hospitalisations en régions, hauteur et couleur des formes 3D liées au nombre de cas sévères pondéré par la population:
+![Carte évolutive des cas en régions pondérés selon la population](Kano-Covid-19-Régions-France-Hospitalisations-Population-3D.gif)
+
+Voir la [vidéo originale](https://drive.google.com/file/d/1uNqU9opcMAPYbmaeZWa-aDtfwMw3_kSI/view).
+
 * données journalières par département consolidées au niveau national :open_file_folder: [departements-france](./departements-france)
   * issues des données des [Agences Régionales de Santé](https://github.com/opencovid19-fr/data/tree/master/agences-regionales-sante) et de [Santé Publique France](https://www.data.gouv.fr/fr/organizations/sante-publique-france/)
   * croisement géographique par département réalisé sur la base du code de département
@@ -234,7 +239,7 @@ Exemple de configuration d'un affichage de bulles d'information par région:
 }
 ```
 
-Exemple de configuration d'un affichage coloré dépendant du ration de cas/lits par région:
+Exemple de configuration d'un affichage coloré dépendant du ratio de cas/lits par région:
 ```js
 {
   name: 'COVID-19 (Regions)',
@@ -297,6 +302,47 @@ Exemple de configuration d'une heatmap:
     max: 100,
     // The higher the blur factor is, the smoother the gradients will be
     blur: 0.8
+  }
+}
+```
+
+Exemple de configuration d'un affichage 3D coloré et extrudé dépendant du ratio de cas sévères/population par région:
+```js
+{
+  name: 'COVID-19 (Regions)',
+  description: 'Cases by regions in France',
+  tags: [ 'business' ],
+  icon: 'fas fa-atlas',
+  attribution: '',
+  type: 'OverlayLayer',
+  featureId: 'Province/State',
+  cesium: {
+    type: 'geoJson',
+    realtime: true,
+    sourceTemplate: `${s3Url}/krawler/covid-19/regions-france/regions-france-polygons-<%= time.format('YYYY-MM-DD') %>.json`,
+    entityStyle: {
+      polygon: {
+        height: 0,
+        outline: false,
+        extrudedHeight: '<%= 100 * (properties.Severe || 0) / (properties.Population.Total * 0.000001) %>',
+        material : {
+            type : 'ColorMaterialProperty',
+            options : {
+                type : 'Color',
+                options : [ 
+                    '<%= 1 - Math.min(0.25 + 0.001 * (properties.Severe || 0) / (properties.Population.Total * 0.000001), 1) %>', 
+                    0, 
+                    0.75, 
+                    1
+                ]
+            }
+        }
+      },
+      template: ['polygon.extrudedHeight', 'polygon.material.options.options[0]']
+    },
+    tooltip: {
+      template: `<%= properties['Province/State'] %>\n<% if (properties.Severe) { %> <%= properties.Severe %> hospitalisations<% } %>`
+    }
   }
 }
 ```
