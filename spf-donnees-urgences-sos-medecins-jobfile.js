@@ -81,6 +81,16 @@ module.exports = {
               }, entries.shift()))
               else if (entries.length > 0) data.donneesRegionales.push(Object.assign({ code: key }, _.omit(entries[0], ['code'])))
             })
+            data.donneesNationales = {}
+            if (data.donneesRegionales.length > 0) data.donneesNationales = _.reduce(_.tail(data.donneesRegionales), (total, entry) => {
+              return {
+                urgences: total.urgences + entry.urgences,
+                urgencesTotal: total.urgencesTotal + entry.urgencesTotal,
+                urgencesHospitalises: total.urgencesHospitalises + entry.urgencesHospitalises,
+                actes: total.actes + entry.actes,
+                actesTotal: total.actesTotal + entry.actesTotal
+              }
+            }, _.head(data.donneesRegionales))
           }
         },
         writeYAML: {

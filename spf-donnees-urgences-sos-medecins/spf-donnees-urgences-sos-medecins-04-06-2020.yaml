@@ -336,9 +336,9 @@ donneesDepartementales:
     actes: 0
     actesTotal: 0
   - code: '56'
-    urgences: 32
-    urgencesTotal: 226
-    urgencesHospitalises: 2
+    urgences: 19
+    urgencesTotal: 255
+    urgencesHospitalises: 6
     actes: 0
     actesTotal: 39
   - code: '57'
@@ -409,7 +409,7 @@ donneesDepartementales:
     actesTotal: 238
   - code: '68'
     urgences: 50
-    urgencesTotal: 278
+    urgencesTotal: 277
     urgencesHospitalises: 31
     actes: 29
     actesTotal: 103
@@ -487,7 +487,7 @@ donneesDepartementales:
     actesTotal: 150
   - code: '81'
     urgences: 21
-    urgencesTotal: 147
+    urgencesTotal: 149
     urgencesHospitalises: 5
     actes: 0
     actesTotal: 0
@@ -554,7 +554,7 @@ donneesDepartementales:
   - code: '92'
     urgences: 115
     urgencesTotal: 482
-    urgencesHospitalises: 47
+    urgencesHospitalises: 46
     actes: 0
     actesTotal: 0
   - code: '93'
@@ -609,7 +609,7 @@ donneesRegionales:
   - code: '11'
     urgences: 1302
     urgencesTotal: 4383
-    urgencesHospitalises: 482
+    urgencesHospitalises: 481
     actes: 212
     actesTotal: 1076
   - code: '24'
@@ -638,7 +638,7 @@ donneesRegionales:
     actesTotal: 557
   - code: '44'
     urgences: 359
-    urgencesTotal: 2048
+    urgencesTotal: 2047
     urgencesHospitalises: 188
     actes: 116
     actesTotal: 543
@@ -649,9 +649,9 @@ donneesRegionales:
     actes: 41
     actesTotal: 320
   - code: '53'
-    urgences: 104
-    urgencesTotal: 1222
-    urgencesHospitalises: 46
+    urgences: 91
+    urgencesTotal: 1251
+    urgencesHospitalises: 50
     actes: 12
     actesTotal: 229
   - code: '75'
@@ -662,7 +662,7 @@ donneesRegionales:
     actesTotal: 770
   - code: '76'
     urgences: 198
-    urgencesTotal: 2172
+    urgencesTotal: 2174
     urgencesHospitalises: 96
     actes: 38
     actesTotal: 249
@@ -714,3 +714,9 @@ donneesRegionales:
     urgencesHospitalises: 5
     actes: 0
     actesTotal: 0
+donneesNationales:
+  urgences: 3748
+  urgencesTotal: 24285
+  urgencesHospitalises: 1612
+  actes: 926
+  actesTotal: 5814
