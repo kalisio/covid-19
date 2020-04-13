@@ -43,7 +43,7 @@ regionsData.forEach(region => {
     }
   })
 })
-// Add SPF source
+// Add SPF sources
 tasks.push({
   id: `spf-donnees-hospitalieres/spf-donnees-hospitalieres-${date.format('MM-DD-YYYY')}.yaml`,
   type: 'store',
@@ -53,6 +53,13 @@ tasks.push({
 })
 tasks.push({
   id: `spf-donnees-urgences-sos-medecins/spf-donnees-urgences-sos-medecins-${date.format('MM-DD-YYYY')}.yaml`,
+  type: 'store',
+  options: {
+    store: 'fs'
+  }
+})
+tasks.push({
+  id: `spf-donnees-laboratoires/spf-donnees-laboratoires-${date.format('MM-DD-YYYY')}.yaml`,
   type: 'store',
   options: {
     store: 'fs'

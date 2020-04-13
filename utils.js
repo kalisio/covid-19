@@ -42,8 +42,12 @@ const properties = {
   urgencesTotal: 'Emergencies.Total',
   urgencesHospitalises: 'Emergencies.Severe',
   actes: 'MedicalActs.Suspected',
-  actesTotal: 'MedicalActs.Total'
+  actesTotal: 'MedicalActs.Total',
+  testsLaboratoire: 'MedicalTests.Total',
+  casConfirmesLaboratoire: 'MedicalTests.Confirmed'
 }
+// List of cumulative indicators
+const cumulativeProperties = ['Confirmed', 'Deaths', 'Recovered', 'Severe', 'Critical']
 
 // Counters
 let N = {}
@@ -169,24 +173,40 @@ module.exports = {
       const data = features.find(element =>
         _.get(element, 'properties.Province/State') === _.get(feature, 'properties.Province/State'))
       console.log(`Merging data of ${_.get(feature, 'properties.Province/State')} with previously found elements`)
-      // Use previous data if none found
+      // Use previous data if none found but only for cumulative indicators
       if (!data) {
         // Iterate over properties
         _.forOwn(properties, (value, key) => {
-          if (feature.properties[value]) {
-            const n = _.get(N, value)
-            _.set(N, value, n + _.get(feature.properties, value))
+          if (cumulativeProperties.includes(value)) {
+            if (feature.properties[value]) {
+              const n = _.get(N, value)
+              _.set(N, value, n + _.get(feature.properties, value))
+            }
+          } else {
+            _.unset(feature.properties, value) 
           }
         })
         features.push(feature)
-      } else { // Otherwise keep track of max values
+      } else { // Otherwise keep track of max/accumulated values
         // Iterate over properties
         _.forOwn(properties, (value, key) => {
-          if (_.get(feature.properties, value)) {
-            if (_.get(data.properties, value) && (_.get(feature.properties, value) <= _.get(data.properties, value))) return
-            const n = _.get(N, value)
-            _.set(N, value, n + (_.get(feature.properties, value) - _.get(data.properties, value, 0)))
-            _.set(data.properties, value, _.get(feature.properties, value))
+          if (cumulativeProperties.includes(value)) {
+            if (_.get(feature.properties, value)) {
+              // Keep max value
+              if (_.get(data.properties, value) && (_.get(feature.properties, value) <= _.get(data.properties, value))) return
+              const n = _.get(N, value)
+              _.set(N, value, n + (_.get(feature.properties, value) - _.get(data.properties, value, 0)))
+              _.set(data.properties, value, _.get(feature.properties, value))
+            }
+          } else {
+            // Compute cumulative values for daily ones
+            const accumulatedValue = `${value}/Accumulated`
+            const n = _.get(data.properties, value, 0)
+            const accumulated = _.get(feature.properties, accumulatedValue, 0)
+            // Accumulate or initialize
+            if (n || accumulated) {
+              _.set(data.properties, accumulatedValue, n + accumulated)
+            }
           }
         })
       }

@@ -61,12 +61,15 @@ Chaque élément cartographique peut contenir les propriétés suivantes:
 * `Severe` nombre de cas hospitalisés à date
 * `Critical` nombre de cas en réanimation à date
 * `Emergencies`
-  * `Total` - nombre de passages aux urgences total à date
-  * `Suspected` - nombre de passages aux urgences pour suspicion COVID-19 à date
-  * `Severe` - nombre d'hospitalisations parmi les passages aux urgences pour suspicion COVID-19 à date
+  * `Total` - nombre de passages quotidiens aux urgences total
+  * `Suspected` - nombre de passages quotidiens aux urgences pour suspicion COVID-19
+  * `Severe` - nombre d'hospitalisations parmi les passages quotidiens aux urgences pour suspicion COVID-19
 * `MedicalActs`
-  * `Total` - nombres d'actes médicaux SOS Médecins total à date
-  * `Suspected` - nombres d'actes médicaux SOS Médecins pour suspicion de COVID-19 à date
+  * `Total` - nombres d'actes médicaux quotidiens SOS Médecins total
+  * `Suspected` - nombres d'actes médicaux quotidiens SOS Médecins pour suspicion de COVID-19
+* `MedicalTests`
+  * `Total` - nombres de tests quotidiens effectués dans un laboratoire d'analyse médicale
+  * `Confirmed` - nombres de tests quotidiens positifs dans un laboratoire d'analyse médicale
 * `Population`
   * `Total` - Ensemble
   * `Under19` - 0 à 19 ans
@@ -79,7 +82,12 @@ Chaque élément cartographique peut contenir les propriétés suivantes:
   * `Resuscitation` - Réanimation
   * `IntensiveCare` - Soins intensifs et continus
 
+Pour chaque indicateur quotidien un indicateur cumulé est automatiquement calculé à partir des valeurs du jour précédent, par exemple il existe une propriété `Emergencies.Suspected/Accumulated` correspondant à la propriété `Emergencies.Suspected`.
+
 Les principales données produites sont les suivantes:
+
+* données journalières par pays au niveau mondial :open_file_folder: [csse_covid_19_daily_reports](./csse_covid_19_daily_reports)
+  * issues des données du [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports)
 
 * données journalières par région consolidées au niveau national :open_file_folder: [regions-france](./regions-france)
   * issues des données des [Agences Régionales de Santé](https://github.com/opencovid19-fr/data/tree/master/agences-regionales-sante) et de [Santé Publique France](https://www.data.gouv.fr/fr/organizations/sante-publique-france/)

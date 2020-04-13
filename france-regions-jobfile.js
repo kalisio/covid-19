@@ -65,6 +65,13 @@ tasks.push({
     store: 'fs'
   }
 })
+tasks.push({
+  id: `spf-donnees-laboratoires/spf-donnees-laboratoires-${date.format('MM-DD-YYYY')}.yaml`,
+  type: 'store',
+  options: {
+    store: 'fs'
+  }
+})
 
 module.exports = {
   id: (program.geometry === 'Point' ? 'regions-france-' : 'regions-france-polygons-') + `${date.format('YYYY-MM-DD')}`,
