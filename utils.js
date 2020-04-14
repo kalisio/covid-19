@@ -49,10 +49,14 @@ const properties = {
 // List of cumulative indicators
 const cumulativeProperties = ['Confirmed', 'Deaths', 'Recovered', 'Severe', 'Critical']
 
+function getAccumulatedValue(value) { return `${value}/Accumulated` }
+
 // Counters
 let N = {}
 _.forOwn(properties, (value, key) => {
   _.set(N, value, 0)
+  // Add cumulated value as well for daily ones
+  if (!cumulativeProperties.includes(value)) _.set(N, getAccumulatedValue(value), 0)
 })
 
 function max(matches, property) {
@@ -65,6 +69,8 @@ function max(matches, property) {
     
 module.exports = {
   properties,
+  cumulativeProperties,
+  getAccumulatedValue,
   N,
   max,
   processAdministrativeData(file, geometry, populationFile, bedsFile, bedsCode) {
@@ -165,53 +171,54 @@ module.exports = {
         //console.log(`Skipping empty data for element with code ${feature.properties.code}`, feature.properties)
       }
     })
-    console.log(`Skipping empty data for ${count} elements`)
+    if (count) console.log(`Skipping empty data for ${count} elements`)
   },
   processPreviousData(features, previousFeatures) {
     const nbInitialElements = features.length
     previousFeatures.forEach(feature => {
       const data = features.find(element =>
         _.get(element, 'properties.Province/State') === _.get(feature, 'properties.Province/State'))
-      console.log(`Merging data of ${_.get(feature, 'properties.Province/State')} with previously found elements`)
       // Use previous data if none found but only for cumulative indicators
       if (!data) {
+        console.log(`Using data of ${_.get(feature, 'properties.Province/State')} from previously found elements`)
         // Iterate over properties
         _.forOwn(properties, (value, key) => {
           if (cumulativeProperties.includes(value)) {
             if (feature.properties[value]) {
-              const n = _.get(N, value)
-              _.set(N, value, n + _.get(feature.properties, value))
+              _.set(N, value, _.get(N, value) + _.get(feature.properties, value))
             }
           } else {
-            _.unset(feature.properties, value) 
+            // Remove previous daily value but keep accumulated one
+            _.unset(feature.properties, value)
+            value = getAccumulatedValue(value)
+            _.set(N, value, _.get(N, value) + _.get(feature.properties, value))
           }
         })
         features.push(feature)
       } else { // Otherwise keep track of max/accumulated values
+        console.log(`Merging data of ${_.get(feature, 'properties.Province/State')} with previously found elements`)
         // Iterate over properties
         _.forOwn(properties, (value, key) => {
           if (cumulativeProperties.includes(value)) {
             if (_.get(feature.properties, value)) {
               // Keep max value
               if (_.get(data.properties, value) && (_.get(feature.properties, value) <= _.get(data.properties, value))) return
-              const n = _.get(N, value)
-              _.set(N, value, n + (_.get(feature.properties, value) - _.get(data.properties, value, 0)))
+              _.set(N, value, _.get(N, value) + (_.get(feature.properties, value) - _.get(data.properties, value, 0)))
               _.set(data.properties, value, _.get(feature.properties, value))
             }
           } else {
             // Compute cumulative values for daily ones
-            const accumulatedValue = `${value}/Accumulated`
             const n = _.get(data.properties, value, 0)
-            const accumulated = _.get(feature.properties, accumulatedValue, 0)
+            value = getAccumulatedValue(value)
+            const accumulated = _.get(feature.properties, value, 0)
             // Accumulate or initialize
             if (n || accumulated) {
-              _.set(data.properties, accumulatedValue, n + accumulated)
+              _.set(data.properties, value, n + accumulated)
+              _.set(N, value, _.get(N, value) + n + accumulated)
             }
           }
         })
       }
     })
-    const nbTotalElements = features.length
-    console.log(`Filled data with ${nbTotalElements - nbInitialElements} previously found elements`)
   }
 }

@@ -130,8 +130,13 @@ module.exports = {
               utils.processPreviousData(data.features, yesterday.features)
               console.log(`Data processed for ${data.features.length} regions on ${regions.features.length} regions`)
               _.forOwn(utils.properties, (value, key) => {
-                const n = _.get(utils.N, value)
+                let n = _.get(utils.N, value)
                 console.log(`Found a total of ${n} ${value}`)
+                if (!utils.cumulativeProperties.includes(value)) {
+                  value = utils.getAccumulatedValue(value)
+                  n = _.get(utils.N, value)
+                  console.log(`Found a total of ${n} ${value}`)
+                }
               })
             }
           }
