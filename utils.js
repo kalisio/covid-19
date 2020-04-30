@@ -46,8 +46,10 @@ const properties = {
   testsLaboratoire: 'MedicalTests.Total',
   casConfirmesLaboratoire: 'MedicalTests.Confirmed'
 }
-// List of cumulative indicators
+// List of cumulative indicators, others being daily count
 const cumulativeProperties = ['Confirmed', 'Deaths', 'Recovered', 'Severe', 'Critical']
+// Indicators that can't decrease, used to always keep max value and avoir errors appearing in data
+const increasingCumulativeProperties = ['Confirmed', 'Deaths', 'Recovered']
 
 function getAccumulatedValue(value) { return `${value}/Accumulated` }
 
@@ -201,10 +203,12 @@ module.exports = {
         _.forOwn(properties, (value, key) => {
           if (cumulativeProperties.includes(value)) {
             if (_.get(feature.properties, value)) {
-              // Keep max value
-              if (_.get(data.properties, value) && (_.get(feature.properties, value) <= _.get(data.properties, value))) return
-              _.set(N, value, _.get(N, value) + (_.get(feature.properties, value) - _.get(data.properties, value, 0)))
-              _.set(data.properties, value, _.get(feature.properties, value))
+              // Keep max value for increasing indicators as sometimes we have erroneous data with decreasing values
+              if (increasingCumulativeProperties.includes(value)) {
+                if (_.get(data.properties, value) && (_.get(feature.properties, value) <= _.get(data.properties, value))) return
+                _.set(N, value, _.get(N, value) + (_.get(feature.properties, value) - _.get(data.properties, value, 0)))
+                _.set(data.properties, value, _.get(feature.properties, value))
+              }
             }
           } else {
             // Compute cumulative values for daily ones

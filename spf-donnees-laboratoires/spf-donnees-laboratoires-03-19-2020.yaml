@@ -147,8 +147,8 @@ donneesDepartementales:
     testsLaboratoire: 0
     casConfirmesLaboratoire: 0
   - code: '49'
-    testsLaboratoire: 1
-    casConfirmesLaboratoire: 0
+    testsLaboratoire: 3
+    casConfirmesLaboratoire: 2
   - code: '50'
     testsLaboratoire: 3
     casConfirmesLaboratoire: 1
@@ -322,8 +322,8 @@ donneesRegionales:
     testsLaboratoire: 97
     casConfirmesLaboratoire: 36
   - code: '52'
-    testsLaboratoire: 4
-    casConfirmesLaboratoire: 1
+    testsLaboratoire: 6
+    casConfirmesLaboratoire: 3
   - code: '53'
     testsLaboratoire: 3
     casConfirmesLaboratoire: 1
@@ -358,5 +358,5 @@ donneesRegionales:
     testsLaboratoire: 0
     casConfirmesLaboratoire: 0
 donneesNationales:
-  testsLaboratoire: 1715
-  casConfirmesLaboratoire: 471
+  testsLaboratoire: 1717
+  casConfirmesLaboratoire: 473
