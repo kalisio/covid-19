@@ -219,7 +219,7 @@ yarn run dev
 
 L'ensemble des données est visualisable via un simple drag'n'drop des fichiers dans Kano. Néanmoins pour des visualisations spatio-temporelles avancées comme les heatmaps il vous faudra faire un peu de configuration.
 
-Vous retrouverez dans le fichier :open_file_folder: [kano/local.js](./kano/local.js) des exemples de configuration d'un affichage de bulles d'information par région, d'un affichage coloré dépendant du ratio de cas/lits, d'une heatmap ou encore d'un affichage 3D coloré et extrudé dépendant du ratio de cas sévères/population par région. Ce fichier est à copier dans le dossier :open_file_folder: [api/config](https://github.com/kalisio/kano/tree/master/config) de Kano.
+Vous retrouverez dans le fichier :open_file_folder: [kano/covid19-layers.js](./kano/covid19-layers.js) des exemples de configuration d'un affichage de bulles d'information par région, d'un affichage coloré dépendant du ratio de cas/lits, d'une heatmap ou encore d'un affichage 3D coloré et extrudé dépendant du ratio de cas sévères/population par région. Ce fichier est à copier dans le dossier :open_file_folder: [api/config/layers](https://github.com/kalisio/kano/tree/master/config/layers) de Kano.
 
 ## Licence
 

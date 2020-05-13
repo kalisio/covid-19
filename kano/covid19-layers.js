@@ -1,10 +1,5 @@
-const path = require('path')
-const layers = require('./layers')
-const kargoDomain = (process.env.SUBDOMAIN ? process.env.SUBDOMAIN : 'test.kalisio.xyz')
-const s3Url = (process.env.API_GATEWAY ? 'https://api.' + kargoDomain + '/s3' : 'https://s3.eu-central-1.amazonaws.com')
-
-module.exports = {
-  catalog: { layers: layers.concat([
+module.exports = function ({ wmtsUrl, wmsUrl, wcsUrl, k2Url, s3Url }) {
+  return [
   {
     name: 'COVID-19 (CSSE)',
     description: 'Cases World-wide',
@@ -209,6 +204,5 @@ module.exports = {
       // The higher the blur factor is, the smoother the gradients will be
       blur: 0.8
     }
-  }
-  ])}
+  }]
 }
