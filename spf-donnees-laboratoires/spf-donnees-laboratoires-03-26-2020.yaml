@@ -30,7 +30,7 @@ donneesDepartementales:
     testsLaboratoire: 29
     casConfirmesLaboratoire: 7
   - code: '11'
-    testsLaboratoire: 44
+    testsLaboratoire: 45
     casConfirmesLaboratoire: 4
   - code: '12'
     testsLaboratoire: 4
@@ -57,8 +57,8 @@ donneesDepartementales:
     testsLaboratoire: 14
     casConfirmesLaboratoire: 2
   - code: '21'
-    testsLaboratoire: 7
-    casConfirmesLaboratoire: 1
+    testsLaboratoire: 9
+    casConfirmesLaboratoire: 2
   - code: '22'
     testsLaboratoire: 4
     casConfirmesLaboratoire: 0
@@ -90,7 +90,7 @@ donneesDepartementales:
     testsLaboratoire: 0
     casConfirmesLaboratoire: 0
   - code: '30'
-    testsLaboratoire: 80
+    testsLaboratoire: 81
     casConfirmesLaboratoire: 7
   - code: '31'
     testsLaboratoire: 98
@@ -132,7 +132,7 @@ donneesDepartementales:
     testsLaboratoire: 16
     casConfirmesLaboratoire: 3
   - code: '44'
-    testsLaboratoire: 30
+    testsLaboratoire: 31
     casConfirmesLaboratoire: 5
   - code: '45'
     testsLaboratoire: 74
@@ -204,8 +204,8 @@ donneesDepartementales:
     testsLaboratoire: 69
     casConfirmesLaboratoire: 22
   - code: '68'
-    testsLaboratoire: 89
-    casConfirmesLaboratoire: 41
+    testsLaboratoire: 92
+    casConfirmesLaboratoire: 42
   - code: '69'
     testsLaboratoire: 11
     casConfirmesLaboratoire: 5
@@ -310,8 +310,8 @@ donneesRegionales:
     testsLaboratoire: 274
     casConfirmesLaboratoire: 69
   - code: '27'
-    testsLaboratoire: 185
-    casConfirmesLaboratoire: 42
+    testsLaboratoire: 187
+    casConfirmesLaboratoire: 43
   - code: '28'
     testsLaboratoire: 242
     casConfirmesLaboratoire: 52
@@ -319,10 +319,10 @@ donneesRegionales:
     testsLaboratoire: 284
     casConfirmesLaboratoire: 99
   - code: '44'
-    testsLaboratoire: 379
-    casConfirmesLaboratoire: 134
+    testsLaboratoire: 382
+    casConfirmesLaboratoire: 135
   - code: '52'
-    testsLaboratoire: 45
+    testsLaboratoire: 46
     casConfirmesLaboratoire: 9
   - code: '53'
     testsLaboratoire: 8
@@ -331,7 +331,7 @@ donneesRegionales:
     testsLaboratoire: 300
     casConfirmesLaboratoire: 31
   - code: '76'
-    testsLaboratoire: 687
+    testsLaboratoire: 689
     casConfirmesLaboratoire: 119
   - code: '84'
     testsLaboratoire: 314
@@ -358,5 +358,5 @@ donneesRegionales:
     testsLaboratoire: 0
     casConfirmesLaboratoire: 0
 donneesNationales:
-  testsLaboratoire: 5695
-  casConfirmesLaboratoire: 1566
+  testsLaboratoire: 5703
+  casConfirmesLaboratoire: 1568

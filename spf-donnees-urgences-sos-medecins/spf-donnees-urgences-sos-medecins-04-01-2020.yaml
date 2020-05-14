@@ -482,7 +482,7 @@ donneesDepartementales:
   - code: '80'
     urgences: 30
     urgencesTotal: 192
-    urgencesHospitalises: 13
+    urgencesHospitalises: 12
     actes: 42
     actesTotal: 144
   - code: '81'
@@ -633,7 +633,7 @@ donneesRegionales:
   - code: '32'
     urgences: 279
     urgencesTotal: 1812
-    urgencesHospitalises: 91
+    urgencesHospitalises: 90
     actes: 91
     actesTotal: 504
   - code: '44'
@@ -717,6 +717,6 @@ donneesRegionales:
 donneesNationales:
   urgences: 4020
   urgencesTotal: 22086
-  urgencesHospitalises: 1709
+  urgencesHospitalises: 1708
   actes: 1223
   actesTotal: 6079
