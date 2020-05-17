@@ -21,13 +21,13 @@ donneesDepartementales:
     testsLaboratoire: 0
     casConfirmesLaboratoire: 0
   - code: 08
-    testsLaboratoire: 0
+    testsLaboratoire: 6
     casConfirmesLaboratoire: 0
   - code: 09
     testsLaboratoire: 0
     casConfirmesLaboratoire: 0
   - code: '10'
-    testsLaboratoire: 0
+    testsLaboratoire: 1
     casConfirmesLaboratoire: 0
   - code: '11'
     testsLaboratoire: 1
@@ -36,7 +36,7 @@ donneesDepartementales:
     testsLaboratoire: 0
     casConfirmesLaboratoire: 0
   - code: '13'
-    testsLaboratoire: 15
+    testsLaboratoire: 18
     casConfirmesLaboratoire: 0
   - code: '14'
     testsLaboratoire: 0
@@ -75,7 +75,7 @@ donneesDepartementales:
     testsLaboratoire: 0
     casConfirmesLaboratoire: 0
   - code: '27'
-    testsLaboratoire: 0
+    testsLaboratoire: 2
     casConfirmesLaboratoire: 0
   - code: '28'
     testsLaboratoire: 0
@@ -99,7 +99,7 @@ donneesDepartementales:
     testsLaboratoire: 1
     casConfirmesLaboratoire: 0
   - code: '33'
-    testsLaboratoire: 3
+    testsLaboratoire: 44
     casConfirmesLaboratoire: 0
   - code: '34'
     testsLaboratoire: 73
@@ -129,7 +129,7 @@ donneesDepartementales:
     testsLaboratoire: 0
     casConfirmesLaboratoire: 0
   - code: '43'
-    testsLaboratoire: 1
+    testsLaboratoire: 3
     casConfirmesLaboratoire: 0
   - code: '44'
     testsLaboratoire: 0
@@ -150,7 +150,7 @@ donneesDepartementales:
     testsLaboratoire: 0
     casConfirmesLaboratoire: 0
   - code: '50'
-    testsLaboratoire: 0
+    testsLaboratoire: 28
     casConfirmesLaboratoire: 0
   - code: '51'
     testsLaboratoire: 0
@@ -180,19 +180,19 @@ donneesDepartementales:
     testsLaboratoire: 0
     casConfirmesLaboratoire: 0
   - code: '60'
-    testsLaboratoire: 0
-    casConfirmesLaboratoire: 0
+    testsLaboratoire: 15
+    casConfirmesLaboratoire: 1
   - code: '61'
-    testsLaboratoire: 0
+    testsLaboratoire: 1
     casConfirmesLaboratoire: 0
   - code: '62'
-    testsLaboratoire: 0
+    testsLaboratoire: 1
     casConfirmesLaboratoire: 0
   - code: '63'
     testsLaboratoire: 6
     casConfirmesLaboratoire: 0
   - code: '64'
-    testsLaboratoire: 0
+    testsLaboratoire: 1
     casConfirmesLaboratoire: 0
   - code: '65'
     testsLaboratoire: 0
@@ -204,7 +204,7 @@ donneesDepartementales:
     testsLaboratoire: 0
     casConfirmesLaboratoire: 0
   - code: '68'
-    testsLaboratoire: 0
+    testsLaboratoire: 1
     casConfirmesLaboratoire: 0
   - code: '69'
     testsLaboratoire: 0
@@ -228,19 +228,19 @@ donneesDepartementales:
     testsLaboratoire: 1
     casConfirmesLaboratoire: 0
   - code: '76'
-    testsLaboratoire: 0
+    testsLaboratoire: 1
     casConfirmesLaboratoire: 0
   - code: '77'
-    testsLaboratoire: 0
+    testsLaboratoire: 2
     casConfirmesLaboratoire: 0
   - code: '78'
-    testsLaboratoire: 0
+    testsLaboratoire: 5
     casConfirmesLaboratoire: 0
   - code: '79'
     testsLaboratoire: 0
     casConfirmesLaboratoire: 0
   - code: '80'
-    testsLaboratoire: 0
+    testsLaboratoire: 1
     casConfirmesLaboratoire: 0
   - code: '81'
     testsLaboratoire: 1
@@ -264,7 +264,7 @@ donneesDepartementales:
     testsLaboratoire: 0
     casConfirmesLaboratoire: 0
   - code: '88'
-    testsLaboratoire: 0
+    testsLaboratoire: 1
     casConfirmesLaboratoire: 0
   - code: '89'
     testsLaboratoire: 0
@@ -273,16 +273,16 @@ donneesDepartementales:
     testsLaboratoire: 0
     casConfirmesLaboratoire: 0
   - code: '91'
-    testsLaboratoire: 2
-    casConfirmesLaboratoire: 0
+    testsLaboratoire: 10
+    casConfirmesLaboratoire: 1
   - code: '92'
-    testsLaboratoire: 8
+    testsLaboratoire: 16
     casConfirmesLaboratoire: 0
   - code: '93'
-    testsLaboratoire: 5
-    casConfirmesLaboratoire: 2
+    testsLaboratoire: 17
+    casConfirmesLaboratoire: 6
   - code: '94'
-    testsLaboratoire: 0
+    testsLaboratoire: 1
     casConfirmesLaboratoire: 0
   - code: '95'
     testsLaboratoire: 2
@@ -304,8 +304,8 @@ donneesDepartementales:
     casConfirmesLaboratoire: 0
 donneesRegionales:
   - code: '11'
-    testsLaboratoire: 18
-    casConfirmesLaboratoire: 2
+    testsLaboratoire: 54
+    casConfirmesLaboratoire: 7
   - code: '24'
     testsLaboratoire: 3
     casConfirmesLaboratoire: 0
@@ -313,13 +313,13 @@ donneesRegionales:
     testsLaboratoire: 0
     casConfirmesLaboratoire: 0
   - code: '28'
-    testsLaboratoire: 0
+    testsLaboratoire: 32
     casConfirmesLaboratoire: 0
   - code: '32'
-    testsLaboratoire: 0
-    casConfirmesLaboratoire: 0
+    testsLaboratoire: 17
+    casConfirmesLaboratoire: 1
   - code: '44'
-    testsLaboratoire: 0
+    testsLaboratoire: 9
     casConfirmesLaboratoire: 0
   - code: '52'
     testsLaboratoire: 0
@@ -328,16 +328,16 @@ donneesRegionales:
     testsLaboratoire: 0
     casConfirmesLaboratoire: 0
   - code: '75'
-    testsLaboratoire: 3
+    testsLaboratoire: 45
     casConfirmesLaboratoire: 0
   - code: '76'
     testsLaboratoire: 101
     casConfirmesLaboratoire: 8
   - code: '84'
-    testsLaboratoire: 8
+    testsLaboratoire: 10
     casConfirmesLaboratoire: 1
   - code: '93'
-    testsLaboratoire: 17
+    testsLaboratoire: 20
     casConfirmesLaboratoire: 0
   - code: '94'
     testsLaboratoire: 0
@@ -358,5 +358,5 @@ donneesRegionales:
     testsLaboratoire: 0
     casConfirmesLaboratoire: 0
 donneesNationales:
-  testsLaboratoire: 150
-  casConfirmesLaboratoire: 11
+  testsLaboratoire: 291
+  casConfirmesLaboratoire: 17
