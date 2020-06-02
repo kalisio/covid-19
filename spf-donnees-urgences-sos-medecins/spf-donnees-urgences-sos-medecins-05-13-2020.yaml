@@ -336,9 +336,9 @@ donneesDepartementales:
     actes: 0
     actesTotal: 0
   - code: '56'
-    urgences: 15
-    urgencesTotal: 265
-    urgencesHospitalises: 2
+    urgences: 8
+    urgencesTotal: 316
+    urgencesHospitalises: 3
     actes: 1
     actesTotal: 63
   - code: '57'
@@ -403,7 +403,7 @@ donneesDepartementales:
     actesTotal: 71
   - code: '67'
     urgences: 6
-    urgencesTotal: 310
+    urgencesTotal: 309
     urgencesHospitalises: 4
     actes: 16
     actesTotal: 177
@@ -638,7 +638,7 @@ donneesRegionales:
     actesTotal: 502
   - code: '44'
     urgences: 76
-    urgencesTotal: 2295
+    urgencesTotal: 2294
     urgencesHospitalises: 35
     actes: 40
     actesTotal: 413
@@ -649,9 +649,9 @@ donneesRegionales:
     actes: 16
     actesTotal: 307
   - code: '53'
-    urgences: 29
-    urgencesTotal: 1316
-    urgencesHospitalises: 14
+    urgences: 22
+    urgencesTotal: 1367
+    urgencesHospitalises: 15
     actes: 9
     actesTotal: 257
   - code: '75'
@@ -715,8 +715,8 @@ donneesRegionales:
     actes: 0
     actesTotal: 0
 donneesNationales:
-  urgences: 953
-  urgencesTotal: 28583
-  urgencesHospitalises: 322
+  urgences: 946
+  urgencesTotal: 28633
+  urgencesHospitalises: 323
   actes: 321
   actesTotal: 5533
