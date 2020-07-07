@@ -1,0 +1,77 @@
+donneesDepartementales:
+  - code: '01'
+    hospitalises: 49
+    reanimation: 0
+    gueris: 427
+    deces: 103
+  - code: '02'
+    hospitalises: 100
+    reanimation: 6
+    gueris: 1023
+    deces: 274
+  - code: '03'
+    hospitalises: 7
+    reanimation: 1
+    gueris: 196
+    deces: 41
+  - code: '04'
+    hospitalises: 3
+    reanimation: 0
+    gueris: 129
+    deces: 13
+  - code: '05'
+    hospitalises: 8
+    reanimation: 0
+    gueris: 128
+    deces: 18
+  - code: '06'
+    hospitalises: 46
+    reanimation: 1
+    gueris: 728
+    deces: 188
+  - code: '07'
+    hospitalises: 1
+    reanimation: 1
+    gueris: 439
+    deces: 108
+  - code: 08
+    hospitalises: 9
+    reanimation: 2
+    gueris: 207
+    deces: 60
+  - code: 09
+    hospitalises: 1
+    reanimation: 1
+    gueris: 33
+    deces: 2
+donneesRegionales:
+  - code: '32'
+    hospitalises: 100
+    reanimation: 6
+    gueris: 1023
+    deces: 274
+  - code: '44'
+    hospitalises: 9
+    reanimation: 2
+    gueris: 207
+    deces: 60
+  - code: '76'
+    hospitalises: 1
+    reanimation: 1
+    gueris: 33
+    deces: 2
+  - code: '84'
+    hospitalises: 57
+    reanimation: 2
+    gueris: 1062
+    deces: 252
+  - code: '93'
+    hospitalises: 57
+    reanimation: 1
+    gueris: 985
+    deces: 219
+donneesNationales:
+  hospitalises: 224
+  reanimation: 12
+  gueris: 3310
+  deces: 807
