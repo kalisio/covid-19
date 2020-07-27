@@ -38,7 +38,8 @@ module.exports = {
     tasks: {
       after: {
         readCSV: {
-          headers: true
+          headers: true,
+          delimiter: ';'
         },
         transformJson: {
           filter: { date_de_passage: `${date.format('YYYY-MM-DD')}`, sursaud_cl_age_corona: '0' }, // Select total not men/women data
