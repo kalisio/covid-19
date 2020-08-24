@@ -58,6 +58,11 @@ module.exports = {
           stdout: true, stderr: true,
           command: `krawler spf-donnees-laboratoires-jobfile.js --port ${port} --date <%= date.format('YYYY-MM-DD') %>`
         },
+        spfTestsPcr: {
+          hook: 'runCommand',
+          stdout: true, stderr: true,
+          command: `krawler spf-donnees-tests-pcr-jobfile.js --port ${port} --date <%= date.format('YYYY-MM-DD') %>`
+        },
         regionsPoint: {
           hook: 'runCommand',
           stdout: true, stderr: true,

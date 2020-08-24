@@ -44,7 +44,9 @@ const properties = {
   actes: 'MedicalActs.Suspected',
   actesTotal: 'MedicalActs.Total',
   testsLaboratoire: 'MedicalTests.Total',
-  casConfirmesLaboratoire: 'MedicalTests.Confirmed'
+  casConfirmesLaboratoire: 'MedicalTests.Confirmed',
+  testsPCR: 'PCRTests.Total',
+  casConfirmesPCR: 'PCRTests.Confirmed'
 }
 // List of cumulative indicators, others being daily count
 const cumulativeProperties = ['Confirmed', 'Deaths', 'Recovered', 'Severe', 'Critical']
