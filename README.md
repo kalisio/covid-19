@@ -67,7 +67,7 @@ Chaque élément cartographique peut contenir les propriétés suivantes:
 * `MedicalActs`
   * `Total` - nombres d'actes médicaux quotidiens SOS Médecins total
   * `Suspected` - nombres d'actes médicaux quotidiens SOS Médecins pour suspicion de COVID-19
-* `MedicalTests` (*depuis le 29/05 cet indicateur n'est plus mis à jour, il est remplacé par les chiffres du système d’information national de dépistage (SIDEP) par tests RT-PCR*) 
+* `MedicalTests` (*depuis le 29/05 cet indicateur n'est plus mis à jour, il est remplacé par les chiffres du système d’information national de dépistage par tests RT-PCR*) 
   * `Total` - nombres de tests quotidiens effectués dans un laboratoire d'analyse médicale
   * `Confirmed` - nombres de tests quotidiens positifs dans un laboratoire d'analyse médicale
 * `PCRTests`
