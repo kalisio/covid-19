@@ -8,8 +8,6 @@ L'information officielle sur la progression de l’épidémie en France est cons
 
 Sous l'impulsion des initiatives libres telles que <a href='https://github.com/opencovid19-fr'>OpenCovid19</a>, Santé publique France propose également des <a href='https://www.data.gouv.fr/fr/organizations/sante-publique-france/'>données relatives à l’épidémie plus précises</a> sur la plateforme <a href='https://www.data.gouv.fr'>www.data.gouv.fr</a>. Un outil <a href='https://github.com/etalab/covid19-dashboard'>dont le code source est libre</a>, développé sous l’impulsion d’<a target='_top' href='https://www.etalab.gouv.fr'>Etalab</a>, au sein de la <a href='https://www.numerique.gouv.fr/dinum/'>direction interministérielle du numérique</a>, propose une vision consolidée des données officielles disponibles.
 
-**A partir du 25/03 devant l'ampleur de la contamination l'indicateur des cas confirmés n'étant plus pertinent il n'est généralement plus communiqué par les pouvoirs publics, sauf au niveau national.**
-
 ## Comment contribuer ?
 
 Vous pouvez vous proposer comme volontaire pour tester nos scrappeurs, les améliorer, utiliser nos données ou réaliser de nouveaux jeux de données.
@@ -57,7 +55,7 @@ SELECT departement, libdepartement, sum(LIT) AS lits
 Chaque élément cartographique peut contenir les propriétés suivantes:
 * `Country/Region` Pays/Région de provenance
 * `Province/State` Etat/Département de provenance
-* `Confirmed` nombre cumulé de cas confirmés
+* `Confirmed` nombre cumulé de cas confirmés (*à partir du 25/03 cet indicateur n'a plus été communiqué par les pouvoirs publics, sauf au niveau national*)
 * `Deaths` nombre cumulé de décès
 * `Recovered` nombre cumulé de guérisons
 * `Severe` nombre de cas hospitalisés à date
@@ -69,9 +67,12 @@ Chaque élément cartographique peut contenir les propriétés suivantes:
 * `MedicalActs`
   * `Total` - nombres d'actes médicaux quotidiens SOS Médecins total
   * `Suspected` - nombres d'actes médicaux quotidiens SOS Médecins pour suspicion de COVID-19
-* `MedicalTests`
+* `MedicalTests` (*depuis le 29/05 cet indicateur n'est plus mis à jour, il est remplacé par les chiffres du système d’information national de dépistage (SIDEP) par tests RT-PCR*) 
   * `Total` - nombres de tests quotidiens effectués dans un laboratoire d'analyse médicale
   * `Confirmed` - nombres de tests quotidiens positifs dans un laboratoire d'analyse médicale
+* `PCRTests`
+  * `Total` - nombres de tests RT-PCR quotidiens effectués sur le territoire
+  * `Confirmed` - nombres de tests RT-PCR quotidiens positifs sur le territoire
 * `Population`
   * `Total` - Ensemble
   * `Under19` - 0 à 19 ans
@@ -149,9 +150,7 @@ Les données sont scrappées via [Krawler](https://kalisio.github.io/krawler/) e
 
 Les données disponibles ne sont réellement significatives qu'à partir du 1er Mars 2020. Un job Krawler est responsable de la production de chaque jeu de données à une date fixée (i.e. statistiques par département, statistiques par région, patients). Certains jobs sont interdépendants, par exemple les jobs des statistiques par département/région dépendent de l'exécution préalable du job de génération des données hospitalières/urgences Santé Publique France. Le job `generate-data-jobfile` permet de lancer tous les jobs dans le bon ordre pour générer tous les jeux de données sur une période.
 
-**Lorsque certains indicateurs (e.g. les des cas confirmés) manquent à une date donnée nous avons fait le choix de combler le trou en réutilisant la valeur de la date précédente. Merci de tenir compte de cette hypothèse dans vos réutilisation.**
-
-**Certains indicateurs (e.g. les des cas confirmés) peuvent ne plus être pertinents à partir d'une certaine période et donc ne plus être communiqués par les pouvoirs publics, sauf par exemple au niveau national.**
+**Lorsque certains indicateurs (e.g. les cas confirmés) manquent à une date donnée nous avons fait le choix de combler le trou en réutilisant la valeur de la date précédente. Ceci peut permettre de continuer à réaliser des cumuls lorsqu'un indicateur a par exemple été remplacé par un autre à une date donnée. Merci de tenir compte de cette hypothèse dans vos réutilisation.**
 
 Concernant la géométrie des contours administratifs nous utilisons [mapshaper](https://github.com/mbloch/mapshaper) afin de les simplifier à une précision donnée via la commande suivante:
 `mapshaper -i .\departements-france-outre-mer.geojson -simplify keep-shapes interval=500 -o .\departements-france-outre-mer-500m.geojson format=geojson`
