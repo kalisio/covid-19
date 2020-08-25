@@ -66,7 +66,7 @@ tasks.push({
   }
 })
 tasks.push({
-  id: `spf-donnees-laboratoires/spf-donnees-tests-pcr-${date.format('MM-DD-YYYY')}.yaml`,
+  id: `spf-donnees-tests-pcr/spf-donnees-tests-pcr-${date.format('MM-DD-YYYY')}.yaml`,
   type: 'store',
   options: {
     store: 'fs'
