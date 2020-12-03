@@ -1,3 +1,371 @@
-donneesDepartementales: []
-donneesRegionales: []
-donneesNationales: {}
+donneesDepartementales:
+  - code: '01'
+    testsPCR: 2801
+    casConfirmesPCR: 795
+  - code: '02'
+    testsPCR: 1173
+    casConfirmesPCR: 191
+  - code: '03'
+    testsPCR: 1400
+    casConfirmesPCR: 247
+  - code: '04'
+    testsPCR: 470
+    casConfirmesPCR: 88
+  - code: '05'
+    testsPCR: 517
+    casConfirmesPCR: 123
+  - code: '06'
+    testsPCR: 3099
+    casConfirmesPCR: 468
+  - code: '07'
+    testsPCR: 1405
+    casConfirmesPCR: 416
+  - code: 08
+    testsPCR: 839
+    casConfirmesPCR: 160
+  - code: 09
+    testsPCR: 672
+    casConfirmesPCR: 103
+  - code: '10'
+    testsPCR: 1131
+    casConfirmesPCR: 183
+  - code: '11'
+    testsPCR: 1053
+    casConfirmesPCR: 146
+  - code: '12'
+    testsPCR: 1150
+    casConfirmesPCR: 173
+  - code: '13'
+    testsPCR: 9560
+    casConfirmesPCR: 1971
+  - code: '14'
+    testsPCR: 1998
+    casConfirmesPCR: 371
+  - code: '15'
+    testsPCR: 430
+    casConfirmesPCR: 47
+  - code: '16'
+    testsPCR: 704
+    casConfirmesPCR: 87
+  - code: '17'
+    testsPCR: 1410
+    casConfirmesPCR: 143
+  - code: '18'
+    testsPCR: 794
+    casConfirmesPCR: 137
+  - code: '19'
+    testsPCR: 634
+    casConfirmesPCR: 91
+  - code: '21'
+    testsPCR: 1933
+    casConfirmesPCR: 355
+  - code: '22'
+    testsPCR: 1459
+    casConfirmesPCR: 138
+  - code: '23'
+    testsPCR: 289
+    casConfirmesPCR: 54
+  - code: '24'
+    testsPCR: 1311
+    casConfirmesPCR: 159
+  - code: '25'
+    testsPCR: 1965
+    casConfirmesPCR: 375
+  - code: '26'
+    testsPCR: 1836
+    casConfirmesPCR: 439
+  - code: '27'
+    testsPCR: 1483
+    casConfirmesPCR: 269
+  - code: '28'
+    testsPCR: 1021
+    casConfirmesPCR: 209
+  - code: '29'
+    testsPCR: 2027
+    casConfirmesPCR: 204
+  - code: 2A
+    testsPCR: 561
+    casConfirmesPCR: 59
+  - code: 2B
+    testsPCR: 791
+    casConfirmesPCR: 100
+  - code: '30'
+    testsPCR: 1774
+    casConfirmesPCR: 473
+  - code: '31'
+    testsPCR: 5088
+    casConfirmesPCR: 978
+  - code: '32'
+    testsPCR: 396
+    casConfirmesPCR: 48
+  - code: '33'
+    testsPCR: 3491
+    casConfirmesPCR: 544
+  - code: '34'
+    testsPCR: 4116
+    casConfirmesPCR: 907
+  - code: '35'
+    testsPCR: 2952
+    casConfirmesPCR: 421
+  - code: '36'
+    testsPCR: 454
+    casConfirmesPCR: 61
+  - code: '37'
+    testsPCR: 2432
+    casConfirmesPCR: 326
+  - code: '38'
+    testsPCR: 5091
+    casConfirmesPCR: 1693
+  - code: '39'
+    testsPCR: 1021
+    casConfirmesPCR: 257
+  - code: '40'
+    testsPCR: 1081
+    casConfirmesPCR: 153
+  - code: '41'
+    testsPCR: 847
+    casConfirmesPCR: 134
+  - code: '42'
+    testsPCR: 4118
+    casConfirmesPCR: 1421
+  - code: '43'
+    testsPCR: 970
+    casConfirmesPCR: 303
+  - code: '44'
+    testsPCR: 4750
+    casConfirmesPCR: 739
+  - code: '45'
+    testsPCR: 2480
+    casConfirmesPCR: 449
+  - code: '46'
+    testsPCR: 413
+    casConfirmesPCR: 42
+  - code: '47'
+    testsPCR: 746
+    casConfirmesPCR: 104
+  - code: '48'
+    testsPCR: 247
+    casConfirmesPCR: 57
+  - code: '49'
+    testsPCR: 2800
+    casConfirmesPCR: 513
+  - code: '50'
+    testsPCR: 1324
+    casConfirmesPCR: 129
+  - code: '51'
+    testsPCR: 1784
+    casConfirmesPCR: 266
+  - code: '52'
+    testsPCR: 423
+    casConfirmesPCR: 74
+  - code: '53'
+    testsPCR: 715
+    casConfirmesPCR: 83
+  - code: '54'
+    testsPCR: 2714
+    casConfirmesPCR: 355
+  - code: '55'
+    testsPCR: 564
+    casConfirmesPCR: 59
+  - code: '56'
+    testsPCR: 1581
+    casConfirmesPCR: 171
+  - code: '57'
+    testsPCR: 4054
+    casConfirmesPCR: 532
+  - code: '58'
+    testsPCR: 619
+    casConfirmesPCR: 95
+  - code: '59'
+    testsPCR: 14695
+    casConfirmesPCR: 3332
+  - code: '60'
+    testsPCR: 2870
+    casConfirmesPCR: 533
+  - code: '61'
+    testsPCR: 467
+    casConfirmesPCR: 73
+  - code: '62'
+    testsPCR: 5218
+    casConfirmesPCR: 932
+  - code: '63'
+    testsPCR: 2790
+    casConfirmesPCR: 497
+  - code: '64'
+    testsPCR: 2728
+    casConfirmesPCR: 429
+  - code: '65'
+    testsPCR: 674
+    casConfirmesPCR: 121
+  - code: '66'
+    testsPCR: 1740
+    casConfirmesPCR: 332
+  - code: '67'
+    testsPCR: 5711
+    casConfirmesPCR: 775
+  - code: '68'
+    testsPCR: 2230
+    casConfirmesPCR: 238
+  - code: '69'
+    testsPCR: 11063
+    casConfirmesPCR: 2742
+  - code: '70'
+    testsPCR: 641
+    casConfirmesPCR: 91
+  - code: '71'
+    testsPCR: 2459
+    casConfirmesPCR: 579
+  - code: '72'
+    testsPCR: 1321
+    casConfirmesPCR: 157
+  - code: '73'
+    testsPCR: 1681
+    casConfirmesPCR: 542
+  - code: '74'
+    testsPCR: 3258
+    casConfirmesPCR: 875
+  - code: '75'
+    testsPCR: 11371
+    casConfirmesPCR: 2260
+  - code: '76'
+    testsPCR: 3975
+    casConfirmesPCR: 715
+  - code: '77'
+    testsPCR: 3722
+    casConfirmesPCR: 841
+  - code: '78'
+    testsPCR: 4858
+    casConfirmesPCR: 1098
+  - code: '79'
+    testsPCR: 986
+    casConfirmesPCR: 124
+  - code: '80'
+    testsPCR: 1345
+    casConfirmesPCR: 203
+  - code: '81'
+    testsPCR: 1201
+    casConfirmesPCR: 306
+  - code: '82'
+    testsPCR: 871
+    casConfirmesPCR: 161
+  - code: '83'
+    testsPCR: 4146
+    casConfirmesPCR: 781
+  - code: '84'
+    testsPCR: 1744
+    casConfirmesPCR: 397
+  - code: '85'
+    testsPCR: 1688
+    casConfirmesPCR: 223
+  - code: '86'
+    testsPCR: 1286
+    casConfirmesPCR: 160
+  - code: '87'
+    testsPCR: 1376
+    casConfirmesPCR: 208
+  - code: '88'
+    testsPCR: 1137
+    casConfirmesPCR: 166
+  - code: '89'
+    testsPCR: 860
+    casConfirmesPCR: 186
+  - code: '90'
+    testsPCR: 308
+    casConfirmesPCR: 44
+  - code: '91'
+    testsPCR: 4354
+    casConfirmesPCR: 1012
+  - code: '92'
+    testsPCR: 7341
+    casConfirmesPCR: 1418
+  - code: '93'
+    testsPCR: 5306
+    casConfirmesPCR: 1318
+  - code: '94'
+    testsPCR: 5602
+    casConfirmesPCR: 1249
+  - code: '95'
+    testsPCR: 4701
+    casConfirmesPCR: 1127
+  - code: '971'
+    testsPCR: 366
+    casConfirmesPCR: 46
+  - code: '972'
+    testsPCR: 917
+    casConfirmesPCR: 143
+  - code: '973'
+    testsPCR: 405
+    casConfirmesPCR: 29
+  - code: '974'
+    testsPCR: 1512
+    casConfirmesPCR: 83
+  - code: '975'
+    testsPCR: 17
+    casConfirmesPCR: 0
+  - code: '976'
+    testsPCR: 186
+    casConfirmesPCR: 17
+  - code: '977'
+    testsPCR: 39
+    casConfirmesPCR: 0
+  - code: '978'
+    testsPCR: 57
+    casConfirmesPCR: 11
+donneesRegionales:
+  - code: '11'
+    testsPCR: 47255
+    casConfirmesPCR: 10323
+  - code: '24'
+    testsPCR: 8028
+    casConfirmesPCR: 1316
+  - code: '27'
+    testsPCR: 9806
+    casConfirmesPCR: 1982
+  - code: '28'
+    testsPCR: 9247
+    casConfirmesPCR: 1557
+  - code: '32'
+    testsPCR: 25301
+    casConfirmesPCR: 5191
+  - code: '44'
+    testsPCR: 20587
+    casConfirmesPCR: 2808
+  - code: '52'
+    testsPCR: 11274
+    casConfirmesPCR: 1715
+  - code: '53'
+    testsPCR: 8019
+    casConfirmesPCR: 934
+  - code: '75'
+    testsPCR: 16042
+    casConfirmesPCR: 2256
+  - code: '76'
+    testsPCR: 19395
+    casConfirmesPCR: 3847
+  - code: '84'
+    testsPCR: 36843
+    casConfirmesPCR: 10017
+  - code: '93'
+    testsPCR: 19536
+    casConfirmesPCR: 3828
+  - code: '94'
+    testsPCR: 1352
+    casConfirmesPCR: 159
+  - code: '01'
+    testsPCR: 366
+    casConfirmesPCR: 46
+  - code: '02'
+    testsPCR: 917
+    casConfirmesPCR: 143
+  - code: '03'
+    testsPCR: 405
+    casConfirmesPCR: 29
+  - code: '04'
+    testsPCR: 1512
+    casConfirmesPCR: 83
+  - code: '06'
+    testsPCR: 186
+    casConfirmesPCR: 17
+donneesNationales:
+  testsPCR: 236071
+  casConfirmesPCR: 46251

@@ -1,0 +1,602 @@
+donneesDepartementales:
+  - code: '01'
+    hospitalises: 403
+    reanimation: 37
+    gueris: 756
+    deces: 173
+  - code: '02'
+    hospitalises: 207
+    reanimation: 30
+    gueris: 1368
+    deces: 335
+  - code: '03'
+    hospitalises: 226
+    reanimation: 21
+    gueris: 435
+    deces: 102
+  - code: '04'
+    hospitalises: 100
+    reanimation: 9
+    gueris: 224
+    deces: 25
+  - code: '05'
+    hospitalises: 163
+    reanimation: 24
+    gueris: 246
+    deces: 43
+  - code: '06'
+    hospitalises: 376
+    reanimation: 62
+    gueris: 1554
+    deces: 288
+  - code: '07'
+    hospitalises: 210
+    reanimation: 16
+    gueris: 598
+    deces: 174
+  - code: 08
+    hospitalises: 72
+    reanimation: 13
+    gueris: 291
+    deces: 79
+  - code: 09
+    hospitalises: 41
+    reanimation: 7
+    gueris: 75
+    deces: 9
+  - code: '10'
+    hospitalises: 106
+    reanimation: 10
+    gueris: 769
+    deces: 159
+  - code: '11'
+    hospitalises: 80
+    reanimation: 9
+    gueris: 335
+    deces: 86
+  - code: '12'
+    hospitalises: 109
+    reanimation: 12
+    gueris: 256
+    deces: 56
+  - code: '13'
+    hospitalises: 1507
+    reanimation: 274
+    gueris: 7391
+    deces: 1069
+  - code: '14'
+    hospitalises: 235
+    reanimation: 47
+    gueris: 600
+    deces: 131
+  - code: '15'
+    hospitalises: 60
+    reanimation: 11
+    gueris: 118
+    deces: 25
+  - code: '16'
+    hospitalises: 22
+    reanimation: 6
+    gueris: 101
+    deces: 20
+  - code: '17'
+    hospitalises: 112
+    reanimation: 20
+    gueris: 243
+    deces: 69
+  - code: '18'
+    hospitalises: 148
+    reanimation: 9
+    gueris: 312
+    deces: 136
+  - code: '19'
+    hospitalises: 72
+    reanimation: 10
+    gueris: 242
+    deces: 58
+  - code: '21'
+    hospitalises: 285
+    reanimation: 61
+    gueris: 1201
+    deces: 299
+  - code: '22'
+    hospitalises: 73
+    reanimation: 5
+    gueris: 325
+    deces: 55
+  - code: '23'
+    hospitalises: 62
+    reanimation: 13
+    gueris: 133
+    deces: 24
+  - code: '24'
+    hospitalises: 75
+    reanimation: 14
+    gueris: 152
+    deces: 22
+  - code: '25'
+    hospitalises: 120
+    reanimation: 30
+    gueris: 764
+    deces: 162
+  - code: '26'
+    hospitalises: 348
+    reanimation: 45
+    gueris: 796
+    deces: 202
+  - code: '27'
+    hospitalises: 176
+    reanimation: 10
+    gueris: 458
+    deces: 132
+  - code: '28'
+    hospitalises: 221
+    reanimation: 19
+    gueris: 800
+    deces: 169
+  - code: '29'
+    hospitalises: 97
+    reanimation: 28
+    gueris: 309
+    deces: 63
+  - code: 2A
+    hospitalises: 57
+    reanimation: 10
+    gueris: 203
+    deces: 60
+  - code: 2B
+    hospitalises: 39
+    reanimation: 7
+    gueris: 166
+    deces: 27
+  - code: '30'
+    hospitalises: 358
+    reanimation: 80
+    gueris: 749
+    deces: 179
+  - code: '31'
+    hospitalises: 396
+    reanimation: 93
+    gueris: 1642
+    deces: 181
+  - code: '32'
+    hospitalises: 32
+    reanimation: 4
+    gueris: 121
+    deces: 42
+  - code: '33'
+    hospitalises: 330
+    reanimation: 66
+    gueris: 1765
+    deces: 276
+  - code: '34'
+    hospitalises: 427
+    reanimation: 85
+    gueris: 1483
+    deces: 279
+  - code: '35'
+    hospitalises: 273
+    reanimation: 30
+    gueris: 833
+    deces: 140
+  - code: '36'
+    hospitalises: 49
+    reanimation: 7
+    gueris: 244
+    deces: 85
+  - code: '37'
+    hospitalises: 116
+    reanimation: 27
+    gueris: 588
+    deces: 125
+  - code: '38'
+    hospitalises: 961
+    reanimation: 126
+    gueris: 1790
+    deces: 378
+  - code: '39'
+    hospitalises: 189
+    reanimation: 9
+    gueris: 476
+    deces: 90
+  - code: '40'
+    hospitalises: 58
+    reanimation: 14
+    gueris: 171
+    deces: 28
+  - code: '41'
+    hospitalises: 76
+    reanimation: 6
+    gueris: 424
+    deces: 90
+  - code: '42'
+    hospitalises: 907
+    reanimation: 95
+    gueris: 1830
+    deces: 477
+  - code: '43'
+    hospitalises: 193
+    reanimation: 12
+    gueris: 275
+    deces: 45
+  - code: '44'
+    hospitalises: 303
+    reanimation: 42
+    gueris: 1126
+    deces: 237
+  - code: '45'
+    hospitalises: 227
+    reanimation: 69
+    gueris: 902
+    deces: 142
+  - code: '46'
+    hospitalises: 23
+    reanimation: 6
+    gueris: 91
+    deces: 26
+  - code: '47'
+    hospitalises: 66
+    reanimation: 13
+    gueris: 173
+    deces: 26
+  - code: '48'
+    hospitalises: 50
+    reanimation: 5
+    gueris: 69
+    deces: 22
+  - code: '49'
+    hospitalises: 241
+    reanimation: 59
+    gueris: 1047
+    deces: 216
+  - code: '50'
+    hospitalises: 126
+    reanimation: 10
+    gueris: 281
+    deces: 77
+  - code: '51'
+    hospitalises: 169
+    reanimation: 27
+    gueris: 1284
+    deces: 311
+  - code: '52'
+    hospitalises: 80
+    reanimation: 7
+    gueris: 325
+    deces: 102
+  - code: '53'
+    hospitalises: 86
+    reanimation: 10
+    gueris: 334
+    deces: 64
+  - code: '54'
+    hospitalises: 261
+    reanimation: 36
+    gueris: 1547
+    deces: 406
+  - code: '55'
+    hospitalises: 36
+    reanimation: 5
+    gueris: 564
+    deces: 120
+  - code: '56'
+    hospitalises: 164
+    reanimation: 21
+    gueris: 613
+    deces: 131
+  - code: '57'
+    hospitalises: 263
+    reanimation: 46
+    gueris: 2977
+    deces: 932
+  - code: '58'
+    hospitalises: 65
+    reanimation: 8
+    gueris: 154
+    deces: 35
+  - code: '59'
+    hospitalises: 1581
+    reanimation: 274
+    gueris: 4760
+    deces: 1119
+  - code: '60'
+    hospitalises: 266
+    reanimation: 43
+    gueris: 1561
+    deces: 481
+  - code: '61'
+    hospitalises: 92
+    reanimation: 9
+    gueris: 360
+    deces: 59
+  - code: '62'
+    hospitalises: 621
+    reanimation: 95
+    gueris: 2215
+    deces: 464
+  - code: '63'
+    hospitalises: 328
+    reanimation: 39
+    gueris: 587
+    deces: 125
+  - code: '64'
+    hospitalises: 315
+    reanimation: 28
+    gueris: 479
+    deces: 77
+  - code: '65'
+    hospitalises: 97
+    reanimation: 13
+    gueris: 232
+    deces: 43
+  - code: '66'
+    hospitalises: 102
+    reanimation: 22
+    gueris: 414
+    deces: 84
+  - code: '67'
+    hospitalises: 435
+    reanimation: 55
+    gueris: 3123
+    deces: 755
+  - code: '68'
+    hospitalises: 168
+    reanimation: 27
+    gueris: 3399
+    deces: 857
+  - code: '69'
+    hospitalises: 1723
+    reanimation: 256
+    gueris: 5488
+    deces: 1077
+  - code: '70'
+    hospitalises: 84
+    reanimation: 11
+    gueris: 357
+    deces: 98
+  - code: '71'
+    hospitalises: 373
+    reanimation: 33
+    gueris: 1262
+    deces: 323
+  - code: '72'
+    hospitalises: 167
+    reanimation: 15
+    gueris: 669
+    deces: 115
+  - code: '73'
+    hospitalises: 405
+    reanimation: 36
+    gueris: 770
+    deces: 178
+  - code: '74'
+    hospitalises: 538
+    reanimation: 54
+    gueris: 1412
+    deces: 263
+  - code: '75'
+    hospitalises: 1322
+    reanimation: 275
+    gueris: 8739
+    deces: 2172
+  - code: '76'
+    hospitalises: 626
+    reanimation: 78
+    gueris: 1511
+    deces: 351
+  - code: '77'
+    hospitalises: 548
+    reanimation: 111
+    gueris: 3713
+    deces: 856
+  - code: '78'
+    hospitalises: 676
+    reanimation: 72
+    gueris: 3353
+    deces: 699
+  - code: '79'
+    hospitalises: 61
+    reanimation: 7
+    gueris: 119
+    deces: 36
+  - code: '80'
+    hospitalises: 201
+    reanimation: 36
+    gueris: 940
+    deces: 286
+  - code: '81'
+    hospitalises: 139
+    reanimation: 19
+    gueris: 255
+    deces: 60
+  - code: '82'
+    hospitalises: 108
+    reanimation: 21
+    gueris: 189
+    deces: 40
+  - code: '83'
+    hospitalises: 401
+    reanimation: 58
+    gueris: 1570
+    deces: 246
+  - code: '84'
+    hospitalises: 450
+    reanimation: 37
+    gueris: 721
+    deces: 169
+  - code: '85'
+    hospitalises: 84
+    reanimation: 15
+    gueris: 411
+    deces: 53
+  - code: '86'
+    hospitalises: 127
+    reanimation: 10
+    gueris: 257
+    deces: 71
+  - code: '87'
+    hospitalises: 137
+    reanimation: 9
+    gueris: 262
+    deces: 64
+  - code: '88'
+    hospitalises: 145
+    reanimation: 12
+    gueris: 857
+    deces: 288
+  - code: '89'
+    hospitalises: 147
+    reanimation: 15
+    gueris: 543
+    deces: 106
+  - code: '90'
+    hospitalises: 102
+    reanimation: 19
+    gueris: 640
+    deces: 216
+  - code: '91'
+    hospitalises: 620
+    reanimation: 107
+    gueris: 3813
+    deces: 764
+  - code: '92'
+    hospitalises: 854
+    reanimation: 165
+    gueris: 6656
+    deces: 1296
+  - code: '93'
+    hospitalises: 811
+    reanimation: 114
+    gueris: 5897
+    deces: 1230
+  - code: '94'
+    hospitalises: 919
+    reanimation: 129
+    gueris: 6123
+    deces: 1466
+  - code: '95'
+    hospitalises: 534
+    reanimation: 61
+    gueris: 3869
+    deces: 917
+  - code: '971'
+    hospitalises: 137
+    reanimation: 19
+    gueris: 631
+    deces: 146
+  - code: '972'
+    hospitalises: 80
+    reanimation: 18
+    gueris: 221
+    deces: 36
+  - code: '973'
+    hospitalises: 18
+    reanimation: 0
+    gueris: 1819
+    deces: 66
+  - code: '974'
+    hospitalises: 72
+    reanimation: 14
+    gueris: 514
+    deces: 34
+  - code: '976'
+    hospitalises: 14
+    reanimation: 3
+    gueris: 488
+    deces: 32
+donneesRegionales:
+  - code: '11'
+    hospitalises: 6284
+    reanimation: 1034
+    gueris: 42163
+    deces: 9400
+  - code: '24'
+    hospitalises: 837
+    reanimation: 137
+    gueris: 3270
+    deces: 747
+  - code: '27'
+    hospitalises: 1365
+    reanimation: 186
+    gueris: 5397
+    deces: 1329
+  - code: '28'
+    hospitalises: 1255
+    reanimation: 154
+    gueris: 3210
+    deces: 750
+  - code: '32'
+    hospitalises: 2876
+    reanimation: 478
+    gueris: 10844
+    deces: 2685
+  - code: '44'
+    hospitalises: 1735
+    reanimation: 238
+    gueris: 15136
+    deces: 4009
+  - code: '52'
+    hospitalises: 881
+    reanimation: 141
+    gueris: 3587
+    deces: 685
+  - code: '53'
+    hospitalises: 607
+    reanimation: 84
+    gueris: 2080
+    deces: 389
+  - code: '75'
+    hospitalises: 1437
+    reanimation: 210
+    gueris: 4097
+    deces: 771
+  - code: '76'
+    hospitalises: 1962
+    reanimation: 376
+    gueris: 5911
+    deces: 1107
+  - code: '84'
+    hospitalises: 6302
+    reanimation: 748
+    gueris: 14855
+    deces: 3219
+  - code: '93'
+    hospitalises: 2997
+    reanimation: 464
+    gueris: 11706
+    deces: 1840
+  - code: '94'
+    hospitalises: 96
+    reanimation: 17
+    gueris: 369
+    deces: 87
+  - code: '01'
+    hospitalises: 137
+    reanimation: 19
+    gueris: 631
+    deces: 146
+  - code: '02'
+    hospitalises: 80
+    reanimation: 18
+    gueris: 221
+    deces: 36
+  - code: '03'
+    hospitalises: 18
+    reanimation: 0
+    gueris: 1819
+    deces: 66
+  - code: '04'
+    hospitalises: 72
+    reanimation: 14
+    gueris: 514
+    deces: 34
+  - code: '06'
+    hospitalises: 14
+    reanimation: 3
+    gueris: 488
+    deces: 32
+donneesNationales:
+  hospitalises: 28955
+  reanimation: 4321
+  gueris: 126298
+  deces: 27332
