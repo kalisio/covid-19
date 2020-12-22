@@ -1,0 +1,722 @@
+donneesDepartementales:
+  - code: '01'
+    urgences: 8
+    urgencesTotal: 222
+    urgencesHospitalises: 3
+    actes: 0
+    actesTotal: 0
+  - code: '02'
+    urgences: 13
+    urgencesTotal: 411
+    urgencesHospitalises: 9
+    actes: 2
+    actesTotal: 255
+  - code: '03'
+    urgences: 8
+    urgencesTotal: 149
+    urgencesHospitalises: 6
+    actes: 0
+    actesTotal: 0
+  - code: '04'
+    urgences: 10
+    urgencesTotal: 128
+    urgencesHospitalises: 9
+    actes: 0
+    actesTotal: 0
+  - code: '05'
+    urgences: 4
+    urgencesTotal: 81
+    urgencesHospitalises: 3
+    actes: 0
+    actesTotal: 0
+  - code: '06'
+    urgences: 20
+    urgencesTotal: 782
+    urgencesHospitalises: 12
+    actes: 8
+    actesTotal: 157
+  - code: '07'
+    urgences: 2
+    urgencesTotal: 186
+    urgencesHospitalises: 1
+    actes: 0
+    actesTotal: 0
+  - code: 08
+    urgences: 0
+    urgencesTotal: 137
+    urgencesHospitalises: 0
+    actes: 0
+    actesTotal: 0
+  - code: 09
+    urgences: 0
+    urgencesTotal: 83
+    urgencesHospitalises: 0
+    actes: 0
+    actesTotal: 0
+  - code: '10'
+    urgences: 4
+    urgencesTotal: 143
+    urgencesHospitalises: 1
+    actes: 2
+    actesTotal: 93
+  - code: '11'
+    urgences: 1
+    urgencesTotal: 216
+    urgencesHospitalises: 1
+    actes: 0
+    actesTotal: 0
+  - code: '12'
+    urgences: 0
+    urgencesTotal: 85
+    urgencesHospitalises: 0
+    actes: 0
+    actesTotal: 0
+  - code: '13'
+    urgences: 33
+    urgencesTotal: 1023
+    urgencesHospitalises: 23
+    actes: 10
+    actesTotal: 186
+  - code: '14'
+    urgences: 2
+    urgencesTotal: 403
+    urgencesHospitalises: 1
+    actes: 2
+    actesTotal: 238
+  - code: '15'
+    urgences: 1
+    urgencesTotal: 70
+    urgencesHospitalises: 1
+    actes: 0
+    actesTotal: 0
+  - code: '16'
+    urgences: 4
+    urgencesTotal: 229
+    urgencesHospitalises: 2
+    actes: 0
+    actesTotal: 0
+  - code: '17'
+    urgences: 0
+    urgencesTotal: 374
+    urgencesHospitalises: 0
+    actes: 3
+    actesTotal: 33
+  - code: '18'
+    urgences: 2
+    urgencesTotal: 108
+    urgencesHospitalises: 0
+    actes: 1
+    actesTotal: 138
+  - code: '19'
+    urgences: 2
+    urgencesTotal: 157
+    urgencesHospitalises: 2
+    actes: 0
+    actesTotal: 0
+  - code: '21'
+    urgences: 4
+    urgencesTotal: 235
+    urgencesHospitalises: 1
+    actes: 6
+    actesTotal: 78
+  - code: '22'
+    urgences: 3
+    urgencesTotal: 317
+    urgencesHospitalises: 3
+    actes: 0
+    actesTotal: 0
+  - code: '23'
+    urgences: 4
+    urgencesTotal: 74
+    urgencesHospitalises: 0
+    actes: 0
+    actesTotal: 0
+  - code: '24'
+    urgences: 3
+    urgencesTotal: 158
+    urgencesHospitalises: 3
+    actes: 0
+    actesTotal: 0
+  - code: '25'
+    urgences: 5
+    urgencesTotal: 249
+    urgencesHospitalises: 1
+    actes: 2
+    actesTotal: 85
+  - code: '26'
+    urgences: 10
+    urgencesTotal: 280
+    urgencesHospitalises: 5
+    actes: 0
+    actesTotal: 0
+  - code: '27'
+    urgences: 1
+    urgencesTotal: 129
+    urgencesHospitalises: 0
+    actes: 0
+    actesTotal: 0
+  - code: '28'
+    urgences: 3
+    urgencesTotal: 269
+    urgencesHospitalises: 2
+    actes: 0
+    actesTotal: 0
+  - code: '29'
+    urgences: 2
+    urgencesTotal: 556
+    urgencesHospitalises: 1
+    actes: 3
+    actesTotal: 115
+  - code: 2A
+    urgences: 0
+    urgencesTotal: 94
+    urgencesHospitalises: 0
+    actes: 2
+    actesTotal: 94
+  - code: 2B
+    urgences: 0
+    urgencesTotal: 89
+    urgencesHospitalises: 0
+    actes: 0
+    actesTotal: 0
+  - code: '30'
+    urgences: 6
+    urgencesTotal: 398
+    urgencesHospitalises: 2
+    actes: 2
+    actesTotal: 49
+  - code: '31'
+    urgences: 6
+    urgencesTotal: 643
+    urgencesHospitalises: 4
+    actes: 3
+    actesTotal: 110
+  - code: '32'
+    urgences: 1
+    urgencesTotal: 65
+    urgencesHospitalises: 1
+    actes: 0
+    actesTotal: 0
+  - code: '33'
+    urgences: 9
+    urgencesTotal: 741
+    urgencesHospitalises: 5
+    actes: 6
+    actesTotal: 609
+  - code: '34'
+    urgences: 1
+    urgencesTotal: 692
+    urgencesHospitalises: 0
+    actes: 0
+    actesTotal: 89
+  - code: '35'
+    urgences: 4
+    urgencesTotal: 544
+    urgencesHospitalises: 4
+    actes: 5
+    actesTotal: 117
+  - code: '36'
+    urgences: 2
+    urgencesTotal: 92
+    urgencesHospitalises: 2
+    actes: 0
+    actesTotal: 0
+  - code: '37'
+    urgences: 8
+    urgencesTotal: 219
+    urgencesHospitalises: 4
+    actes: 3
+    actesTotal: 132
+  - code: '38'
+    urgences: 19
+    urgencesTotal: 639
+    urgencesHospitalises: 9
+    actes: 7
+    actesTotal: 180
+  - code: '39'
+    urgences: 7
+    urgencesTotal: 174
+    urgencesHospitalises: 5
+    actes: 0
+    actesTotal: 0
+  - code: '40'
+    urgences: 7
+    urgencesTotal: 149
+    urgencesHospitalises: 2
+    actes: 0
+    actesTotal: 0
+  - code: '41'
+    urgences: 7
+    urgencesTotal: 214
+    urgencesHospitalises: 1
+    actes: 0
+    actesTotal: 0
+  - code: '42'
+    urgences: 6
+    urgencesTotal: 549
+    urgencesHospitalises: 1
+    actes: 5
+    actesTotal: 87
+  - code: '43'
+    urgences: 1
+    urgencesTotal: 16
+    urgencesHospitalises: 1
+    actes: 0
+    actesTotal: 0
+  - code: '44'
+    urgences: 11
+    urgencesTotal: 493
+    urgencesHospitalises: 9
+    actes: 14
+    actesTotal: 430
+  - code: '45'
+    urgences: 5
+    urgencesTotal: 336
+    urgencesHospitalises: 5
+    actes: 2
+    actesTotal: 49
+  - code: '46'
+    urgences: 0
+    urgencesTotal: 110
+    urgencesHospitalises: 0
+    actes: 0
+    actesTotal: 0
+  - code: '47'
+    urgences: 4
+    urgencesTotal: 209
+    urgencesHospitalises: 4
+    actes: 0
+    actesTotal: 0
+  - code: '48'
+    urgences: 0
+    urgencesTotal: 12
+    urgencesHospitalises: 0
+    actes: 0
+    actesTotal: 0
+  - code: '49'
+    urgences: 1
+    urgencesTotal: 350
+    urgencesHospitalises: 0
+    actes: 0
+    actesTotal: 0
+  - code: '50'
+    urgences: 1
+    urgencesTotal: 352
+    urgencesHospitalises: 1
+    actes: 5
+    actesTotal: 109
+  - code: '51'
+    urgences: 2
+    urgencesTotal: 273
+    urgencesHospitalises: 2
+    actes: 1
+    actesTotal: 24
+  - code: '52'
+    urgences: 8
+    urgencesTotal: 98
+    urgencesHospitalises: 4
+    actes: 0
+    actesTotal: 0
+  - code: '53'
+    urgences: 4
+    urgencesTotal: 155
+    urgencesHospitalises: 2
+    actes: 0
+    actesTotal: 0
+  - code: '54'
+    urgences: 13
+    urgencesTotal: 382
+    urgencesHospitalises: 7
+    actes: 12
+    actesTotal: 90
+  - code: '55'
+    urgences: 2
+    urgencesTotal: 85
+    urgencesHospitalises: 1
+    actes: 0
+    actesTotal: 0
+  - code: '56'
+    urgences: 24
+    urgencesTotal: 358
+    urgencesHospitalises: 6
+    actes: 3
+    actesTotal: 58
+  - code: '57'
+    urgences: 25
+    urgencesTotal: 629
+    urgencesHospitalises: 18
+    actes: 0
+    actesTotal: 0
+  - code: '58'
+    urgences: 0
+    urgencesTotal: 139
+    urgencesHospitalises: 0
+    actes: 0
+    actesTotal: 0
+  - code: '59'
+    urgences: 27
+    urgencesTotal: 1588
+    urgencesHospitalises: 10
+    actes: 13
+    actesTotal: 364
+  - code: '60'
+    urgences: 4
+    urgencesTotal: 98
+    urgencesHospitalises: 3
+    actes: 0
+    actesTotal: 0
+  - code: '61'
+    urgences: 1
+    urgencesTotal: 247
+    urgencesHospitalises: 1
+    actes: 0
+    actesTotal: 0
+  - code: '62'
+    urgences: 10
+    urgencesTotal: 498
+    urgencesHospitalises: 3
+    actes: 0
+    actesTotal: 0
+  - code: '63'
+    urgences: 2
+    urgencesTotal: 124
+    urgencesHospitalises: 2
+    actes: 3
+    actesTotal: 71
+  - code: '64'
+    urgences: 7
+    urgencesTotal: 382
+    urgencesHospitalises: 5
+    actes: 6
+    actesTotal: 242
+  - code: '65'
+    urgences: 2
+    urgencesTotal: 89
+    urgencesHospitalises: 1
+    actes: 0
+    actesTotal: 0
+  - code: '66'
+    urgences: 2
+    urgencesTotal: 205
+    urgencesHospitalises: 1
+    actes: 4
+    actesTotal: 93
+  - code: '67'
+    urgences: 14
+    urgencesTotal: 418
+    urgencesHospitalises: 10
+    actes: 3
+    actesTotal: 205
+  - code: '68'
+    urgences: 14
+    urgencesTotal: 380
+    urgencesHospitalises: 11
+    actes: 4
+    actesTotal: 95
+  - code: '69'
+    urgences: 32
+    urgencesTotal: 1063
+    urgencesHospitalises: 24
+    actes: 14
+    actesTotal: 318
+  - code: '70'
+    urgences: 2
+    urgencesTotal: 108
+    urgencesHospitalises: 0
+    actes: 0
+    actesTotal: 0
+  - code: '71'
+    urgences: 13
+    urgencesTotal: 273
+    urgencesHospitalises: 8
+    actes: 0
+    actesTotal: 0
+  - code: '72'
+    urgences: 11
+    urgencesTotal: 311
+    urgencesHospitalises: 6
+    actes: 0
+    actesTotal: 0
+  - code: '73'
+    urgences: 4
+    urgencesTotal: 155
+    urgencesHospitalises: 2
+    actes: 5
+    actesTotal: 92
+  - code: '74'
+    urgences: 13
+    urgencesTotal: 520
+    urgencesHospitalises: 6
+    actes: 5
+    actesTotal: 88
+  - code: '75'
+    urgences: 15
+    urgencesTotal: 1177
+    urgencesHospitalises: 9
+    actes: 27
+    actesTotal: 736
+  - code: '76'
+    urgences: 6
+    urgencesTotal: 817
+    urgencesHospitalises: 2
+    actes: 2
+    actesTotal: 88
+  - code: '77'
+    urgences: 11
+    urgencesTotal: 496
+    urgencesHospitalises: 4
+    actes: 6
+    actesTotal: 170
+  - code: '78'
+    urgences: 19
+    urgencesTotal: 732
+    urgencesHospitalises: 9
+    actes: 7
+    actesTotal: 134
+  - code: '79'
+    urgences: 2
+    urgencesTotal: 187
+    urgencesHospitalises: 2
+    actes: 0
+    actesTotal: 0
+  - code: '80'
+    urgences: 4
+    urgencesTotal: 348
+    urgencesHospitalises: 2
+    actes: 6
+    actesTotal: 192
+  - code: '81'
+    urgences: 3
+    urgencesTotal: 249
+    urgencesHospitalises: 2
+    actes: 0
+    actesTotal: 0
+  - code: '82'
+    urgences: 8
+    urgencesTotal: 168
+    urgencesHospitalises: 5
+    actes: 0
+    actesTotal: 0
+  - code: '83'
+    urgences: 12
+    urgencesTotal: 521
+    urgencesHospitalises: 11
+    actes: 14
+    actesTotal: 393
+  - code: '84'
+    urgences: 11
+    urgencesTotal: 385
+    urgencesHospitalises: 3
+    actes: 3
+    actesTotal: 36
+  - code: '85'
+    urgences: 5
+    urgencesTotal: 389
+    urgencesHospitalises: 5
+    actes: 0
+    actesTotal: 0
+  - code: '86'
+    urgences: 3
+    urgencesTotal: 233
+    urgencesHospitalises: 3
+    actes: 0
+    actesTotal: 0
+  - code: '87'
+    urgences: 3
+    urgencesTotal: 289
+    urgencesHospitalises: 3
+    actes: 3
+    actesTotal: 147
+  - code: '88'
+    urgences: 10
+    urgencesTotal: 242
+    urgencesHospitalises: 3
+    actes: 0
+    actesTotal: 0
+  - code: '89'
+    urgences: 17
+    urgencesTotal: 277
+    urgencesHospitalises: 10
+    actes: 3
+    actesTotal: 48
+  - code: '90'
+    urgences: 9
+    urgencesTotal: 122
+    urgencesHospitalises: 5
+    actes: 0
+    actesTotal: 0
+  - code: '91'
+    urgences: 8
+    urgencesTotal: 507
+    urgencesHospitalises: 6
+    actes: 5
+    actesTotal: 100
+  - code: '92'
+    urgences: 9
+    urgencesTotal: 786
+    urgencesHospitalises: 3
+    actes: 0
+    actesTotal: 0
+  - code: '93'
+    urgences: 19
+    urgencesTotal: 812
+    urgencesHospitalises: 7
+    actes: 0
+    actesTotal: 0
+  - code: '94'
+    urgences: 18
+    urgencesTotal: 880
+    urgencesHospitalises: 6
+    actes: 0
+    actesTotal: 0
+  - code: '95'
+    urgences: 21
+    urgencesTotal: 733
+    urgencesHospitalises: 12
+    actes: 7
+    actesTotal: 284
+  - code: '971'
+    urgences: 1
+    urgencesTotal: 235
+    urgencesHospitalises: 0
+    actes: 0
+    actesTotal: 0
+  - code: '972'
+    urgences: 0
+    urgencesTotal: 0
+    urgencesHospitalises: 0
+    actes: 2
+    actesTotal: 90
+  - code: '973'
+    urgences: 1
+    urgencesTotal: 234
+    urgencesHospitalises: 0
+    actes: 0
+    actesTotal: 0
+  - code: '974'
+    urgences: 2
+    urgencesTotal: 360
+    urgencesHospitalises: 2
+    actes: 0
+    actesTotal: 0
+  - code: '976'
+    urgences: 1
+    urgencesTotal: 122
+    urgencesHospitalises: 1
+    actes: 0
+    actesTotal: 0
+donneesRegionales:
+  - code: '11'
+    urgences: 120
+    urgencesTotal: 6123
+    urgencesHospitalises: 56
+    actes: 52
+    actesTotal: 1424
+  - code: '24'
+    urgences: 27
+    urgencesTotal: 1238
+    urgencesHospitalises: 14
+    actes: 6
+    actesTotal: 319
+  - code: '27'
+    urgences: 57
+    urgencesTotal: 1577
+    urgencesHospitalises: 30
+    actes: 11
+    actesTotal: 211
+  - code: '28'
+    urgences: 11
+    urgencesTotal: 1948
+    urgencesHospitalises: 5
+    actes: 9
+    actesTotal: 435
+  - code: '32'
+    urgences: 58
+    urgencesTotal: 2943
+    urgencesHospitalises: 27
+    actes: 21
+    actesTotal: 811
+  - code: '44'
+    urgences: 92
+    urgencesTotal: 2787
+    urgencesHospitalises: 57
+    actes: 22
+    actesTotal: 507
+  - code: '52'
+    urgences: 32
+    urgencesTotal: 1698
+    urgencesHospitalises: 22
+    actes: 14
+    actesTotal: 430
+  - code: '53'
+    urgences: 33
+    urgencesTotal: 1775
+    urgencesHospitalises: 14
+    actes: 11
+    actesTotal: 290
+  - code: '75'
+    urgences: 48
+    urgencesTotal: 3182
+    urgencesHospitalises: 31
+    actes: 18
+    actesTotal: 1031
+  - code: '76'
+    urgences: 30
+    urgencesTotal: 3015
+    urgencesHospitalises: 17
+    actes: 9
+    actesTotal: 341
+  - code: '84'
+    urgences: 106
+    urgencesTotal: 3973
+    urgencesHospitalises: 61
+    actes: 39
+    actesTotal: 836
+  - code: '93'
+    urgences: 90
+    urgencesTotal: 2920
+    urgencesHospitalises: 61
+    actes: 35
+    actesTotal: 772
+  - code: '94'
+    urgences: 0
+    urgencesTotal: 183
+    urgencesHospitalises: 0
+    actes: 2
+    actesTotal: 94
+  - code: '01'
+    urgences: 1
+    urgencesTotal: 235
+    urgencesHospitalises: 0
+    actes: 0
+    actesTotal: 0
+  - code: '02'
+    urgences: 0
+    urgencesTotal: 0
+    urgencesHospitalises: 0
+    actes: 2
+    actesTotal: 90
+  - code: '03'
+    urgences: 1
+    urgencesTotal: 234
+    urgencesHospitalises: 0
+    actes: 0
+    actesTotal: 0
+  - code: '04'
+    urgences: 2
+    urgencesTotal: 360
+    urgencesHospitalises: 2
+    actes: 0
+    actesTotal: 0
+  - code: '06'
+    urgences: 1
+    urgencesTotal: 122
+    urgencesHospitalises: 1
+    actes: 0
+    actesTotal: 0
+donneesNationales:
+  urgences: 709
+  urgencesTotal: 34313
+  urgencesHospitalises: 398
+  actes: 251
+  actesTotal: 7591
