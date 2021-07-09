@@ -1,3 +1,5 @@
+> Ce dépôt n'est plus mis à jour de façon régulière suite à l'évolution de la pandémie et des outils officiels mis en place. Néanmoins nous le conservons au titre d'un exemple d'école de ce qu'il est possible de produire à partir de sources disparates.
+
 # Données cartographiques concernant l'épidémie de COVID-19
 
 L'information officielle sur la progression de l'épidémie en France a été au départ assez fragmentée. Différentes initiatives ont tenté de structurer celle-ci sous forme de données libres. Malgré ce travail les données ont été néanmoins souvent difficilement exploitables à l'état brut au sein d'outils cartographiques.
